@@ -87,6 +87,10 @@
 		<filter-name>startFilter</filter-name>
 		<filter-class>com.fh.filter.startFilter</filter-class>
 	</filter>
+	<!-- 服务器缓存 -->
+	<listener>
+		<listener-class>com.fh.controller.fish.MonitorController</listener-class>
+	</listener>
 	
 	<!-- Shiro filter start -->
 	<filter>

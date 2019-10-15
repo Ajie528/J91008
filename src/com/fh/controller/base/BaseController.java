@@ -1,8 +1,10 @@
 package com.fh.controller.base;
 
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.web.context.ContextLoader;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,6 +19,14 @@ import com.fh.util.UuidUtil;
  * 修改时间：2018、2、11
  */
 public class BaseController {
+
+
+	/**
+	 * @Fields         applicati : TODO(上下文缓存)
+	 * @author:        Ajie
+	 * @date:          2019年8月8日 下午5:57:44
+	 */
+	protected ServletContext applicati = ContextLoader.getCurrentWebApplicationContext().getServletContext();
 	
 	protected Logger logger = Logger.getLogger(this.getClass());
 

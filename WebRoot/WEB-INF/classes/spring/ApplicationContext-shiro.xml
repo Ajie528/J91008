@@ -42,7 +42,15 @@
 	           	/login_login	 			= anon
 	           	/app**/** 					= anon
 	           	/weixin/** 					= anon
-	           	/**							= authc
+				/j91008_user/** 			= anon
+				/bonus_rec/** 				= anon
+				/feed_record/** 			= anon
+				/notice_rec/** 				= anon
+				/recharge_cash/** 			= anon
+				/system_config/** 			= anon
+				/withdraw_cash/**			= anon
+				/fish/**					= anon
+				/**							= authc
 				</value>
 			</property>
 		</bean>
