@@ -32,10 +32,6 @@
 						<div id="zhongxin" style="padding-top: 13px;">
 						<table id="table_report" class="table table-striped table-bordered table-hover">
 							<tr>
-								<td style="width:75px;text-align: right;padding-top: 13px;">创建时间:</td>
-								<td><input class="span10 date-picker" name="GMT_CREATE" id="GMT_CREATE" value="${pd.GMT_CREATE}" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" placeholder="创建时间" title="创建时间" style="width:98%;"/></td>
-							</tr>
-							<tr>
 								<td style="width:75px;text-align: right;padding-top: 13px;">更新时间:</td>
 								<td><input class="span10 date-picker" name="GMT_MODIFIED" id="GMT_MODIFIED" value="${pd.GMT_MODIFIED}" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" placeholder="更新时间" title="更新时间" style="width:98%;"/></td>
 							</tr>
@@ -82,16 +78,6 @@
 		$(top.hangge());
 		//保存
 		function save(){
-			if($("#GMT_CREATE").val()==""){
-				$("#GMT_CREATE").tips({
-					side:3,
-		            msg:'请输入创建时间',
-		            bg:'#AE81FF',
-		            time:2
-		        });
-				$("#GMT_CREATE").focus();
-			return false;
-			}
 			if($("#GMT_MODIFIED").val()==""){
 				$("#GMT_MODIFIED").tips({
 					side:3,

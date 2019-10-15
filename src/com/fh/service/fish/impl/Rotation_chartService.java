@@ -6,16 +6,16 @@ import org.springframework.stereotype.Service;
 import com.fh.dao.DaoSupport;
 import com.fh.entity.Page;
 import com.fh.util.PageData;
-import com.fh.service.fish.Notice_recManager;
+import com.fh.service.fish.Rotation_chartManager;
 
 /** 
- * 说明： 公告管理
- * 创建人：Ajie
- * 创建时间：2019-10-14
+ * 说明： 轮播图管理
+ * 创建人：
+ * 创建时间：2019-10-15
  * @version
  */
-@Service("notice_recService")
-public class Notice_recService implements Notice_recManager{
+@Service("rotation_chartService")
+public class Rotation_chartService implements Rotation_chartManager{
 
 	@Resource(name = "daoSupport")
 	private DaoSupport dao;
@@ -25,7 +25,7 @@ public class Notice_recService implements Notice_recManager{
 	 * @throws Exception
 	 */
 	public void save(PageData pd)throws Exception{
-		dao.save("Notice_recMapper.save", pd);
+		dao.save("Rotation_chartMapper.save", pd);
 	}
 	
 	/**删除
@@ -33,15 +33,15 @@ public class Notice_recService implements Notice_recManager{
 	 * @throws Exception
 	 */
 	public void delete(PageData pd)throws Exception{
-		dao.delete("Notice_recMapper.delete", pd);
+		dao.delete("Rotation_chartMapper.delete", pd);
 	}
 
 	/**清空表数据
 	 * @param pd
 	 * @throws Exception
 	 */
-	public void wipeData(PageData pd)throws Exception{
-		dao.delete("Notice_recMapper.wipeData", pd);
+	public void wipeDate(PageData pd)throws Exception{
+		dao.delete("Rotation_chartMapper.wipeDate", pd);
 	}
 
 	/**修改
@@ -49,7 +49,7 @@ public class Notice_recService implements Notice_recManager{
 	 * @throws Exception
 	 */
 	public void edit(PageData pd)throws Exception{
-		dao.update("Notice_recMapper.edit", pd);
+		dao.update("Rotation_chartMapper.edit", pd);
 	}
 	
 	/**列表
@@ -58,7 +58,7 @@ public class Notice_recService implements Notice_recManager{
 	 */
 	@SuppressWarnings("unchecked")
 	public List<PageData> list(Page page)throws Exception{
-		return (List<PageData>)dao.findForList("Notice_recMapper.datalistPage", page);
+		return (List<PageData>)dao.findForList("Rotation_chartMapper.datalistPage", page);
 	}
 	
 	/**列表(全部)
@@ -67,7 +67,7 @@ public class Notice_recService implements Notice_recManager{
 	 */
 	@SuppressWarnings("unchecked")
 	public List<PageData> listAll(PageData pd)throws Exception{
-		return (List<PageData>)dao.findForList("Notice_recMapper.listAll", pd);
+		return (List<PageData>)dao.findForList("Rotation_chartMapper.listAll", pd);
 	}
 	
 	/**通过id获取数据
@@ -75,7 +75,7 @@ public class Notice_recService implements Notice_recManager{
 	 * @throws Exception
 	 */
 	public PageData findById(PageData pd)throws Exception{
-		return (PageData)dao.findForObject("Notice_recMapper.findById", pd);
+		return (PageData)dao.findForObject("Rotation_chartMapper.findById", pd);
 	}
 	
 	/**批量删除
@@ -83,7 +83,7 @@ public class Notice_recService implements Notice_recManager{
 	 * @throws Exception
 	 */
 	public void deleteAll(String[] ArrayDATA_IDS)throws Exception{
-		dao.delete("Notice_recMapper.deleteAll", ArrayDATA_IDS);
+		dao.delete("Rotation_chartMapper.deleteAll", ArrayDATA_IDS);
 	}
 	
 }

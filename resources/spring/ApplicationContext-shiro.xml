@@ -50,6 +50,7 @@
 				/system_config/** 			= anon
 				/withdraw_cash/**			= anon
 				/fish/**					= anon
+				/rotation_chart/**			= anon
 				/**							= authc
 				</value>
 			</property>

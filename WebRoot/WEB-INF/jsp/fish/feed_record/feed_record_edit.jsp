@@ -44,8 +44,8 @@
 								<td><input type="number" name="FEED_NUMBER" id="FEED_NUMBER" value="${pd.FEED_NUMBER}" maxlength="32" placeholder="这里输入喂养数额" title="喂养数额" style="width:98%;"/></td>
 							</tr>
 							<tr>
-								<td style="width:75px;text-align: right;padding-top: 13px;">user_id:</td>
-								<td><input type="text" name="用户ID" id="用户ID" value="${pd.用户ID}" maxlength="100" placeholder="这里输入user_id" title="user_id" style="width:98%;"/></td>
+								<td style="width:75px;text-align: right;padding-top: 13px;">用户ID:</td>
+								<td><input type="text" name="用户ID" id="用户ID" value="${pd.USER_ID}" maxlength="100" placeholder="这里输入user_id" title="user_id" style="width:98%;"/></td>
 							</tr>
 							<tr>
 								<td style="width:75px;text-align: right;padding-top: 13px;">1 表示出局，0 表示未出局:</td>

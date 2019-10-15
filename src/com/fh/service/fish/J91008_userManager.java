@@ -23,7 +23,13 @@ public interface J91008_userManager{
 	 * @throws Exception
 	 */
 	public void delete(PageData pd)throws Exception;
-	
+
+	/**清空表数据保留顶点账号
+	 * @param pd
+	 * @throws Exception
+	 */
+	void wipeData(PageData pd)throws Exception;
+
 	/**修改
 	 * @param pd
 	 * @throws Exception

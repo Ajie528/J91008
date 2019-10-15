@@ -69,7 +69,7 @@
 									<th class="center">创建时间</th>
 									<th class="center">更新时间</th>
 									<th class="center">喂养数额</th>
-									<th class="center">user_id</th>
+									<th class="center">用户ID</th>
 									<th class="center">1 表示出局，0 表示未出局</th>
 									<th class="center">排号</th>
 									<th class="center">操作</th>
@@ -90,7 +90,7 @@
 											<td class='center'>${var.GMT_CREATE}</td>
 											<td class='center'>${var.GMT_MODIFIED}</td>
 											<td class='center'>${var.FEED_NUMBER}</td>
-											<td class='center'>${var.用户ID}</td>
+											<td class='center'>${var.USER_ID}</td>
 											<td class='center'>${var.IS_OUT}</td>
 											<td class='center'>${var.ROW_NUMBER}</td>
 											<td class="center">

@@ -27,7 +27,7 @@ public class J91008_userService implements J91008_userManager{
 	public void save(PageData pd)throws Exception{
 		dao.save("J91008_userMapper.save", pd);
 	}
-	
+
 	/**删除
 	 * @param pd
 	 * @throws Exception
@@ -35,7 +35,15 @@ public class J91008_userService implements J91008_userManager{
 	public void delete(PageData pd)throws Exception{
 		dao.delete("J91008_userMapper.delete", pd);
 	}
-	
+
+	/**清空表数据保留顶点账号
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void wipeData(PageData pd)throws Exception{
+		dao.delete("J91008_userMapper.wipeData", pd);
+	}
+
 	/**修改
 	 * @param pd
 	 * @throws Exception

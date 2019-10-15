@@ -17,14 +17,14 @@
 <%@ include file="../../system/index/top.jsp"%>
 <!-- 日期框 -->
 <link rel="stylesheet" href="static/ace/css/datepicker.css" />
-	<style type="text/css">
-		.yulantu{
-			z-index: 9999999999999999;
-			position:absolute;
-			border:3px solid #438EB9;
-			display: none;
-		}
-	</style>
+    <style type="text/css">
+        .yulantu{
+            z-index: 9999999999999999;
+            position:absolute;
+            border:3px solid #438EB9;
+            display: none;
+        }
+    </style>
 </head>
 <body class="no-skin">
 
@@ -36,9 +36,9 @@
 				<div class="page-content">
 					<div class="row">
 						<div class="col-xs-12">
-							
+
 						<!-- 检索  -->
-						<form action="withdraw_cash/list.do" method="post" name="Form" id="Form">
+						<form action="rotation_chart/list.do" method="post" name="Form" id="Form">
 						<table style="margin-top:5px;">
 							<tr>
 								<td>
@@ -66,60 +66,50 @@
 							</tr>
 						</table>
 						<!-- 检索  -->
-					
-						<table id="simple-table" class="table table-striped table-bordered table-hover" style="margin-top:5px;">	
+
+						<table id="simple-table" class="table table-striped table-bordered table-hover" style="margin-top:5px;">
 							<thead>
 								<tr>
 									<th class="center" style="width:35px;">
 									<label class="pos-rel"><input type="checkbox" class="ace" id="zcheckbox" /><span class="lbl"></span></label>
 									</th>
 									<th class="center" style="width:50px;">序号</th>
+									<th class="center">图片</th>
 									<th class="center">创建时间</th>
 									<th class="center">更新时间</th>
-									<th class="center">提现数量</th>
-									<th class="center">用户ID</th>
-									<th class="center">1 表示微信、2、支付宝、3表示银行卡</th>
-									<th class="center">支付凭证</th>
-									<th class="center">1 表示删除，0 表示未删除</th>
-									<th class="center">1 表示审核，0 表示未审核</th>
 									<th class="center">操作</th>
 								</tr>
 							</thead>
-													
+
 							<tbody>
-							<!-- 开始循环 -->	
+							<!-- 开始循环 -->
 							<c:choose>
 								<c:when test="${not empty varList}">
 									<c:if test="${QX.cha == 1 }">
 									<c:forEach items="${varList}" var="var" varStatus="vs">
 										<tr>
 											<td class='center'>
-												<label class="pos-rel"><input type='checkbox' name='ids' value="${var.WITHDRAW_CASH_ID}" class="ace" /><span class="lbl"></span></label>
+												<label class="pos-rel"><input type='checkbox' name='ids' value="${var.ROTATION_CHART_ID}" class="ace" /><span class="lbl"></span></label>
 											</td>
 											<td class='center' style="width: 30px;">${vs.index+1}</td>
+											<td class='center'>
+											    <a style="cursor:pointer;" onmouseover="showTU('${var.PIC_PATH}','yulantu${vs.index+1}');" onmouseout="hideTU('yulantu${vs.index+1}');">[预览]</a>
+                                                <div class="yulantu" id="yulantu${vs.index+1}"></div>
+											</td>
 											<td class='center'>${var.GMT_CREATE}</td>
 											<td class='center'>${var.GMT_MODIFIED}</td>
-											<td class='center'>${var.NUMBER}</td>
-											<td class='center'>${var.USER_ID}</td>
-											<td class='center'>${var.WITHDRAW_TYPE}</td>
-											<td class='center'>
-												<a style="cursor:pointer;" onmouseover="showTU('${var.VOUCHER}','yulantu${vs.index+1}');" onmouseout="hideTU('yulantu${vs.index+1}');">[预览]</a>
-												<div class="yulantu" id="yulantu${vs.index+1}"></div>
-											</td>
-											<td class='center'>${var.IS_DELETED}</td>
-											<td class='center'>${var.IS_AUDITING}</td>
 											<td class="center">
 												<c:if test="${QX.edit != 1 && QX.del != 1 }">
 												<span class="label label-large label-grey arrowed-in-right arrowed-in"><i class="ace-icon fa fa-lock" title="无权限"></i></span>
 												</c:if>
 												<div class="hidden-sm hidden-xs btn-group">
 													<c:if test="${QX.edit == 1 }">
-													<a class="btn btn-xs btn-success" title="编辑" onclick="edit('${var.WITHDRAW_CASH_ID}');">
+													<a class="btn btn-xs btn-success" title="编辑" onclick="edit('${var.ROTATION_CHART_ID}');">
 														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="编辑"></i>
 													</a>
 													</c:if>
 													<c:if test="${QX.del == 1 }">
-													<a class="btn btn-xs btn-danger" onclick="del('${var.WITHDRAW_CASH_ID}');">
+													<a class="btn btn-xs btn-danger" onclick="del('${var.ROTATION_CHART_ID}');">
 														<i class="ace-icon fa fa-trash-o bigger-120" title="删除"></i>
 													</a>
 													</c:if>
@@ -129,11 +119,11 @@
 														<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
 															<i class="ace-icon fa fa-cog icon-only bigger-110"></i>
 														</button>
-			
+
 														<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
 															<c:if test="${QX.edit == 1 }">
 															<li>
-																<a style="cursor:pointer;" onclick="edit('${var.WITHDRAW_CASH_ID}');" class="tooltip-success" data-rel="tooltip" title="修改">
+																<a style="cursor:pointer;" onclick="edit('${var.ROTATION_CHART_ID}');" class="tooltip-success" data-rel="tooltip" title="修改">
 																	<span class="green">
 																		<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
 																	</span>
@@ -142,7 +132,7 @@
 															</c:if>
 															<c:if test="${QX.del == 1 }">
 															<li>
-																<a style="cursor:pointer;" onclick="del('${var.WITHDRAW_CASH_ID}');" class="tooltip-error" data-rel="tooltip" title="删除">
+																<a style="cursor:pointer;" onclick="del('${var.ROTATION_CHART_ID}');" class="tooltip-error" data-rel="tooltip" title="删除">
 																	<span class="red">
 																		<i class="ace-icon fa fa-trash-o bigger-120"></i>
 																	</span>
@@ -154,7 +144,7 @@
 												</div>
 											</td>
 										</tr>
-									
+
 									</c:forEach>
 									</c:if>
 									<c:if test="${QX.cha == 0 }">
@@ -175,6 +165,9 @@
 						<table style="width:100%;">
 							<tr>
 								<td style="vertical-align:top;">
+									<c:if test="${QX.add == 1 }">
+									<a class="btn btn-mini btn-success" onclick="add();">新增</a>
+									</c:if>
 									<c:if test="${QX.del == 1 }">
 									<a class="btn btn-mini btn-danger" onclick="makeAll('确定要删除选中的数据吗?');" title="批量删除" ><i class='ace-icon fa fa-trash-o bigger-120'></i></a>
 									</c:if>
@@ -184,7 +177,7 @@
 						</table>
 						</div>
 						</form>
-					
+
 						</div>
 						<!-- /.col -->
 					</div>
@@ -223,27 +216,29 @@
 			top.jzts();
 			$("#Form").submit();
 		}
-		//显示图片
-		function showTU(path,TPID){
-			$("#"+TPID).html('<img width="300" src="'+path+'">');
-			$("#"+TPID).show();
-		}
 
-		//隐藏图片
-		function hideTU(TPID){
-			$("#"+TPID).hide();
-		}
+        //显示图片
+        function showTU(path,TPID){
+            $("#"+TPID).html('<img width="300" src="'+path+'">');
+            $("#"+TPID).show();
+        }
+
+        //隐藏图片
+        function hideTU(TPID){
+            $("#"+TPID).hide();
+        }
+
 		$(function() {
-		
+
 			//日期框
 			$('.date-picker').datepicker({
 				autoclose: true,
 				todayHighlight: true
 			});
-			
+
 			//下拉框
 			if(!ace.vars['touch']) {
-				$('.chosen-select').chosen({allow_single_deselect:true}); 
+				$('.chosen-select').chosen({allow_single_deselect:true});
 				$(window)
 				.off('resize.chosen')
 				.on('resize.chosen', function() {
@@ -266,8 +261,8 @@
 					 else $('#form-field-select-4').removeClass('tag-input-style');
 				});
 			}
-			
-			
+
+
 			//复选框全选控制
 			var active_class = 'active';
 			$('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
@@ -279,14 +274,14 @@
 				});
 			});
 		});
-		
+
 		//新增
 		function add(){
 			 top.jzts();
 			 var diag = new top.Dialog();
 			 diag.Drag=true;
 			 diag.Title ="新增";
-			 diag.URL = '<%=basePath%>withdraw_cash/goAdd.do';
+			 diag.URL = '<%=basePath%>rotation_chart/goAdd.do';
 			 diag.Width = 450;
 			 diag.Height = 355;
 			 diag.Modal = true;				//有无遮罩窗口
@@ -304,32 +299,32 @@
 			 };
 			 diag.show();
 		}
-		
+
 		//删除
 		function del(Id){
 			bootbox.confirm("确定要删除吗?", function(result) {
 				if(result) {
 					top.jzts();
-					var url = "<%=basePath%>withdraw_cash/delete.do?WITHDRAW_CASH_ID="+Id+"&tm="+new Date().getTime();
+					var url = "<%=basePath%>rotation_chart/delete.do?ROTATION_CHART_ID="+Id+"&tm="+new Date().getTime();
 					$.get(url,function(data){
 						tosearch();
 					});
 				}
 			});
 		}
-		
+
 		//修改
 		function edit(Id){
 			 top.jzts();
 			 var diag = new top.Dialog();
 			 diag.Drag=true;
 			 diag.Title ="编辑";
-			 diag.URL = '<%=basePath%>withdraw_cash/goEdit.do?WITHDRAW_CASH_ID='+Id;
+			 diag.URL = '<%=basePath%>rotation_chart/goEdit.do?ROTATION_CHART_ID='+Id;
 			 diag.Width = 450;
 			 diag.Height = 355;
 			 diag.Modal = true;				//有无遮罩窗口
 			 diag. ShowMaxButton = true;	//最大化按钮
-		     diag.ShowMinButton = true;		//最小化按钮 
+		     diag.ShowMinButton = true;		//最小化按钮
 			 diag.CancelEvent = function(){ //关闭事件
 				 if(diag.innerFrame.contentWindow.document.getElementById('zhongxin').style.display == 'none'){
 					 tosearch();
@@ -338,7 +333,7 @@
 			 };
 			 diag.show();
 		}
-		
+
 		//批量操作
 		function makeAll(msg){
 			bootbox.confirm(msg, function(result) {
@@ -353,7 +348,7 @@
 					if(str==''){
 						bootbox.dialog({
 							message: "<span class='bigger-110'>您没有选择任何内容!</span>",
-							buttons: 			
+							buttons:
 							{ "button":{ "label":"确定", "className":"btn-sm btn-success"}}
 						});
 						$("#zcheckbox").tips({
@@ -368,7 +363,7 @@
 							top.jzts();
 							$.ajax({
 								type: "POST",
-								url: '<%=basePath%>withdraw_cash/deleteAll.do?tm='+new Date().getTime(),
+								url: '<%=basePath%>rotation_chart/deleteAll.do?tm='+new Date().getTime(),
 						    	data: {DATA_IDS:str},
 								dataType:'json',
 								//beforeSend: validateData,
@@ -384,10 +379,10 @@
 				}
 			});
 		};
-		
+
 		//导出excel
 		function toExcel(){
-			window.location.href='<%=basePath%>withdraw_cash/excel.do';
+			window.location.href='<%=basePath%>rotation_chart/excel.do';
 		}
 	</script>
 

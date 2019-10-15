@@ -1,5 +1,6 @@
 package com.fh.controller.fish;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -9,12 +10,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.xml.crypto.Data;
+
+import com.fh.util.express.ImageUtils;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import com.fh.controller.base.BaseController;
 import com.fh.entity.Page;
@@ -23,34 +29,66 @@ import com.fh.util.ObjectExcelView;
 import com.fh.util.PageData;
 import com.fh.util.Jurisdiction;
 import com.fh.util.Tools;
-import com.fh.service.fish.Feed_recordManager;
+import com.fh.service.fish.Rotation_chartManager;
 
 /** 
- * 说明：喂养记录
- * 创建人：Ajie
- * 创建时间：2019-10-14
+ * 说明：轮播图管理
+ * 创建人：
+ * 创建时间：2019-10-15
  */
 @Controller
-@RequestMapping(value="/feed_record")
-public class Feed_recordController extends BaseController {
+@RequestMapping(value="/rotation_chart")
+public class Rotation_chartController extends BaseController {
 	
-	String menuUrl = "feed_record/list.do"; //菜单地址(权限用)
-	@Resource(name="feed_recordService")
-	private Feed_recordManager feed_recordService;
-	
+	String menuUrl = "rotation_chart/list.do"; //菜单地址(权限用)
+	@Resource(name="rotation_chartService")
+	private Rotation_chartManager rotation_chartService;
+
+	/**
+	 *@描述：图片上传
+	 *@参数：请求和文件数据
+	 *@返回值：UUID后的图片路径
+	 *@创建人：Ajie
+	 *@创建时间：2019/10/15 0015
+	 */
+	@RequestMapping(value="/addPic")
+	@ResponseBody
+	public String addUser(HttpServletRequest request, MultipartFile pictureFile) throws Exception {
+		// 得到上传图片的地址
+		String imgPath = "";
+		try {
+			//ImageUtils为之前添加的工具类
+			imgPath = ImageUtils.upload(request, pictureFile);
+			if (imgPath != null) {
+				System.out.println("-----------------图片上传成功！");
+			}else{
+				System.out.println("-----------------图片上传失败！");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			System.out.println("----------------图片上传失败！");
+		}
+		System.out.println(imgPath);
+		return imgPath;
+	}
+
 	/**保存
 	 * @param
 	 * @throws Exception
 	 */
 	@RequestMapping(value="/save")
 	public ModelAndView save() throws Exception{
-		logBefore(logger, Jurisdiction.getUsername()+"新增Feed_record");
+		logBefore(logger, Jurisdiction.getUsername()+"新增Rotation_chart");
 		if(!Jurisdiction.buttonJurisdiction(menuUrl, "add")){return null;} //校验权限
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
+		Date data = new Date();
 		pd = this.getPageData();
-		pd.put("FEED_RECORD_ID", this.get32UUID());	//主键
-		feed_recordService.save(pd);
+		// 创建时间和主键
+		pd.put("GMT_CREATE",Tools.date2Str(data,"yyyy-MM-dd"));
+		pd.put("GMT_MODIFIED","");
+		pd.put("ROTATION_CHART_ID", this.get32UUID());	//主键
+		rotation_chartService.save(pd);
 		mv.addObject("msg","success");
 		mv.setViewName("save_result");
 		return mv;
@@ -62,11 +100,11 @@ public class Feed_recordController extends BaseController {
 	 */
 	@RequestMapping(value="/delete")
 	public void delete(PrintWriter out) throws Exception{
-		logBefore(logger, Jurisdiction.getUsername()+"删除Feed_record");
+		logBefore(logger, Jurisdiction.getUsername()+"删除Rotation_chart");
 		if(!Jurisdiction.buttonJurisdiction(menuUrl, "del")){return;} //校验权限
 		PageData pd = new PageData();
 		pd = this.getPageData();
-		feed_recordService.delete(pd);
+		rotation_chartService.delete(pd);
 		out.write("success");
 		out.close();
 	}
@@ -77,12 +115,14 @@ public class Feed_recordController extends BaseController {
 	 */
 	@RequestMapping(value="/edit")
 	public ModelAndView edit() throws Exception{
-		logBefore(logger, Jurisdiction.getUsername()+"修改Feed_record");
+		logBefore(logger, Jurisdiction.getUsername()+"修改Rotation_chart");
 		if(!Jurisdiction.buttonJurisdiction(menuUrl, "edit")){return null;} //校验权限
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
+		Date data = new Date();
 		pd = this.getPageData();
-		feed_recordService.edit(pd);
+		pd.put("GMT_MODIFIED",Tools.date2Str(data,"yyyy-MM-dd"));
+		rotation_chartService.edit(pd);
 		mv.addObject("msg","success");
 		mv.setViewName("save_result");
 		return mv;
@@ -94,7 +134,7 @@ public class Feed_recordController extends BaseController {
 	 */
 	@RequestMapping(value="/list")
 	public ModelAndView list(Page page) throws Exception{
-		logBefore(logger, Jurisdiction.getUsername()+"列表Feed_record");
+		logBefore(logger, Jurisdiction.getUsername()+"列表Rotation_chart");
 		//if(!Jurisdiction.buttonJurisdiction(menuUrl, "cha")){return null;} //校验权限(无权查看时页面会有提示,如果不注释掉这句代码就无法进入列表页面,所以根据情况是否加入本句代码)
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
@@ -104,8 +144,8 @@ public class Feed_recordController extends BaseController {
 			pd.put("keywords", keywords.trim());
 		}
 		page.setPd(pd);
-		List<PageData>	varList = feed_recordService.list(page);	//列出Feed_record列表
-		mv.setViewName("fish/feed_record/feed_record_list");
+		List<PageData>	varList = rotation_chartService.list(page);	//列出Rotation_chart列表
+		mv.setViewName("fish/rotation_chart/rotation_chart_list");
 		mv.addObject("varList", varList);
 		mv.addObject("pd", pd);
 		mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
@@ -121,7 +161,7 @@ public class Feed_recordController extends BaseController {
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();
-		mv.setViewName("fish/feed_record/feed_record_edit");
+		mv.setViewName("fish/rotation_chart/rotation_chart_edit");
 		mv.addObject("msg", "save");
 		mv.addObject("pd", pd);
 		return mv;
@@ -136,8 +176,8 @@ public class Feed_recordController extends BaseController {
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();
-		pd = feed_recordService.findById(pd);	//根据ID读取
-		mv.setViewName("fish/feed_record/feed_record_edit");
+		pd = rotation_chartService.findById(pd);	//根据ID读取
+		mv.setViewName("fish/rotation_chart/rotation_chart_edit");
 		mv.addObject("msg", "edit");
 		mv.addObject("pd", pd);
 		return mv;
@@ -150,7 +190,7 @@ public class Feed_recordController extends BaseController {
 	@RequestMapping(value="/deleteAll")
 	@ResponseBody
 	public Object deleteAll() throws Exception{
-		logBefore(logger, Jurisdiction.getUsername()+"批量删除Feed_record");
+		logBefore(logger, Jurisdiction.getUsername()+"批量删除Rotation_chart");
 		if(!Jurisdiction.buttonJurisdiction(menuUrl, "del")){return null;} //校验权限
 		PageData pd = new PageData();		
 		Map<String,Object> map = new HashMap<String,Object>();
@@ -159,7 +199,7 @@ public class Feed_recordController extends BaseController {
 		String DATA_IDS = pd.getString("DATA_IDS");
 		if(null != DATA_IDS && !"".equals(DATA_IDS)){
 			String ArrayDATA_IDS[] = DATA_IDS.split(",");
-			feed_recordService.deleteAll(ArrayDATA_IDS);
+			rotation_chartService.deleteAll(ArrayDATA_IDS);
 			pd.put("msg", "ok");
 		}else{
 			pd.put("msg", "no");
@@ -175,7 +215,7 @@ public class Feed_recordController extends BaseController {
 	 */
 	@RequestMapping(value="/excel")
 	public ModelAndView exportExcel() throws Exception{
-		logBefore(logger, Jurisdiction.getUsername()+"导出Feed_record到excel");
+		logBefore(logger, Jurisdiction.getUsername()+"导出Rotation_chart到excel");
 		if(!Jurisdiction.buttonJurisdiction(menuUrl, "cha")){return null;}
 		ModelAndView mv = new ModelAndView();
 		PageData pd = new PageData();
@@ -184,21 +224,15 @@ public class Feed_recordController extends BaseController {
 		List<String> titles = new ArrayList<String>();
 		titles.add("创建时间");	//1
 		titles.add("更新时间");	//2
-		titles.add("喂养数额");	//3
-		titles.add("用户ID");	//4
-		titles.add("1 表示出局，0 表示未出局");	//5
-		titles.add("排号");	//6
+		titles.add("图片地址");	//3
 		dataMap.put("titles", titles);
-		List<PageData> varOList = feed_recordService.listAll(pd);
+		List<PageData> varOList = rotation_chartService.listAll(pd);
 		List<PageData> varList = new ArrayList<PageData>();
 		for(int i=0;i<varOList.size();i++){
 			PageData vpd = new PageData();
 			vpd.put("var1", varOList.get(i).getString("GMT_CREATE"));	    //1
 			vpd.put("var2", varOList.get(i).getString("GMT_MODIFIED"));	    //2
-			vpd.put("var3", varOList.get(i).get("FEED_NUMBER").toString());	//3
-			vpd.put("var4", varOList.get(i).getString("USER_ID"));	    //4
-			vpd.put("var5", varOList.get(i).get("IS_OUT").toString());	//5
-			vpd.put("var6", varOList.get(i).get("ROW_NUMBER").toString());	//6
+			vpd.put("var3", varOList.get(i).getString("PIC_PATH"));	    //3
 			varList.add(vpd);
 		}
 		dataMap.put("varList", varList);

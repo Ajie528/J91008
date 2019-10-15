@@ -5,12 +5,12 @@ import com.fh.entity.Page;
 import com.fh.util.PageData;
 
 /** 
- * 说明： 公告管理接口
- * 创建人：Ajie
- * 创建时间：2019-10-14
+ * 说明： 轮播图管理接口
+ * 创建人：
+ * 创建时间：2019-10-15
  * @version
  */
-public interface Notice_recManager{
+public interface Rotation_chartManager{
 
 	/**新增
 	 * @param pd
@@ -24,11 +24,11 @@ public interface Notice_recManager{
 	 */
 	public void delete(PageData pd)throws Exception;
 
-	/**清空表数据
+	/**清空表护甲
 	 * @param pd
 	 * @throws Exception
 	 */
-	void wipeData(PageData pd)throws Exception;
+	void wipeDate(PageData pd)throws Exception;
 
 	/**修改
 	 * @param pd

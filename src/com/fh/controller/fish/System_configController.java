@@ -12,6 +12,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.fh.util.*;
 import com.fh.util.express.ImageUtils;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -23,11 +24,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import com.fh.controller.base.BaseController;
 import com.fh.entity.Page;
-import com.fh.util.AppUtil;
-import com.fh.util.ObjectExcelView;
-import com.fh.util.PageData;
-import com.fh.util.Jurisdiction;
-import com.fh.util.Tools;
 import com.fh.service.fish.System_configManager;
 
 /** 
@@ -43,33 +39,6 @@ public class System_configController extends BaseController {
 	@Resource(name="system_configService")
 	private System_configManager system_configService;
 
-	/**
-	 *@描述：
-	 *@参数：
-	 *@返回值：
-	 *@创建人：Ajie
-	 *@创建时间：2019/10/14 0014
-	 */
-	@RequestMapping(value="/addPic")
-	@ResponseBody
-	public String addUser(HttpServletRequest request, MultipartFile pictureFile) throws Exception {
-		// 得到上传图片的地址
-		String imgPath = "";
-		try {
-			//ImageUtils为之前添加的工具类
-			imgPath = ImageUtils.upload(request, pictureFile);
-			if (imgPath != null) {
-				System.out.println("-----------------图片上传成功！");
-			}else{
-				System.out.println("-----------------图片上传失败！");
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-			System.out.println("----------------图片上传失败！");
-		}
-		System.out.println(imgPath);
-		return imgPath;
-	}
 
 	
 	/**修改
@@ -77,16 +46,20 @@ public class System_configController extends BaseController {
 	 * @throws Exception
 	 */
 	@RequestMapping(value="/edit")
-	public ModelAndView edit() throws Exception{
+	@ResponseBody
+	public String edit() throws Exception{
 		logBefore(logger, Jurisdiction.getUsername()+"修改System_config");
 		if(!Jurisdiction.buttonJurisdiction(menuUrl, "edit")){return null;} //校验权限
-		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();
+		Date date = new Date();
+		pd.put("GMT_MODIFIED",Tools.date2Str(date));
+		logger.info("修改系统参数："+pd);
+		logger.info("系统参数长度为："+pd.size());
 		system_configService.edit(pd);
-		mv.addObject("msg","success");
-		mv.setViewName("save_result");
-		return mv;
+		// 更新缓存中的参数
+		applicati.setAttribute(Const.Par,pd);
+		return "success";
 	}
 	
 	/**列表
@@ -137,9 +110,6 @@ public class System_configController extends BaseController {
 		titles.add("饲料价格");	//9
 		titles.add("出局收益");	//10
 		titles.add("没有推人喂养次数");	//11
-		titles.add("轮播图1");	//12
-		titles.add("轮播图2");	//13
-		titles.add("轮播图3");	//14
 		dataMap.put("titles", titles);
 		List<PageData> varOList = system_configService.listAll(pd);
 		List<PageData> varList = new ArrayList<PageData>();
@@ -156,9 +126,6 @@ public class System_configController extends BaseController {
 			vpd.put("var9", varOList.get(i).get("FEED_PRICE").toString());	//9
 			vpd.put("var10", varOList.get(i).get("OUT_EARNINGS").toString());	//10
 			vpd.put("var11", varOList.get(i).get("FEEDING_TIMES").toString());	//11
-			vpd.put("var12", varOList.get(i).getString("IMG_PATH1"));	    //12
-			vpd.put("var13", varOList.get(i).getString("IMG_PATH2"));	    //13
-			vpd.put("var14", varOList.get(i).getString("IMG_PATH3"));	    //14
 			varList.add(vpd);
 		}
 		dataMap.put("varList", varList);

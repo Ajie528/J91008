@@ -7,6 +7,8 @@ import org.springframework.context.ApplicationContext;
  * 修改时间：2018/8/2
 */
 public class Const {
+	public static final String Par  = "FRONT_CONFIG";		//前台参数配置
+
 	public static final String SESSION_SECURITY_CODE = "sessionSecCode";	//验证码
 	public static final String SESSION_USER = "sessionUser";				//session用的用户
 	public static final String SESSION_ROLE_RIGHTS = "sessionRoleRights";
@@ -23,7 +25,7 @@ public class Const {
 	public static final String DEPARTMENT_ID = "DEPARTMENT_ID";				//当前用户拥有的最高部门权限
 	public static final String TRUE = "T";
 	public static final String FALSE = "F";
-	public static final String SKIN = "SKIN";									//用户皮肤
+	public static final String SKIN = "SKIN";								//用户皮肤
 	public static final String LOGIN = "/login_toLogin.do";					//登录地址
 	public static final String SYSNAME = "admin/config/SYSNAME.txt";		//系统名称路径
 	public static final String PAGE	= "admin/config/PAGE.txt";				//分页条数配置路径

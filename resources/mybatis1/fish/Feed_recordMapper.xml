@@ -12,7 +12,7 @@
 		"GMT_CREATE",	
 		"GMT_MODIFIED",	
 		"FEED_NUMBER",	
-		"用户ID",	
+		"USER_ID",
 		"IS_OUT",	
 		"ROW_NUMBER",	
 		"FEED_RECORD_ID"
@@ -23,7 +23,7 @@
 			#{GMT_CREATE},	
 			#{GMT_MODIFIED},	
 			#{FEED_NUMBER},	
-			#{用户ID},	
+			#{USER_ID},
 			#{IS_OUT},	
 			#{ROW_NUMBER},	
 			#{FEED_RECORD_ID}

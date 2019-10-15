@@ -17,6 +17,22 @@
     <%@ include file="../../system/index/top.jsp" %>
     <!-- 日期框 -->
     <link rel="stylesheet" href="static/ace/css/datepicker.css"/>
+    <style>
+        .upload_pic {
+            height: 100px;
+            width: 100px;
+        }
+
+        .preimg {
+            position: absolute;
+            top: 50%;
+            right: 214px;
+            width: 95px;
+            height: 99px;
+            opacity: 0;
+            margin-top: -52px;
+        }
+    </style>
 </head>
 <body class="no-skin">
 
@@ -84,31 +100,6 @@
                                                            value="${varList[0].FEEDING_TIMES}" maxlength="32"
                                                            placeholder="这里输入没有推人喂养次数" style="width:98%;"/></td>
                                             </tr>
-                                            <tr>
-                                                <th class='center'>轮播图1：</th>
-                                                <td><img id="IMG_PATH1" src="${varList[0].IMG_PATH1}" style="width:100px; height: 100px"/></td>
-                                                <th class='center'>轮播图2：</th>
-                                                <td><img id="IMG_PATH2" src="${varList[0].IMG_PATH2}" style="width:100px; height: 100px"/></td>
-                                                <th class='center'>轮播图3：</th>
-                                                <td><img id="IMG_PATH3" src="${varList[0].IMG_PATH3}" style="width:100px; height: 100px"/></td>
-                                            </tr>
-                                            <tr>
-                                                <th class='center'>上传轮播图1：</th>
-                                                <td>
-                                                    <input type='file' name='pictureFile' id='pictureFile1'
-                                                           onchange='setImg(this)'>
-                                                </td>
-                                                <th class='center'>上传轮播图2：</th>
-                                                <td>
-                                                    <input type='file' name='pictureFile' id='pictureFile2'
-                                                           onchange='setImg(this)'>
-                                                </td>
-                                                <th class='center'>上传轮播图3：</th>
-                                                <td>
-                                                    <input type='file' name='pictureFile' id='pictureFile3'
-                                                           onchange='setImg(this)'>
-                                                </td>
-                                            </tr>
                                         </c:if>
                                         <c:if test="${QX.cha == 0 }">
                                             <tr>
@@ -129,12 +120,11 @@
                                     <tr>
                                         <td style="vertical-align:top;">
                                             <c:if test="${QX.add == 1 }">
-                                                <a class="btn btn-mini btn-success" onclick="add();">新增</a>
+                                                <a class="btn btn-mini btn-success" onclick="edit();">更改</a>
+                                                <a class="btn btn-mini " onclick="formReset()">取消</a>
+                                                <a class="btn btn-mini btn-danger" onclick="wipeData();">清空数据</a>
                                             </c:if>
-                                            <c:if test="${QX.del == 1 }">
-                                                <a class="btn btn-mini btn-danger" onclick="makeAll('确定要删除选中的数据吗?');"
-                                                   title="批量删除"><i class='ace-icon fa fa-trash-o bigger-120'></i></a>
-                                            </c:if>
+
                                         </td>
                                     </tr>
                                 </table>
@@ -185,60 +175,78 @@
     }
 
 
-    //删除
-    function del(Id) {
-        bootbox.confirm("确定要删除吗?", function (result) {
-            if (result) {
+    //清空数据
+    function wipeData(){
+        bootbox.confirm("确定要清空数据吗?", function(result) {
+            if(result) {
                 top.jzts();
-                var url = "<%=basePath%>system_config/delete.do?SYSTEM_CONFIG_ID=" + Id + "&tm=" + new Date().getTime();
-                $.get(url, function (data) {
-                    tosearch();
+                var url = "fish/resetSystem.do";
+                $.get(url,function(data){
+                    if(data === "suceess") {
+                        alert("清空数据成功！")
+                        location.reload(); //刷新页面
+                    }
                 });
             }
         });
+    }
+
+    //复位
+    function formReset() {
+        document.getElementById("Form").reset();
+    }
+
+    //判断不能为空
+    function check() {  //Form是表单的ID
+        for (var i = 0; i < document.Form.elements.length - 1; i++) {
+            if (document.Form.elements[i].value === "") {
+                alert("当前表单不能有空项");
+                document.Form.elements[i].focus();
+                return false;
+            }
+        }
+        return true;
+    }
+
+    //获取from表单数据并传到后台
+    function edit() {
+        //取表单值
+        finalRes = $("#Form").serializeArray().reduce(function (result, item) {
+            result[item.name] = item.value;
+            return result;
+        }, {})
+        //打印控制台查看数据是否符合
+        console.log(finalRes)
+        //验证是否为空
+        if (check()) {
+            var lock = true;
+        } else {
+            lock = false;
+        }
+        //通过ajax传到后台
+        if (lock) {
+            $.ajax({
+                url: "system_config/edit",
+                type: "post",
+                data: finalRes,
+                timeout: 10000, //超时时间设置为10秒
+                success: function (data) { //回调函数
+                    if (data === "success") {
+                        alert("参数更改成功~");
+                        location.reload(); //刷新页面
+                    } else {
+                        alert("参数更改失败~");
+                        location.reload(); //刷新页面
+                    }
+                },
+            });
+        }
     }
 
     //导出excel
     function toExcel() {
         window.location.href = '<%=basePath%>system_config/excel.do';
     }
-
-    //用于进行图片上传格式验证
-    function setImg(obj) {
-        var f = $(obj).val();
-        var id = $(obj).attr('id');
-        if (f == null || f == undefined || f == '') {
-            return false;
-        }
-        if (!/\.(?:png|jpg|bmp|gif|PNG|JPG|BMP|GIF)$/.test(f)) {
-            layer.msg("类型必须是图片(.png|jpg|bmp|gif|PNG|JPG|BMP|GIF)");
-            $(obj).val('');
-            return false;
-        }
-        var url = "system_config/addPic";
-        //异步提交表单(先确保jquery.form.js已经引入了)
-        var options = {
-            url: url,
-            success: function (data) {
-                picture_path = (data + "").trim();
-                var sta = picture_path;
-                if (id == "pictureFile1") {
-                    $("#IMG_PATH1").attr({src: sta});
-                    $("#pictureFile1").val("")
-                }
-                if (id == "pictureFile2") {
-                    $("#IMG_PATH2").attr({src: sta});
-                    $("#pictureFile2").val("")
-                }
-                if (id == "pictureFile3") {
-                    $("#IMG_PATH3").attr({src: sta});
-                    $("#pictureFile3").val("")
-                }
-            }
-        };
-        $("#Form").ajaxSubmit(options);
-    }
-
 
 
 </script>

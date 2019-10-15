@@ -19,10 +19,7 @@
 		"FEED_CAPPING",	
 		"FEED_PRICE",	
 		"OUT_EARNINGS",	
-		"FEEDING_TIMES",	
-		"IMG_PATH1",	
-		"IMG_PATH2",	
-		"IMG_PATH3",	
+		"FEEDING_TIMES",
 		"SYSTEM_CONFIG_ID"
 	</sql>
 	
@@ -38,10 +35,7 @@
 			#{FEED_CAPPING},	
 			#{FEED_PRICE},	
 			#{OUT_EARNINGS},	
-			#{FEEDING_TIMES},	
-			#{IMG_PATH1},	
-			#{IMG_PATH2},	
-			#{IMG_PATH3},	
+			#{FEEDING_TIMES},
 			#{SYSTEM_CONFIG_ID}
 	</sql>
 	
@@ -68,8 +62,7 @@
 	<update id="edit" parameterType="pd">
 		update
 		<include refid="tableName"></include>
-			set 
-				"GMT_CREATE" = #{GMT_CREATE},	
+			set
 				"GMT_MODIFIED" = #{GMT_MODIFIED},	
 				"WITHDRAW_TODAY" = #{WITHDRAW_TODAY},	
 				"PAYMENT_FEE" = #{PAYMENT_FEE},	
@@ -79,13 +72,9 @@
 				"FEED_CAPPING" = #{FEED_CAPPING},	
 				"FEED_PRICE" = #{FEED_PRICE},	
 				"OUT_EARNINGS" = #{OUT_EARNINGS},	
-				"FEEDING_TIMES" = #{FEEDING_TIMES},	
-				"IMG_PATH1" = #{IMG_PATH1},	
-				"IMG_PATH2" = #{IMG_PATH2},	
-				"IMG_PATH3" = #{IMG_PATH3},	
-			"SYSTEM_CONFIG_ID" = "SYSTEM_CONFIG_ID"
+				"FEEDING_TIMES" = #{FEEDING_TIMES}
 			where 
-				"SYSTEM_CONFIG_ID" = #{SYSTEM_CONFIG_ID}
+				"SYSTEM_CONFIG_ID" = '1'
 	</update>
 	
 	<!-- 通过ID获取数据 -->

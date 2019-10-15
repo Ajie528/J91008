@@ -17,6 +17,14 @@
 <%@ include file="../../system/index/top.jsp"%>
 <!-- 日期框 -->
 <link rel="stylesheet" href="static/ace/css/datepicker.css" />
+	<style type="text/css">
+		.yulantu{
+			z-index: 9999999999999999;
+			position:absolute;
+			border:3px solid #438EB9;
+			display: none;
+		}
+	</style>
 </head>
 <body class="no-skin">
 
@@ -94,7 +102,10 @@
 											<td class='center'>${var.NUMBER}</td>
 											<td class='center'>${var.USER_ID}</td>
 											<td class='center'>${var.PAYMENT_TYPE}</td>
-											<td class='center'>${var.VOUCHER}</td>
+											<td class='center'>
+												<a style="cursor:pointer;" onmouseover="showTU('${var.VOUCHER}','yulantu${vs.index+1}');" onmouseout="hideTU('yulantu${vs.index+1}');">[预览]</a>
+												<div class="yulantu" id="yulantu${vs.index+1}"></div>
+											</td>
 											<td class='center'>${var.IS_DELETED}</td>
 											<td class='center'>${var.IS_AUDITING}</td>
 											<td class="center">
@@ -164,9 +175,6 @@
 						<table style="width:100%;">
 							<tr>
 								<td style="vertical-align:top;">
-									<c:if test="${QX.add == 1 }">
-									<a class="btn btn-mini btn-success" onclick="add();">新增</a>
-									</c:if>
 									<c:if test="${QX.del == 1 }">
 									<a class="btn btn-mini btn-danger" onclick="makeAll('确定要删除选中的数据吗?');" title="批量删除" ><i class='ace-icon fa fa-trash-o bigger-120'></i></a>
 									</c:if>
@@ -215,6 +223,18 @@
 			top.jzts();
 			$("#Form").submit();
 		}
+
+		//显示图片
+		function showTU(path,TPID){
+			$("#"+TPID).html('<img width="300" src="'+path+'">');
+			$("#"+TPID).show();
+		}
+
+		//隐藏图片
+		function hideTU(TPID){
+			$("#"+TPID).hide();
+		}
+
 		$(function() {
 		
 			//日期框

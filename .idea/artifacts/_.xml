@@ -5,6 +5,7 @@
       <element id="javaee-facet-resources" facet="J91008/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
+          <element id="module-output" name="J91008_test" />
           <element id="module-output" name="J91008" />
         </element>
         <element id="directory" name="lib">

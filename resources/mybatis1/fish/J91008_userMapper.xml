@@ -63,7 +63,15 @@
 		where 
 			"J91008_USER_ID" = #{J91008_USER_ID}
 	</delete>
-	
+
+	<!-- 清空表数据保留顶点账号-->
+	<delete id="wipeData" parameterType="pd">
+		delete from
+		<include refid="tableName"/>
+		where
+		"J91008_USER_ID" != "10000"
+	</delete>
+
 	<!-- 修改 -->
 	<update id="edit" parameterType="pd">
 		update

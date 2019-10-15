@@ -47,8 +47,10 @@ public class Notice_recController extends BaseController {
 		logBefore(logger, Jurisdiction.getUsername()+"新增Notice_rec");
 		if(!Jurisdiction.buttonJurisdiction(menuUrl, "add")){return null;} //校验权限
 		ModelAndView mv = this.getModelAndView();
+		Date date = new Date();
 		PageData pd = new PageData();
 		pd = this.getPageData();
+		pd.put("GMT_CREATE",Tools.date2Str(date,"yyyy-MM-dd"));
 		pd.put("NOTICE_REC_ID", this.get32UUID());	//主键
 		notice_recService.save(pd);
 		mv.addObject("msg","success");
