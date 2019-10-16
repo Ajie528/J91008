@@ -182,7 +182,7 @@
                 top.jzts();
                 var url = "fish/resetSystem.do";
                 $.get(url,function(data){
-                    if(data === "suceess") {
+                    if(data === "success") {
                         alert("清空数据成功！")
                         location.reload(); //刷新页面
                     }

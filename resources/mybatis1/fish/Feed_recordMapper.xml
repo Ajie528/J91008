@@ -14,7 +14,7 @@
 		"FEED_NUMBER",	
 		"USER_ID",
 		"IS_OUT",	
-		"ROW_NUMBER",	
+		"ROW_NUMBER",
 		"FEED_RECORD_ID"
 	</sql>
 	
@@ -25,8 +25,7 @@
 			#{FEED_NUMBER},	
 			#{USER_ID},
 			#{IS_OUT},	
-			#{ROW_NUMBER},	
-			#{FEED_RECORD_ID}
+			#{ROW_NUMBER}
 	</sql>
 	
 	<!-- 新增-->

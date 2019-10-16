@@ -15,7 +15,7 @@
 		"USER_ID",	
 		"TYPE",	
 		"IS_DELETED",	
-		"IS_AUDITING",	
+		"IS_AUDITING",
 		"BONUS_REC_ID"
 	</sql>
 	
@@ -27,8 +27,7 @@
 			#{USER_ID},	
 			#{TYPE},	
 			#{IS_DELETED},	
-			#{IS_AUDITING},	
-			#{BONUS_REC_ID}
+			#{IS_AUDITING}
 	</sql>
 	
 	<!-- 新增-->

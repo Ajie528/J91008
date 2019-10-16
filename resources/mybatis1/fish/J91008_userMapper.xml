@@ -12,7 +12,7 @@
 		"GMT_CREATE",	
 		"GMT_MODIFIED",	
 		"IS_DELETED",	
-		"IS_WITHDRAW ",	
+		"IS_WITHDRAW",
 		"PHONE",	
 		"PASSWORD",	
 		"FEEDING_TODAY",	
@@ -22,7 +22,7 @@
 		"RE_PATH",	
 		"LOVE_COIN",	
 		"NICKNAME",	
-		"IS_ADOPTION",	
+		"IS_ADOPTION",
 		"J91008_USER_ID"
 	</sql>
 	
@@ -31,7 +31,7 @@
 			#{GMT_CREATE},	
 			#{GMT_MODIFIED},	
 			#{IS_DELETED},	
-			#{IS_WITHDRAW },	
+			#{IS_WITHDRAW},
 			#{PHONE},	
 			#{PASSWORD},	
 			#{FEEDING_TODAY},	
@@ -41,8 +41,7 @@
 			#{RE_PATH},	
 			#{LOVE_COIN},	
 			#{NICKNAME},	
-			#{IS_ADOPTION},	
-			#{J91008_USER_ID}
+			#{IS_ADOPTION}
 	</sql>
 	
 	<!-- 新增-->
@@ -69,7 +68,7 @@
 		delete from
 		<include refid="tableName"/>
 		where
-		"J91008_USER_ID" != "10000"
+		"J91008_USER_ID" != '10000'
 	</delete>
 
 	<!-- 修改 -->
@@ -86,17 +85,58 @@
 			where 
 				"J91008_USER_ID" = #{J91008_USER_ID}
 	</update>
-	
+
+	<!-- 更新推荐人数 -->
+	<update id="addReNumber" parameterType="pd">
+		update
+		<include refid="tableName"/>
+		set
+		"RECOMMENDED_NUMBER" = #{RECOMMENDED_NUMBER}
+		where
+		"PHONE" = #{PHONE}
+	</update>
+
 	<!-- 通过ID获取数据 -->
 	<select id="findById" parameterType="pd" resultType="pd">
 		select 
-		<include refid="Field"></include>
+		<include refid="Field"/>
 		from 
-		<include refid="tableName"></include>
+		<include refid="tableName"/>
 		where 
 			"J91008_USER_ID" = #{J91008_USER_ID}
 	</select>
-	
+
+	<!-- 验证手机号和密码是否匹配 -->
+	<select id="findByPhoneAndpassword" parameterType="pd" resultType="pd">
+		select
+		<include refid="Field"/>
+		from
+		<include refid="tableName"/>
+		where
+		"PHONE" = #{PHONE}
+		and
+		"PASSWORD" = #{PASSWORD}
+	</select>
+
+	<!-- 通过手机号获取数据 -->
+	<select id="findByPhone" parameterType="pd" resultType="pd">
+		select
+		<include refid="Field"/>
+		from
+		<include refid="tableName"/>
+		where
+		"PHONE" = #{PHONE}
+	</select>
+
+
+	<!-- 重置序列 -->
+	<select id="reset_seq" parameterType="pd" statementType="CALLABLE">
+		<!--调用存储过程有专门的标签statementType="CALLABLE" 用{}括起来-->
+		{
+			call RESET_SEQ(#{seqName},#{seqStart})
+		}
+	</select>
+
 	<!-- 列表 -->
 	<select id="datalistPage" parameterType="page" resultType="pd">
 		select

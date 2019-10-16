@@ -2,12 +2,14 @@ package com.fh.util;
 
 import org.springframework.context.ApplicationContext;
 /**
- * 项目名称：
+ * 项目名称：全民养鱼
  * @author:fh qq313596790[青苔]
  * 修改时间：2018/8/2
 */
 public class Const {
 	public static final String Par  = "FRONT_CONFIG";		//前台参数配置
+	public static final String J9User_SESSION_USER  = "j9SessionUser";		//J9项目session用的用户
+	public static final String APPLICA_USER = "applicaUser"; // 服务器缓存中的用户登录信息
 
 	public static final String SESSION_SECURITY_CODE = "sessionSecCode";	//验证码
 	public static final String SESSION_USER = "sessionUser";				//session用的用户

@@ -44,6 +44,14 @@ public class J91008_userService implements J91008_userManager{
 		dao.delete("J91008_userMapper.wipeData", pd);
 	}
 
+	/**重置序列
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void reset_seq(PageData pd)throws Exception{
+		dao.findForObject("J91008_userMapper.reset_seq", pd);
+	}
+
 	/**修改
 	 * @param pd
 	 * @throws Exception
@@ -51,7 +59,15 @@ public class J91008_userService implements J91008_userManager{
 	public void edit(PageData pd)throws Exception{
 		dao.update("J91008_userMapper.edit", pd);
 	}
-	
+
+	/**更新推荐人数
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void addReNumber(PageData pd)throws Exception{
+		dao.update("J91008_userMapper.addReNumber", pd);
+	}
+
 	/**列表
 	 * @param page
 	 * @throws Exception
@@ -77,7 +93,23 @@ public class J91008_userService implements J91008_userManager{
 	public PageData findById(PageData pd)throws Exception{
 		return (PageData)dao.findForObject("J91008_userMapper.findById", pd);
 	}
-	
+
+	/**验证手机号和密码是否匹配
+	 * @param pd
+	 * @throws Exception
+	 */
+	public PageData findByPhoneAndpassword(PageData pd)throws Exception{
+		return (PageData)dao.findForObject("J91008_userMapper.findByPhoneAndpassword", pd);
+	}
+
+	/**通过手机号获取数据
+	 * @param pd
+	 * @throws Exception
+	 */
+	public PageData findByPhone(PageData pd)throws Exception{
+		return (PageData)dao.findForObject("J91008_userMapper.findByPhone", pd);
+	}
+
 	/**批量删除
 	 * @param ArrayDATA_IDS
 	 * @throws Exception

@@ -24,7 +24,7 @@ public interface Rotation_chartManager{
 	 */
 	public void delete(PageData pd)throws Exception;
 
-	/**清空表护甲
+	/**清空表数据
 	 * @param pd
 	 * @throws Exception
 	 */

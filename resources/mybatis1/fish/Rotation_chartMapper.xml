@@ -42,7 +42,7 @@
 			"ROTATION_CHART_ID" = #{ROTATION_CHART_ID}
 	</delete>
 
-	<!-- 清空表护甲-->
+	<!-- 清空表数据-->
 	<delete id="wipeDate" parameterType="pd">
 		delete from
 		<include refid="tableName"/>
