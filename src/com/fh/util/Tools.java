@@ -264,6 +264,26 @@ public class Tools {
 	   }
 	  return flag;
 	 }
+
+	 /**
+	  *@描述：验证是否有HMTL标签
+	  *@参数：字符串
+	  *@返回值：匹配：true.不匹配：false
+	  *@创建人：Ajie
+	  *@创建时间：2019/10/17 0017
+	  */
+	public static boolean checkHTML(String str){
+		boolean flag = false;
+		String pattern = "<(\\S*?)[^>]*>.*?|<.*? />";
+		try{
+			Pattern regex = Pattern.compile(pattern);
+			Matcher matcher = regex.matcher(str);
+			flag = matcher.matches();
+		}catch(Exception e){
+			flag = false;
+		}
+		return flag;
+	}
 	 
 	/**
 	 * 检测KEY是否正确

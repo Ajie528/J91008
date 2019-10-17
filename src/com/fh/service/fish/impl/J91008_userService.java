@@ -68,6 +68,14 @@ public class J91008_userService implements J91008_userManager{
 		dao.update("J91008_userMapper.addReNumber", pd);
 	}
 
+	/**重置喂养次数和提现次数
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void resetRec(PageData pd)throws Exception{
+		dao.update("J91008_userMapper.resetRec", pd);
+	}
+
 	/**列表
 	 * @param page
 	 * @throws Exception

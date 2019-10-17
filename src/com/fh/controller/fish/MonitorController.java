@@ -1,7 +1,9 @@
 package com.fh.controller.fish;
 
 
+import com.fh.service.fish.J91008_userManager;
 import com.fh.service.fish.System_configManager;
+import com.fh.service.fish.impl.J91008_userService;
 import com.fh.util.Const;
 import com.fh.util.DateUtil;
 import com.fh.util.PageData;
@@ -39,6 +41,8 @@ public class MonitorController implements ServletContextListener {
 
         // 系统参数配置
         System_configManager system_configService = context.getBean("system_configService",System_configManager.class);
+        // 用户表
+        J91008_userManager j91008_userService = context.getBean("j91008_userService",J91008_userService.class);
         PageData pd = new PageData();
         // 创建用户缓存list
         List<PageData> userList = new ArrayList<>(18);
@@ -47,13 +51,18 @@ public class MonitorController implements ServletContextListener {
         pd.put("SYSTEM_CONFIG_ID","1");
         try {
            pd =  system_configService.findById(pd);
+           // 查询所有用户信息
+           userList = j91008_userService.listAll(pd);
         } catch (Exception e) {
             e.printStackTrace();
         }
         // 存放到缓存中，键值对 #参数设置
         // 把参数信息放到缓存
         applicati.setAttribute(Const.Par, pd);
-
+        // 把用户手机号当KEY，放入缓存中
+        for (PageData i : userList) {
+          applicati.setAttribute(i.get("PHONE").toString(),i);
+        }
 
     }
     // 服务器关闭监听

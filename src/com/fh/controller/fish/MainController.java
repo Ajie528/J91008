@@ -13,10 +13,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
 import javax.annotation.Resource;
+import javax.tools.Tool;
 import java.lang.reflect.Parameter;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+import static java.lang.System.*;
+import static com.fh.util.DateUtil.*;
 
 
 /**
@@ -49,6 +56,32 @@ public class MainController extends BaseController {
     // 充值管理
     @Resource(name = "recharge_cashService")
     private Recharge_cashManager recharge_cashService;
+
+    /**
+     *@描述：访问注册页
+     *@创建人：Ajie
+     *@创建时间：2019/10/17 0017
+     */
+    @RequestMapping(value = "/toRegister")
+    public ModelAndView toRegister(){
+        ModelAndView mv = this.getModelAndView();
+        mv.setViewName("j91008/register");
+        return mv;
+    }
+
+    /**
+     * 功能描述：访问登录页
+     * @author Ajie
+     * @date 2019/10/17 0017
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/toLogin")
+    public ModelAndView toLogin(){
+        ModelAndView mv = this.getModelAndView();
+        mv.setViewName("j91008/login");
+        return mv;
+    }
 
 
     /**
@@ -135,6 +168,12 @@ public class MainController extends BaseController {
         if (IS_ADOPTION == 0) {
             return "nonAdoption";
         }
+        // 验证是否有HTNL标签
+        if (Tools.checkHTML(userInfo[1]) || Tools.checkHTML(userInfo[2])){
+            return "illegal";
+        }
+
+
         // 传数据去保存新注册用户
         addRegisterUser(userInfo,pd1);
         return "success";
@@ -156,36 +195,36 @@ public class MainController extends BaseController {
         // 定义新注册用户的推荐关系路径
         String path = "";
         if (Tools.isEmpty(rePath)) {
-            path = ","+reId+",";
-        }else {
-            path = rePath+reId+",";
+            path = "," + reId + ",";
+        } else {
+            path = rePath + reId + ",";
         }
-        pd.put("GMT_CREATE",Tools.date2Str(date));
-        pd.put("GMT_MODIFIED","");
-        pd.put("IS_DELETED",0);
-        pd.put("IS_WITHDRAW ",0);
-        pd.put("PHONE",userInfo[0]);
-        pd.put("PASSWORD",userInfo[1]);
-        pd.put("FEEDING_TODAY",0);
-        pd.put("MONEY",0);
-        pd.put("RECOMMENDED_NUMBER",0);
-        pd.put("RECOMMENDER",reId);
-        pd.put("RE_PATH",path);
-        pd.put("LOVE_COIN",0);
-        pd.put("NICKNAME","");
-        pd.put("IS_ADOPTION",0);
+        pd.put("GMT_CREATE", getTime());
+        pd.put("GMT_MODIFIED", "");
+        pd.put("IS_DELETED", 0);
+        pd.put("IS_WITHDRAW ", 0);
+        pd.put("PHONE", userInfo[0]);
+        pd.put("PASSWORD", userInfo[1]);
+        pd.put("FEEDING_TODAY", 0);
+        pd.put("MONEY", 0);
+        pd.put("RECOMMENDED_NUMBER", 0);
+        pd.put("RECOMMENDER", reId);
+        pd.put("RE_PATH", path);
+        pd.put("LOVE_COIN", 0);
+        pd.put("NICKNAME", "");
+        pd.put("IS_ADOPTION", 0);
         j91008_userService.save(pd);
         pd = j91008_userService.findByPhone(pd);
         // 把新注册的用户添加到服务器缓存中
-        applicati.setAttribute(userInfo[0],pd);
+        applicati.setAttribute(userInfo[0], pd);
         // 更新推荐人的推荐数量
         int number = Integer.parseInt(Re.getString("RECOMMENDED_NUMBER"));
-        pd.put("RECOMMENDED_NUMBER",(number+1));
-        pd.put("PHONE",Re.getString("PHONE"));
+        pd.put("RECOMMENDED_NUMBER", (number + 1));
+        pd.put("PHONE", Re.getString("PHONE"));
         j91008_userService.addReNumber(pd);
         // 根据推荐人ID查信息，重复赋值到服务器缓存中
         pd = j91008_userService.findById(Re);
-        applicati.setAttribute(pd.getString("PHONE"),pd);
+        applicati.setAttribute(pd.getString("PHONE"), pd);
     }
 
 
@@ -247,7 +286,7 @@ public class MainController extends BaseController {
     protected void savaUser(PageData pd) {
         // 创建实体类对象
         User user = new User();
-        user.setIS_DELETED(Integer.parseInt(pd.getString("IS_DELETED")));
+        user.setTEAM_PERFORMANCE(Integer.parseInt(pd.getString("TEAM_PERFORMANCE")));
         user.setIS_WITHDRAW(Integer.parseInt(pd.getString("IS_WITHDRAW")));
         user.setPHONE(pd.getString("IS_WITHDRAW"));
         user.setPASSWORD(pd.getString("IS_DELETED"));

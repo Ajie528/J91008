@@ -10,20 +10,82 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80deab66-0af8-4317-bedc-e80c752b4330" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/fh/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/cash.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/center.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/charge.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/contactus.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/feeding.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/findpwd.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/fundDetails.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/invitation.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifydata.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifypwd.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/myteam.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/platoon.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/register.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/css/mui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/css/mui.picker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/css/mui.poppicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/fonts/iconfont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/fonts/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/fonts/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/fonts/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/fonts/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/fonts/iconfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/fonts/mui.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/adoptionbtn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/charge.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/chart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/code.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/feed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/feeding.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/feeding00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/fish.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/index00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/indexbg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/invitationbg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/login_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/loginbg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/number.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/qq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/today.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/tx.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/upload.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/images/wy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/js/jquery-3.4.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/js/md5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/js/mui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/js/mui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/js/mui.picker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/js/mui.poppicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/fh/controller/fish/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/MainControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/fh/interceptor/LoginHandlerInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/fh/interceptor/LoginHandlerInterceptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/fh/util/Const.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/fh/util/Const.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/system_config/system_config_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/system_config/system_config_list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/mybatis1/fish/Bonus_recMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/mybatis1/fish/Bonus_recMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/mybatis1/fish/Feed_recordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/mybatis1/fish/Feed_recordMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/fh/util/Tools.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/fh/util/Tools.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/fh/util/express/DailyDataTaskListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/fh/util/express/DailyDataTaskListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/fh/util/express/DailyDataTimerTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/fh/util/express/DailyDataTimerTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/spring/ApplicationContext-shiro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/spring/ApplicationContext-shiro.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/mybatis1/fish/J91008_userMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/mybatis1/fish/J91008_userMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/mybatis1/fish/Rotation_chartMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/mybatis1/fish/Rotation_chartMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/spring/ApplicationContext-shiro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/spring/ApplicationContext-shiro.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/fh/controller/fish/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/fish/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/fish/MonitorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/fish/MonitorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/fh/service/fish/J91008_userManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/service/fish/J91008_userManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/fh/service/fish/Rotation_chartManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/service/fish/Rotation_chartManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/fh/service/fish/impl/J91008_userService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/service/fish/impl/J91008_userService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/fh/util/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/util/Const.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/util/Tools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/util/Tools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/util/express/DailyDataTaskListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/util/express/DailyDataTaskListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/util/express/DailyDataTimerTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/util/express/DailyDataTimerTask.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/WebRoot/WEB-INF/classes/" />
@@ -35,6 +97,9 @@
   </component>
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="275" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -58,33 +123,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="170" column="39" lean-forward="true" selection-start-line="170" selection-start-column="39" selection-end-line="170" selection-end-column="39" />
+            <state relative-caret-position="280">
+              <caret line="172" column="27" selection-start-line="172" selection-start-column="20" selection-end-line="172" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="docComment;method#toRegister#0;class#MainController#0" />
+                <element signature="docComment;method#toLogin#0;class#MainController#0" />
                 <element signature="docComment;method#resetSystem#0;class#MainController#0" />
                 <element signature="method#resetSystem#0;class#MainController#0" />
-                <element signature="class#1683:2055" />
-                <element signature="method#run#0;class#1683:2055" />
                 <element signature="docComment;method#register#0;class#MainController#0" />
-                <element signature="method#register#0;class#MainController#0" />
-                <element signature="e#3063#3806#1" />
-                <element signature="e#3406#3458#1" />
-                <element signature="e#3632#3663#1" />
-                <element signature="e#3501#3556#1" />
-                <element signature="e#3729#3770#1" />
-                <element signature="e#3891#3922#1" />
                 <element signature="docComment;method#addRegisterUser#0;class#MainController#0" />
+                <element signature="method#addRegisterUser#0;class#MainController#0" />
                 <element signature="docComment;method#login#0;class#MainController#0" />
                 <element signature="method#login#0;class#MainController#0" />
-                <element signature="e#6266#6297#1" />
-                <element signature="e#6518#6792#1" />
-                <element signature="e#6734#6781#1" />
-                <element signature="e#6805#6957#1" />
-                <element signature="e#6915#6962#1" />
                 <element signature="docComment;method#savaUser#0;class#MainController#0" />
                 <element signature="method#savaUser#0;class#MainController#0" />
               </folding>
@@ -93,76 +147,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/rotation_chart/rotation_chart_list.jsp">
+        <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="231" selection-start-line="231" selection-end-line="231" />
+            <state relative-caret-position="-188">
+              <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/rotation_chart/rotation_chart_edit.jsp">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/register.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="146" column="20" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/fh/util/Tools.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/fh/util/Const.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/J91008_userManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="72" column="35" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/impl/J91008_userService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
-              <caret line="101" column="84" selection-start-line="101" selection-start-column="62" selection-end-line="101" selection-end-column="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/mybatis1/fish/J91008_userMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="759">
-              <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/fh/entity/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="34" column="27" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="406">
+              <caret line="150" column="39" selection-start-line="150" selection-start-column="39" selection-end-line="150" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -173,6 +170,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -187,7 +185,14 @@
       <find>showTU</find>
       <find>hideTU</find>
       <find>yulantu</find>
+      <find>mv.setViewName(&quot;&quot;);</find>
+      <find>href=&quot;</find>
+      <find>src=&quot;</find>
     </findStrings>
+    <replaceStrings>
+      <replace>href=&quot;j91008/</replace>
+      <replace>src=&quot;j91008/</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -196,62 +201,68 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/fh/controller/fish/Bonus_recController.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/controller/fish/J91008_userController.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/controller/fish/Recharge_cashController.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/controller/fish/Withdraw_cashController.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/Bonus_recManager.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/Feed_recordManager.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/System_configManager.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/Recharge_cashManager.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/Withdraw_cashManager.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/impl/Bonus_recService.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/impl/Feed_recordService.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/impl/Recharge_cashService.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/impl/System_configService.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/impl/Withdraw_cashService.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/controller/fish/Aa.java" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/system_config/system_config_edit.jsp" />
-        <option value="$PROJECT_DIR$/resources/spring/ApplicationContext-shiro.xml" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fhoa/fhfile/fhfile_list.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/rotation_chart/rotation_chart_list.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/notice_rec/notice_rec_edit.jsp" />
-        <option value="$PROJECT_DIR$/src/com/fh/controller/fish/Notice_recController.java" />
-        <option value="$PROJECT_DIR$/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/resources/mybatis1/fish/System_configMapper.xml" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/rotation_chart/rotation_chart_edit.jsp" />
-        <option value="$PROJECT_DIR$/src/com/fh/controller/fish/Rotation_chartController.java" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/feed_record/feed_record_list.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/feed_record/feed_record_edit.jsp" />
-        <option value="$PROJECT_DIR$/src/com/fh/controller/fish/Feed_recordController.java" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/bonus_rec/bonus_rec_list.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/recharge_cash/recharge_cash_list.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/withdraw_cash/withdraw_cash_list.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/admin/config/SYSNAME.txt" />
-        <option value="$PROJECT_DIR$/src/com/fh/controller/fish/MonitorController.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/controller/fish/System_configController.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/Notice_recManager.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/impl/Notice_recService.java" />
-        <option value="$PROJECT_DIR$/resources/mybatis1/fish/Notice_recMapper.xml" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/impl/Rotation_chartService.java" />
-        <option value="$PROJECT_DIR$/resources/mybatis1/fish/Recharge_cashMapper.xml" />
-        <option value="$PROJECT_DIR$/resources/mybatis1/fish/Rotation_chartMapper.xml" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/Rotation_chartManager.java" />
         <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/system_config/system_config_list.jsp" />
-        <option value="$PROJECT_DIR$/src/com/fh/util/Const.java" />
         <option value="$PROJECT_DIR$/resources/mybatis1/fish/Feed_recordMapper.xml" />
         <option value="$PROJECT_DIR$/resources/mybatis1/fish/Bonus_recMapper.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/com/fh/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/com/fh/util/express/DailyDataTaskListener.java" />
         <option value="$PROJECT_DIR$/src/com/fh/service/fish/J91008_userManager.java" />
         <option value="$PROJECT_DIR$/src/com/fh/service/fish/impl/J91008_userService.java" />
         <option value="$PROJECT_DIR$/resources/mybatis1/fish/J91008_userMapper.xml" />
-        <option value="$PROJECT_DIR$/src/com/fh/entity/User.java" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/com/fh/util/express/DailyDataTimerTask.java" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/cash.html" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/charge.html" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/contactus.html" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/feeding.html" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/findpwd.html" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/fundDetails.html" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/index.html" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/invitation.html" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/login.html" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifydata.html" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifypwd.html" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/myteam.html" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/platoon.html" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/register.html" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/center.html" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/cash.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/center.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/charge.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/contactus.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/feeding.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/findpwd.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/fundDetails.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/index.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/invitation.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifydata.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifypwd.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/myteam.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/platoon.jsp" />
+        <option value="$PROJECT_DIR$/src/com/fh/controller/fish/MonitorController.java" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/login.jsp" />
+        <option value="$PROJECT_DIR$/resources/spring/ApplicationContext-shiro.xml" />
+        <option value="$PROJECT_DIR$/src/com/fh/util/Const.java" />
+        <option value="$PROJECT_DIR$/src/test/isHTML.java" />
+        <option value="$PROJECT_DIR$/src/test/test/RegexMatchesTest.java" />
+        <option value="$PROJECT_DIR$/src/test/RegexMatches.java" />
+        <option value="$PROJECT_DIR$/src/test/com/fh/controller/fish/MainControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/MainControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/com/fh/util/Tools.java" />
         <option value="$PROJECT_DIR$/src/com/fh/controller/fish/MainController.java" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/register.jsp" />
       </list>
     </option>
   </component>
   <component name="JRebelWorkspace">
     <option name="jrebelEnabledAutocompile" value="true" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -288,7 +299,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -313,67 +323,60 @@
               <item name="J91008" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="fh" type="462c0819:PsiDirectoryNode" />
-              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="J91008" type="b2602c69:ProjectViewProjectNode" />
               <item name="J91008" type="462c0819:PsiDirectoryNode" />
-              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="J91008" type="b2602c69:ProjectViewProjectNode" />
-              <item name="J91008" type="462c0819:PsiDirectoryNode" />
-              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="J91008" type="b2602c69:ProjectViewProjectNode" />
-              <item name="J91008" type="462c0819:PsiDirectoryNode" />
-              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="J91008" type="b2602c69:ProjectViewProjectNode" />
-              <item name="J91008" type="462c0819:PsiDirectoryNode" />
-              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="J91008" type="b2602c69:ProjectViewProjectNode" />
-              <item name="J91008" type="462c0819:PsiDirectoryNode" />
-              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="J91008" type="b2602c69:ProjectViewProjectNode" />
-              <item name="J91008" type="462c0819:PsiDirectoryNode" />
-              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="fh" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
               <item name="fish" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="J91008" type="b2602c69:ProjectViewProjectNode" />
               <item name="J91008" type="462c0819:PsiDirectoryNode" />
               <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="J91008" type="b2602c69:ProjectViewProjectNode" />
+              <item name="J91008" type="462c0819:PsiDirectoryNode" />
+              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="J91008" type="b2602c69:ProjectViewProjectNode" />
+              <item name="J91008" type="462c0819:PsiDirectoryNode" />
+              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="jsp" type="462c0819:PsiDirectoryNode" />
-              <item name="fish" type="462c0819:PsiDirectoryNode" />
-              <item name="rotation_chart" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="J91008" type="b2602c69:ProjectViewProjectNode" />
+              <item name="J91008" type="462c0819:PsiDirectoryNode" />
+              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+              <item name="j91008" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="J91008" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/Downloads/lombok.jar!/" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/WebRoot/WEB-INF/lib" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -383,24 +386,30 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="settings.editor.splitter.proportion" value="0.19920844" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\idea-workpace\J91008\WebRoot\static\images" />
-      <recent name="D:\idea-workpace\J91008\WebRoot\WEB-INF\jsp\fish" />
-      <recent name="D:\idea-workpace\J91008\src\com\fh\service\fish\impl" />
-      <recent name="D:\idea-workpace\J91008\src\com\fh\service\fish" />
-      <recent name="D:\idea-workpace\J91008\resources\mybatis1\fish" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.fh.controller.fish" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\idea-workpace\J91008\src" />
       <recent name="D:\idea-workpace\J91008\resources\mybatis1" />
       <recent name="D:\idea-workpace\J91008\WebRoot\static" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\idea-workpace\J91008\WebRoot\WEB-INF\lib" />
+      <recent name="D:\idea-workpace\J91008\WebRoot\j91008\js" />
+      <recent name="D:\idea-workpace\J91008\WebRoot\j91008\css" />
+      <recent name="D:\idea-workpace\J91008\WebRoot\j91008" />
+      <recent name="D:\idea-workpace\J91008\WebRoot\WEB-INF\jsp\j91008" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -677,7 +686,20 @@
       <workItem from="1571121046222" duration="14087000" />
       <workItem from="1571185893405" duration="6166000" />
       <workItem from="1571195817970" duration="36000" />
-      <workItem from="1571195881984" duration="18362000" />
+      <workItem from="1571195881984" duration="18493000" />
+      <workItem from="1571220630312" duration="118000" />
+      <workItem from="1571220895232" duration="606000" />
+      <workItem from="1571221553834" duration="234000" />
+      <workItem from="1571221818225" duration="576000" />
+      <workItem from="1571222464244" duration="111000" />
+      <workItem from="1571222629032" duration="189000" />
+      <workItem from="1571222851562" duration="283000" />
+      <workItem from="1571223180566" duration="194000" />
+      <workItem from="1571272080348" duration="11929000" />
+      <workItem from="1571293345742" duration="840000" />
+      <workItem from="1571294219090" duration="6704000" />
+      <workItem from="1571300985951" duration="4107000" />
+      <workItem from="1571305145010" duration="1665000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交，只有一个ssm框架">
       <created>1570981819520</created>
@@ -728,11 +750,44 @@
       <option name="project" value="LOCAL" />
       <updated>1571134894579</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="实现注册、登录逻辑">
+      <created>1571220273481</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1571220273481</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="MainControllerTest - 2019.10.17 at 17h 08m 29s.xml">
+      <configuration name="MainControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainControllerTest - 2019.10.17 at 17h 11m 22s.xml">
+      <configuration name="MainControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainControllerTest - 2019.10.17 at 17h 12m 46s.xml">
+      <configuration name="MainControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainControllerTest_(1) - 2019.10.17 at 17h 13m 18s.xml">
+      <configuration name="MainControllerTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainControllerTest_(1) - 2019.10.17 at 17h 13m 32s.xml">
+      <configuration name="MainControllerTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainControllerTest_(1) - 2019.10.17 at 17h 13m 38s.xml">
+      <configuration name="MainControllerTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainControllerTest_(1) - 2019.10.17 at 17h 19m 36s.xml">
+      <configuration name="MainControllerTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainControllerTest_(1) - 2019.10.17 at 17h 20m 05s.xml">
+      <configuration name="MainControllerTest (1)" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80221000" />
+    <option name="totallyTimeSpent" value="107908000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -747,7 +802,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4982659" weight="0.20525187" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4982659" visible="true" weight="0.17845659" />
       <window_info id="Structure" order="1" sideWeight="0.5009634" side_tool="true" weight="0.18649517" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -758,8 +813,8 @@
       <window_info id="JRebel" order="8" sideWeight="0.5017341" side_tool="true" weight="0.18649517" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3283237" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32912844" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49571276" weight="0.40115607" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3283237" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49356914" weight="0.40115607" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49839228" weight="0.3283237" />
@@ -767,7 +822,7 @@
       <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.4994641" weight="0.32947975" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32947975" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50428724" side_tool="true" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50643086" side_tool="true" weight="0.40115607" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3283237" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32947975" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
@@ -785,6 +840,7 @@
       <window_info anchor="right" id="Database" order="6" weight="0.329582" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.329582" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -806,388 +862,377 @@
     <MESSAGE value="第一次提交" />
     <MESSAGE value="创建了数据库表和后台的参数配置页面" />
     <MESSAGE value="实现后台上传轮播图和显示方式的优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现后台上传轮播图和显示方式的优化" />
+    <MESSAGE value="实现注册、登录逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现注册、登录逻辑" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/J91008$Tomcat_9_0_26.ic" NAME="Tomcat 9.0.26 Coverage Results" MODIFIED="1571302859660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WebRoot/admin/config/WEIXIN.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/recharge_cash/recharge_cash_list.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/fh/service/system/impl/LogInImgService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="216" column="14" lean-forward="true" selection-start-line="216" selection-start-column="14" selection-end-line="216" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/admin/config/SYSNAME.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" selection-start-column="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-972" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/System_configManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/impl/System_configService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/MonitorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/Bonus_recController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="38" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/Feed_recordController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="38" column="50" selection-start-line="37" selection-start-column="4" selection-end-line="38" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/J91008_userController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="38" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/Notice_recController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="38" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/System_configController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/Withdraw_cashController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="38" column="54" selection-start-line="37" selection-start-column="4" selection-end-line="38" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/impl/Notice_recService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/mybatis1/fish/Notice_recMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/mybatis1/fish/Recharge_cashMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/impl/Rotation_chartService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/util/Logger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/base/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/util/express/ThreadManagers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/Recharge_cashController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/Rotation_chartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2862">
-          <caret line="44" column="56" selection-start-line="43" selection-start-column="4" selection-end-line="44" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/Notice_recManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="26" column="12" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/Rotation_chartManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/mybatis1/fish/Rotation_chartMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="44" column="14" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/system_config/system_config_list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3366">
-          <caret line="187" column="21" selection-start-line="187" selection-start-column="21" selection-end-line="187" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/entity/system/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10">
-          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/shiro-all-1.2.3.jar!/org/apache/shiro/authc/Account.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/shiro-all-1.2.3.jar!/org/apache/shiro/session/Session.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/listener/WebAppContextListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/plugin/ChatServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/plugin/OnlineChatServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/plugin/ChatServerPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/plugin/OnlineChatServerPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1070">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/resolver/MyExceptionResolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/util/Const.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/util/Tools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/mybatis1/fish/Bonus_recMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/mybatis1/fish/Feed_recordMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/filter/startFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/filter/LoginFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/interceptor/LoginHandlerInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/J91008_userManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="72" column="35" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/impl/J91008_userService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="101" column="84" selection-start-line="101" selection-start-column="62" selection-end-line="101" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/util/PageData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-756">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/mybatis1/fish/J91008_userMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="34" column="27" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/static/images/upload.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/rotation_chart/rotation_chart_edit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="146" column="20" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="53" />
+        <state relative-caret-position="582">
+          <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/rotation_chart/rotation_chart_list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
+        <state relative-caret-position="4158">
           <caret line="231" selection-start-line="231" selection-end-line="231" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/rotation_chart/rotation_chart_edit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2628">
+          <caret line="146" column="20" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/system/AppuserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306">
+          <caret line="50" column="14" lean-forward="true" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/system/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-36">
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fhoa/impl/FhfileService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/spring/ApplicationContext-dataSource.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/util/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="125" column="10" lean-forward="true" selection-start-line="125" selection-start-column="10" selection-end-line="125" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/util/express/DailyDataTaskListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/util/express/TimerManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-440">
+          <caret column="28" lean-forward="true" selection-start-column="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/util/express/DailyDataTimerTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="36" column="55" lean-forward="true" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/impl/J91008_userService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/J91008_userManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="54" column="17" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/mybatis1/fish/J91008_userMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="99" column="24" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/contactus.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/feeding.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="39" column="46" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/findpwd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="48" column="61" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifydata.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="65" column="47" selection-start-line="65" selection-start-column="47" selection-end-line="65" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifypwd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="47" column="40" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/myteam.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="54" column="47" lean-forward="true" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/platoon.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/cash.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1944">
+          <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/center.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1998">
+          <caret line="111" column="40" selection-start-line="111" selection-start-column="40" selection-end-line="111" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/charge.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1872">
+          <caret line="104" column="17" selection-start-line="104" selection-start-column="17" selection-end-line="104" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/util/PageData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="e#1333#1334#0" expanded="true" />
+            <element signature="e#1359#1360#0" expanded="true" />
+            <element signature="e#1724#1725#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/MonitorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="63" column="58" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="80" column="47" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/fundDetails.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/invitation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/spring-webmvc-4.3.7.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="442" selection-start-line="442" selection-end-line="442" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/spring-webmvc-4.3.7.RELEASE.jar!/org/springframework/web/servlet/HandlerExecutionChain.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/util/Const.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="47" column="4" lean-forward="true" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/interceptor/LoginHandlerInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/spring/ApplicationContext-shiro.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="51" column="24" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/j91008_user/j91008_user_list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/j91008_user/j91008_user_edit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="39" column="55" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/java/jdk1.8.0_221/src.zip!/java/util/regex/Pattern.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="768" column="19" selection-start-line="768" selection-start-column="19" selection-end-line="768" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/test/RegexMatchesTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/RegexMatches.java" />
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/save_result.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../test/java/com/fh/controller/fish/MainControllerTest .java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../test/java/test/RegexMatchesTest .java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/Bonus_recController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/MainControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/J91008_userController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/util/Tools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="273" column="8" lean-forward="true" selection-start-line="273" selection-start-column="8" selection-end-line="273" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="170" column="39" lean-forward="true" selection-start-line="170" selection-start-column="39" selection-end-line="170" selection-end-column="39" />
+        <state relative-caret-position="280">
+          <caret line="172" column="27" selection-start-line="172" selection-start-column="20" selection-end-line="172" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#toRegister#0;class#MainController#0" />
+            <element signature="docComment;method#toLogin#0;class#MainController#0" />
             <element signature="docComment;method#resetSystem#0;class#MainController#0" />
             <element signature="method#resetSystem#0;class#MainController#0" />
-            <element signature="class#1683:2055" />
-            <element signature="method#run#0;class#1683:2055" />
             <element signature="docComment;method#register#0;class#MainController#0" />
-            <element signature="method#register#0;class#MainController#0" />
-            <element signature="e#3063#3806#1" />
-            <element signature="e#3406#3458#1" />
-            <element signature="e#3632#3663#1" />
-            <element signature="e#3501#3556#1" />
-            <element signature="e#3729#3770#1" />
-            <element signature="e#3891#3922#1" />
             <element signature="docComment;method#addRegisterUser#0;class#MainController#0" />
+            <element signature="method#addRegisterUser#0;class#MainController#0" />
             <element signature="docComment;method#login#0;class#MainController#0" />
             <element signature="method#login#0;class#MainController#0" />
-            <element signature="e#6266#6297#1" />
-            <element signature="e#6518#6792#1" />
-            <element signature="e#6734#6781#1" />
-            <element signature="e#6805#6957#1" />
-            <element signature="e#6915#6962#1" />
             <element signature="docComment;method#savaUser#0;class#MainController#0" />
             <element signature="method#savaUser#0;class#MainController#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-188">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="150" column="39" selection-start-line="150" selection-start-column="39" selection-end-line="150" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1260,6 +1305,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

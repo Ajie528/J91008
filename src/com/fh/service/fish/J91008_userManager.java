@@ -48,6 +48,12 @@ public interface J91008_userManager{
 	 */
 	void addReNumber(PageData pd)throws Exception;
 
+	/**重置喂养次数和提现次数
+	 * @param pd
+	 * @throws Exception
+	 */
+	void resetRec(PageData pd)throws Exception;
+
 	/**列表
 	 * @param page
 	 * @throws Exception

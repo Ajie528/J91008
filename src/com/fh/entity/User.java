@@ -13,8 +13,8 @@ import java.util.List;
 @Data
 public class User {
 
-    // 1 表示删除，0 表示未删除
-    private int IS_DELETED;
+    // 团队业绩
+    private int TEAM_PERFORMANCE;
     // 1 表示已提现，0 表示未提现。每日0时 重置为0
     private int IS_WITHDRAW;
     // 手机号

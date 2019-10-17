@@ -11,7 +11,7 @@
 	<sql id="Field">
 		"GMT_CREATE",	
 		"GMT_MODIFIED",	
-		"IS_DELETED",	
+		"TEAM_PERFORMANCE",
 		"IS_WITHDRAW",
 		"PHONE",	
 		"PASSWORD",	
@@ -31,7 +31,7 @@
 			#{GMT_CREATE},	
 			#{GMT_MODIFIED},	
 			#{IS_DELETED},	
-			#{IS_WITHDRAW},
+			#{TEAM_PERFORMANCE},
 			#{PHONE},	
 			#{PASSWORD},	
 			#{FEEDING_TODAY},	
@@ -94,6 +94,15 @@
 		"RECOMMENDED_NUMBER" = #{RECOMMENDED_NUMBER}
 		where
 		"PHONE" = #{PHONE}
+	</update>
+
+	<!-- 重置喂养次数和提现次数 -->
+	<update id="resetRec" parameterType="pd">
+		update
+		<include refid="tableName"/>
+		set
+			"IS_WITHDRAW" = '0';
+			"FEEDING_TODAY" = '0';
 	</update>
 
 	<!-- 通过ID获取数据 -->

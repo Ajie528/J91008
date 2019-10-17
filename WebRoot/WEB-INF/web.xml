@@ -87,10 +87,6 @@
 		<filter-name>startFilter</filter-name>
 		<filter-class>com.fh.filter.startFilter</filter-class>
 	</filter>
-	<!-- 服务器缓存 -->
-	<listener>
-		<listener-class>com.fh.controller.fish.MonitorController</listener-class>
-	</listener>
 	
 	<!-- Shiro filter start -->
 	<filter>
@@ -114,30 +110,17 @@
 		<error-code>404</error-code>
 		<location>/404.jsp</location>
 	</error-page>
-	
-<!--
-	 <error-page>
-	    <error-code>405</error-code>
-	   <location>/WEB-INF/405.html</location>
-	 </error-page>
-	 <error-page>
-	   <error-code>404</error-code>
-	   <location>/WEB-INF/404.html</location>
-	 </error-page>
-	 <error-page>
-	   <error-code>500</error-code>
-	   <location>/WEB-INF/500.html</location>
-	 </error-page>
-	 <error-page>
-	   <error-code>javax.servle.ServletException</error-code>
-	   <location>/WEB-INF/error.html</location>
-	 </error-page>
-	 <error-page>
-	   <error-code>java.lang.NullPointerException</error-code>
-	   <location>/WEB-INF/error.html</location>
-	 </error-page>
--->
+
 	<session-config>
 		<session-timeout>600</session-timeout>
 	</session-config>
+	<!-- 服务器缓存监听 -->
+	<listener>
+		<listener-class>com.fh.controller.fish.MonitorController</listener-class>
+	</listener>
+	<!-- 定时任务启动监听 -->
+	<listener>
+		<listener-class>com.fh.util.express.DailyDataTaskListener</listener-class>
+	</listener>
+
 </web-app>

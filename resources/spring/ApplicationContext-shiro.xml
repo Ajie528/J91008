@@ -51,6 +51,7 @@
 				/withdraw_cash/**			= anon
 				/fish/**					= anon
 				/rotation_chart/**			= anon
+				/j91008/**					= anon
 				/**							= authc
 				</value>
 			</property>
