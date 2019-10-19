@@ -62,7 +62,18 @@
 			where 
 				"RECHARGE_CASH_ID" = #{RECHARGE_CASH_ID}
 	</update>
-	
+
+	<!-- 更改订单状态 -->
+	<update id="editState" parameterType="pd">
+		update
+		<include refid="tableName"/>
+		set
+		"IS_AUDITING" = #{IS_AUDITING},
+		"GMT_MODIFIED" = #{GMT_MODIFIED}
+		where
+		"RECHARGE_CASH_ID" = #{RECHARGE_CASH_ID}
+	</update>
+
 	<!-- 通过ID获取数据 -->
 	<select id="findById" parameterType="pd" resultType="pd">
 		select 

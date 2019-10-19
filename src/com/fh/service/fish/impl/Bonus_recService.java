@@ -69,7 +69,7 @@ public class Bonus_recService implements Bonus_recManager{
 	public PageData findById(PageData pd)throws Exception{
 		return (PageData)dao.findForObject("Bonus_recMapper.findById", pd);
 	}
-	
+
 	/**批量删除
 	 * @param ArrayDATA_IDS
 	 * @throws Exception

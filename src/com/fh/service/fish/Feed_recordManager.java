@@ -41,13 +41,25 @@ public interface Feed_recordManager{
 	 * @throws Exception
 	 */
 	public List<PageData> listAll(PageData pd)throws Exception;
-	
+
+	/**列表(根据用户ID获取未出局的记录)
+	 * @param pd
+	 * @throws Exception
+	 */
+	List<PageData> listByUerId(PageData pd)throws Exception;
+
 	/**通过id获取数据
 	 * @param pd
 	 * @throws Exception
 	 */
 	public PageData findById(PageData pd)throws Exception;
-	
+
+	/**获取喂养记录累积
+	 * @param pd
+	 * @throws Exception
+	 */
+	PageData getRecCount(PageData pd)throws Exception;
+
 	/**批量删除
 	 * @param ArrayDATA_IDS
 	 * @throws Exception

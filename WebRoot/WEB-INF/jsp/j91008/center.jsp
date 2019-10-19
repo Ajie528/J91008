@@ -73,13 +73,13 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 				</div>				
 				<ul class="mui-table-view center-tab-cell center-bg">
 					<li class="mui-table-view-cell center-cell-view">					
-						<a href="invitation.html" class="mui-navigate-right center-cell-text"><i class="iconfont icon-yaoqing center-icon-list"></i>邀请好友</a>
+						<a href="invitation" class="mui-navigate-right center-cell-text"><i class="iconfont icon-yaoqing center-icon-list"></i>邀请好友</a>
 					</li>
 					<li class="mui-table-view-cell center-cell-view">					
-						<a href="modifydata.html" class="mui-navigate-right center-cell-text"><i class="iconfont icon-gerenxinxi center-icon-list"></i>个人信息</a>
+						<a href="modifydata" class="mui-navigate-right center-cell-text"><i class="iconfont icon-gerenxinxi center-icon-list"></i>个人信息</a>
 					</li>
 					<li class="mui-table-view-cell center-cell-view">					
-						<a href="modifypwd.html" class="mui-navigate-right center-cell-text"><i class="iconfont icon-xiugaimima5 center-icon-list"></i>修改密码</a>
+						<a href="modifypwd" class="mui-navigate-right center-cell-text"><i class="iconfont icon-xiugaimima5 center-icon-list"></i>修改密码</a>
 					</li>
 					<li class="mui-table-view-cell center-cell-view">					
 						<a href="#" class="mui-navigate-right center-cell-text"><i class="iconfont icon-tuichu9 center-icon-list"></i>安全退出</a>
@@ -87,27 +87,28 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 				</ul>				
 			</div>
 		</div>
-   
+
 		<footer>
 			<nav class="mui-bar mui-bar-tab nav-bg1">
-				<a class="mui-tab-item nav-item" href="index.html">
+				<a class="mui-tab-item nav-item" href="fish/toIndex.do">
 					<span class="mui-icon iconfont icon-shouye8"></span>
 					<span class="mui-tab-label">领养</span>
 				</a>
-				<a class="mui-tab-item nav-item" href="feeding.jsp">
+				<a class="mui-tab-item nav-item" href="fish/toFeeding.do">
 					<span class="mui-icon iconfont icon-weiyang"></span>
 					<span class="mui-tab-label">喂养</span>
 				</a>
-				<a class="mui-tab-item nav-item" href="platoon.html">
+				<a class="mui-tab-item nav-item" href="fish/toPlatoon.do">
 					<span class="mui-icon iconfont icon-dingdan7"></span>
 					<span class="mui-tab-label">公排</span>
-				</a>				
-				<a class="mui-tab-item nav-item mui-active" href="center.html">
+				</a>
+				<a class="mui-tab-item nav-item mui-active" href="fish/toCenter.do">
 					<span class="mui-icon iconfont icon-huiyuan21"></span>
 					<span class="mui-tab-label">我的</span>
 				</a>
 			</nav>
 		</footer>
+
 	</body>
 	<script type="text/javascript" src="j91008/js/mui.min.js" ></script>
 	<script>

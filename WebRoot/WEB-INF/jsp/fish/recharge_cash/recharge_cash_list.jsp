@@ -76,10 +76,10 @@
 									<th class="center" style="width:50px;">序号</th>
 									<th class="center">创建时间</th>
 									<th class="center">更新时间</th>
+									<th class="center">支付凭证</th>
 									<th class="center">充值数量</th>
 									<th class="center">用户ID</th>
 									<th class="center">1 表示微信、2、支付宝、3表示银行卡</th>
-									<th class="center">支付凭证</th>
 									<th class="center">1 表示删除，0 表示未删除</th>
 									<th class="center">1 表示审核，0 表示未审核</th>
 									<th class="center">操作</th>
@@ -99,13 +99,13 @@
 											<td class='center' style="width: 30px;">${vs.index+1}</td>
 											<td class='center'>${var.GMT_CREATE}</td>
 											<td class='center'>${var.GMT_MODIFIED}</td>
-											<td class='center'>${var.NUMBER}</td>
-											<td class='center'>${var.USER_ID}</td>
-											<td class='center'>${var.PAYMENT_TYPE}</td>
 											<td class='center'>
 												<a style="cursor:pointer;" onmouseover="showTU('${var.VOUCHER}','yulantu${vs.index+1}');" onmouseout="hideTU('yulantu${vs.index+1}');">[预览]</a>
 												<div class="yulantu" id="yulantu${vs.index+1}"></div>
 											</td>
+											<td class='center'>${var.NUMBER}</td>
+											<td class='center'>${var.USER_ID}</td>
+											<td class='center'>${var.PAYMENT_TYPE}</td>
 											<td class='center'>${var.IS_DELETED}</td>
 											<td class='center'>${var.IS_AUDITING}</td>
 											<td class="center">
@@ -114,8 +114,11 @@
 												</c:if>
 												<div class="hidden-sm hidden-xs btn-group">
 													<c:if test="${QX.edit == 1 }">
-													<a class="btn btn-xs btn-success" title="编辑" onclick="edit('${var.RECHARGE_CASH_ID}');">
-														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="编辑"></i>
+													<a class="btn btn-xs btn-success" title="审核" onclick="processed('${var.RECHARGE_CASH_ID}','${var.IS_AUDITING}');">
+														审核
+													</a>
+													<a class="btn btn-xs " title="取消" onclick="edit('${var.RECHARGE_CASH_ID}');">
+														取消
 													</a>
 													</c:if>
 													<c:if test="${QX.del == 1 }">
@@ -226,7 +229,7 @@
 
 		//显示图片
 		function showTU(path,TPID){
-			$("#"+TPID).html('<img width="300" src="'+path+'">');
+			$("#"+TPID).html('<img width="800" src="'+path+'">');
 			$("#"+TPID).show();
 		}
 
@@ -281,32 +284,35 @@
 				});
 			});
 		});
-		
-		//新增
-		function add(){
-			 top.jzts();
-			 var diag = new top.Dialog();
-			 diag.Drag=true;
-			 diag.Title ="新增";
-			 diag.URL = '<%=basePath%>recharge_cash/goAdd.do';
-			 diag.Width = 450;
-			 diag.Height = 355;
-			 diag.Modal = true;				//有无遮罩窗口
-			 diag. ShowMaxButton = true;	//最大化按钮
-		     diag.ShowMinButton = true;		//最小化按钮
-			 diag.CancelEvent = function(){ //关闭事件
-				 if(diag.innerFrame.contentWindow.document.getElementById('zhongxin').style.display == 'none'){
-					 if('${page.currentPage}' == '0'){
-						 tosearch();
-					 }else{
-						 tosearch();
-					 }
+
+		//审核
+		function processed(Id,tag){
+			bootbox.confirm("确定通过审核吗?", function(result) {
+				if(result) {
+					if (tag == 1) {
+						alert("已审核，不可重复审核！！");
+						tosearch();
+						return false;
+					}
+					top.jzts();
+					var url = "<%=basePath%>fish/adoptExamine.do?RECHARGE_CASH_ID="+Id;
+					$.get(url,function(data){
+						if (data == "success") {
+							alert("审核成功~");
+							tosearch();
+							return false;
+						}
+						if (data == "processed") {
+							alert("已审核，不可重复审核！！");
+							tosearch();
+							return false;
+						}
+
+					});
 				}
-				diag.close();
-			 };
-			 diag.show();
+			});
 		}
-		
+
 		//删除
 		function del(Id){
 			bootbox.confirm("确定要删除吗?", function(result) {
@@ -319,28 +325,7 @@
 				}
 			});
 		}
-		
-		//修改
-		function edit(Id){
-			 top.jzts();
-			 var diag = new top.Dialog();
-			 diag.Drag=true;
-			 diag.Title ="编辑";
-			 diag.URL = '<%=basePath%>recharge_cash/goEdit.do?RECHARGE_CASH_ID='+Id;
-			 diag.Width = 450;
-			 diag.Height = 355;
-			 diag.Modal = true;				//有无遮罩窗口
-			 diag. ShowMaxButton = true;	//最大化按钮
-		     diag.ShowMinButton = true;		//最小化按钮 
-			 diag.CancelEvent = function(){ //关闭事件
-				 if(diag.innerFrame.contentWindow.document.getElementById('zhongxin').style.display == 'none'){
-					 tosearch();
-				}
-				diag.close();
-			 };
-			 diag.show();
-		}
-		
+
 		//批量操作
 		function makeAll(msg){
 			bootbox.confirm(msg, function(result) {

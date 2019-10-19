@@ -29,9 +29,9 @@
 	<!-- 字段值 -->
 	<sql id="FieldValue">
 			#{GMT_CREATE},	
-			#{GMT_MODIFIED},	
-			#{IS_DELETED},	
+			#{GMT_MODIFIED},
 			#{TEAM_PERFORMANCE},
+			#{IS_WITHDRAW},
 			#{PHONE},	
 			#{PASSWORD},	
 			#{FEEDING_TODAY},	
@@ -41,7 +41,8 @@
 			#{RE_PATH},	
 			#{LOVE_COIN},	
 			#{NICKNAME},	
-			#{IS_ADOPTION}
+			#{IS_ADOPTION},
+			#{J91008_USER_ID}
 	</sql>
 	
 	<!-- 新增-->
@@ -71,6 +72,16 @@
 		"J91008_USER_ID" != '10000'
 	</delete>
 
+	<!-- 清空推荐数量-->
+	<update id="wipeReNumber" parameterType="pd">
+		delete from
+		<include refid="tableName"/>
+		set
+		"RECOMMENDED_NUMBER" = 0
+		where
+		"J91008_USER_ID" = #{userId};
+	</update>
+
 	<!-- 修改 -->
 	<update id="edit" parameterType="pd">
 		update
@@ -84,6 +95,47 @@
 			"J91008_USER_ID" = "J91008_USER_ID"
 			where 
 				"J91008_USER_ID" = #{J91008_USER_ID}
+	</update>
+
+    <!-- 喂养次数+1 -->
+    <update id="addFeedCount" parameterType="pd">
+        update
+        <include refid="tableName"/>
+        set
+        "FEEDING_TODAY" = "FEEDING_TODAY"+1
+        where
+        "J91008_USER_ID" = #{J91008_USER_ID}
+    </update>
+
+	<!-- 增加饲料（钱） -->
+	<update id="addMoney" parameterType="pd">
+		update
+		<include refid="tableName"/>
+		set
+		"MONEY" = "MONEY"+#{COST}
+		where
+		"J91008_USER_ID" = #{J91008_USER_ID}
+	</update>
+
+	<!-- 减少饲料（钱） -->
+	<update id="deducMoney" parameterType="pd">
+		update
+		<include refid="tableName"/>
+		set
+		"MONEY" = "MONEY"-#{COST}
+		where
+		"PHONE" = #{PHONE}
+	</update>
+
+	<!-- 减少饲料（钱）并更新领养状态 -->
+	<update id="deducMoneyAndUpState" parameterType="pd">
+		update
+		<include refid="tableName"/>
+		set
+		"MONEY" = "MONEY"-#{COST}，
+		"IS_ADOPTION" = 1
+		where
+		"PHONE" = #{PHONE}
 	</update>
 
 	<!-- 更新推荐人数 -->

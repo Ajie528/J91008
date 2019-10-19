@@ -14,8 +14,8 @@
 		"NUMBER",	
 		"USER_ID",	
 		"TYPE",	
-		"IS_DELETED",	
-		"IS_AUDITING",
+		"IS_DELETED",
+		"STATE",
 		"BONUS_REC_ID"
 	</sql>
 	
@@ -26,8 +26,10 @@
 			#{NUMBER},	
 			#{USER_ID},	
 			#{TYPE},	
-			#{IS_DELETED},	
-			#{IS_AUDITING}
+			#{IS_DELETED},
+			#{STATE},
+			#{BONUS_REC_ID}
+
 	</sql>
 	
 	<!-- 新增-->
@@ -69,7 +71,7 @@
 		where 
 			"BONUS_REC_ID" = #{BONUS_REC_ID}
 	</select>
-	
+
 	<!-- 列表 -->
 	<select id="datalistPage" parameterType="page" resultType="pd">
 		select

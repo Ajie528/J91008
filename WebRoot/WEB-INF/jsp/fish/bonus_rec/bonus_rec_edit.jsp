@@ -32,8 +32,8 @@
 						<div id="zhongxin" style="padding-top: 13px;">
 						<table id="table_report" class="table table-striped table-bordered table-hover">
 							<tr>
-								<td style="width:75px;text-align: right;padding-top: 13px;">1 表示审核，0 表示未审核:</td>
-								<td><input type="number" name="IS_AUDITING" id="IS_AUDITING" value="${pd.IS_AUDITING}" maxlength="32" placeholder="这里输入1 表示审核，0 表示未审核" title="1 表示审核，0 表示未审核" style="width:98%;"/></td>
+								<td style="width:75px;text-align: right;padding-top: 13px;">1:完成、0：未完成、2：异常:</td>
+								<td><input type="number" name="IS_AUDITING" id="IS_AUDITING" value="${pd.STATE}" maxlength="32" placeholder="这里输入1 表示审核，0 表示未审核" title="1 表示审核，0 表示未审核" style="width:98%;"/></td>
 							</tr>
 							<tr>
 								<td style="text-align: center;" colspan="10">

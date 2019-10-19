@@ -25,7 +25,8 @@
 			#{FEED_NUMBER},	
 			#{USER_ID},
 			#{IS_OUT},	
-			#{ROW_NUMBER}
+			#{ROW_NUMBER},
+			#{FEED_RECORD_ID}
 	</sql>
 	
 	<!-- 新增-->
@@ -72,7 +73,15 @@
 		where 
 			"FEED_RECORD_ID" = #{FEED_RECORD_ID}
 	</select>
-	
+
+	<!-- 获取喂养记录累积 -->
+	<select id="getRecCount" parameterType="pd" resultType="pd">
+		select
+			COUNT("FEED_RECORD_ID") AS recCount
+		from
+			<include refid="tableName"/>
+	</select>
+
 	<!-- 列表 -->
 	<select id="datalistPage" parameterType="page" resultType="pd">
 		select
@@ -99,7 +108,20 @@
 		from 
 		<include refid="tableName"></include>
 	</select>
-	
+
+	<!-- 列表(根据用户ID获取未出局的记录) -->
+	<select id="listByUerId" parameterType="pd" resultType="pd">
+		select
+		<include refid="Field"></include>
+		from
+		<include refid="tableName"></include>
+		where
+			"USER_ID" = #{USER_ID}
+			and
+			"IS_OUT" = 0
+			order by "FEED_RECORD_ID"
+	</select>
+
 	<!-- 批量删除 -->
 	<delete id="deleteAll" parameterType="String">
 		delete from

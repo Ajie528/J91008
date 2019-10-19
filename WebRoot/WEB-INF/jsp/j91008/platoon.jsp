@@ -30,28 +30,28 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 		<div class="content-view content-nav">
 			<div class="platoon-content">
 				<div class="platoon-view">
-					当前结算排号：100号
+					当前结算排号：${feedRec[0].ROW_NUMBER}号
 				</div>
-				<p>共0条记录</p>
+				<p>共${feedRec.size()}条记录</p>
 			</div>
 
 		</div>
 
 		<footer>
 			<nav class="mui-bar mui-bar-tab nav-bg1">
-				<a class="mui-tab-item nav-item" href="index.jsp">
+				<a class="mui-tab-item nav-item" href="fish/toIndex.do">
 					<span class="mui-icon iconfont icon-shouye8"></span>
 					<span class="mui-tab-label">领养</span>
 				</a>
-				<a class="mui-tab-item nav-item" href="transaction.jsp">
+				<a class="mui-tab-item nav-item" href="fish/toFeeding.do">
 					<span class="mui-icon iconfont icon-weiyang"></span>
 					<span class="mui-tab-label">喂养</span>
 				</a>
-				<a class="mui-tab-item nav-item  mui-active" href="platoon.jsp">
+				<a class="mui-tab-item nav-item  mui-active" href="fish/toPlatoon.do">
 					<span class="mui-icon iconfont icon-dingdan7"></span>
 					<span class="mui-tab-label">公排</span>
 				</a>
-				<a class="mui-tab-item nav-item" href="center.jsp">
+				<a class="mui-tab-item nav-item" href="fish/toCenter.do">
 					<span class="mui-icon iconfont icon-huiyuan21"></span>
 					<span class="mui-tab-label">我的</span>
 				</a>

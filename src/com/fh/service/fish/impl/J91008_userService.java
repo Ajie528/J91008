@@ -44,6 +44,14 @@ public class J91008_userService implements J91008_userManager{
 		dao.delete("J91008_userMapper.wipeData", pd);
 	}
 
+	/**清空推荐数量
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void wipeReNumber(PageData pd)throws Exception{
+		dao.update("J91008_userMapper.wipeReNumber", pd);
+	}
+
 	/**重置序列
 	 * @param pd
 	 * @throws Exception
@@ -58,6 +66,38 @@ public class J91008_userService implements J91008_userManager{
 	 */
 	public void edit(PageData pd)throws Exception{
 		dao.update("J91008_userMapper.edit", pd);
+	}
+
+	/**喂养次数+1
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void addFeedCount(PageData pd)throws Exception{
+		dao.update("J91008_userMapper.addFeedCount", pd);
+	}
+
+	/**增加饲料（钱）
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void addMoney(PageData pd)throws Exception{
+		dao.update("J91008_userMapper.addMoney", pd);
+	}
+
+	/**减少饲料（钱）
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void deducMoney(PageData pd)throws Exception{
+		dao.update("J91008_userMapper.deducMoney", pd);
+	}
+
+	/**减少饲料（钱）并更新领养状态
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void deducMoneyAndUpState(PageData pd)throws Exception{
+		dao.update("J91008_userMapper.deducMoneyAndUpState", pd);
 	}
 
 	/**更新推荐人数

@@ -29,7 +29,13 @@ public interface Recharge_cashManager{
 	 * @throws Exception
 	 */
 	public void edit(PageData pd)throws Exception;
-	
+
+	/**更改订单状态
+	 * @param pd
+	 * @throws Exception
+	 */
+	void editState(PageData pd)throws Exception;
+
 	/**列表
 	 * @param page
 	 * @throws Exception

@@ -119,12 +119,12 @@
         $.ajax({
             url : "fish/register",
             type : "post",
-            data : record,
+            data : {USER:record},
             traditional : true, //传集合或者数组到后台service接收
             success : function(data) { //回调函数
                 if (data === "success") {
                     mui.toast("注册成功！");
-                    location.href="fish/toLogin";
+                    window.location.href="fish/toLogin";
                     return false;
                 }
                 if (data === "phoneError") {
@@ -147,7 +147,7 @@
                     mui.toast("推广人未领养不可当推荐人！");
                     return false;
                 }
-                if (data === "v") {
+                if (data === "illegal") {
                     mui.toast("禁止输入非法参数！");
                     return false;
                 }

@@ -59,7 +59,7 @@ public class MonitorController implements ServletContextListener {
         // 存放到缓存中，键值对 #参数设置
         // 把参数信息放到缓存
         applicati.setAttribute(Const.Par, pd);
-        // 把用户手机号当KEY，放入缓存中
+        // 把用户id当KEY，放入缓存中
         for (PageData i : userList) {
           applicati.setAttribute(i.get("PHONE").toString(),i);
         }

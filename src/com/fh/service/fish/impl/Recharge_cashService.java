@@ -43,7 +43,15 @@ public class Recharge_cashService implements Recharge_cashManager{
 	public void edit(PageData pd)throws Exception{
 		dao.update("Recharge_cashMapper.edit", pd);
 	}
-	
+
+	/**更改订单状态
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void editState(PageData pd)throws Exception{
+		dao.update("Recharge_cashMapper.editState", pd);
+	}
+
 	/**列表
 	 * @param page
 	 * @throws Exception

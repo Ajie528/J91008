@@ -16,13 +16,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
-import javax.tools.Tool;
-import java.lang.reflect.Parameter;
-import java.util.Date;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import static java.lang.System.*;
+
+import java.util.List;
+
 import static com.fh.util.DateUtil.*;
 
 
@@ -58,12 +55,12 @@ public class MainController extends BaseController {
     private Recharge_cashManager recharge_cashService;
 
     /**
-     *@描述：访问注册页
-     *@创建人：Ajie
-     *@创建时间：2019/10/17 0017
+     * @描述：访问注册页
+     * @创建人：Ajie
+     * @创建时间：2019/10/17 0017
      */
     @RequestMapping(value = "/toRegister")
-    public ModelAndView toRegister(){
+    public ModelAndView toRegister() {
         ModelAndView mv = this.getModelAndView();
         mv.setViewName("j91008/register");
         return mv;
@@ -71,18 +68,138 @@ public class MainController extends BaseController {
 
     /**
      * 功能描述：访问登录页
+     *
      * @author Ajie
-     * @date 2019/10/17 0017
-     * @param
-     * @return
+     * @date 2019/10/17
      */
     @RequestMapping(value = "/toLogin")
-    public ModelAndView toLogin(){
+    public ModelAndView toLogin() {
         ModelAndView mv = this.getModelAndView();
         mv.setViewName("j91008/login");
         return mv;
     }
 
+    /**
+     * 功能描述：访问首页
+     *
+     * @author Ajie
+     * @date 2019/10/18
+     */
+    @RequestMapping(value = "/toIndex")
+    public ModelAndView toIndex() throws Exception {
+        ModelAndView mv = this.getModelAndView();
+        if (is_login()) {
+            User user = (User) Jurisdiction.getSession().getAttribute(Const.J9User_SESSION_USER);
+            PageData pd = new PageData();
+            pd.put("PHONE", user.getPHONE());
+            pd = j91008_userService.findByPhone(pd);
+            mv.setViewName("j91008/index");
+            mv.addObject("user", pd);
+        } else {
+            mv.setViewName("j91008/login");
+        }
+        return mv;
+    }
+
+    /**
+     * 功能描述：访问充值页面
+     *
+     * @author Ajie
+     * @date 2019/10/18 0018
+     */
+    @RequestMapping(value = "/toCharge")
+    public ModelAndView toCharge() throws Exception {
+        ModelAndView mv = this.getModelAndView();
+        if (is_login()) {
+            User user = (User) Jurisdiction.getSession().getAttribute(Const.J9User_SESSION_USER);
+            PageData pd = new PageData();
+            // 从缓存获取参数配置
+            PageData par = (PageData) applicati.getAttribute(Const.Par);
+            pd.put("PHONE", user.getPHONE());
+            pd = j91008_userService.findByPhone(pd);
+            mv.setViewName("j91008/charge");
+            mv.addObject("user", pd);
+            mv.addObject("par", par);
+        } else {
+            mv.setViewName("j91008/login");
+        }
+        return mv;
+    }
+
+    /**
+     * 功能描述：访问喂养页面
+     *
+     * @author Ajie
+     * @date 2019/10/19 0019
+     */
+    @RequestMapping(value = "/toFeeding")
+    public ModelAndView toFeeding() throws Exception {
+        ModelAndView mv = this.getModelAndView();
+        if (is_login()) {
+            User user = (User) Jurisdiction.getSession().getAttribute(Const.J9User_SESSION_USER);
+            PageData pd = new PageData();
+            // 从缓存获取参数配置
+            PageData par = (PageData) applicati.getAttribute(Const.Par);
+            // 获取轮播图列表
+            List<PageData> rotationChartList = rotation_chartService.listAll(pd);
+            pd.put("PHONE", user.getPHONE());
+            pd = j91008_userService.findByPhone(pd);
+            mv.setViewName("j91008/feeding");
+            mv.addObject("user", pd);
+            mv.addObject("par", par);
+            mv.addObject("pic", rotationChartList);
+        } else {
+            mv.setViewName("j91008/login");
+        }
+        return mv;
+    }
+
+    /**
+     * 功能描述：访问公排页面
+     *
+     * @author Ajie
+     * @date 2019/10/19 0019
+     */
+    @RequestMapping(value = "/toPlatoon")
+    public ModelAndView toPlatoon() throws Exception {
+        ModelAndView mv = this.getModelAndView();
+        if (is_login()) {
+            User user = (User) Jurisdiction.getSession().getAttribute(Const.J9User_SESSION_USER);
+            PageData pd = new PageData();
+            pd.put("PHONE", user.getPHONE());
+            pd = j91008_userService.findByPhone(pd);
+            pd.put("USER_ID",pd.getString("J91008_USER_ID"));
+            List<PageData> feedList = feed_recordService.listByUerId(pd);
+            mv.setViewName("j91008/platoon");
+            mv.addObject("user", pd);
+            mv.addObject("feedRec",feedList);
+        } else {
+            mv.setViewName("j91008/login");
+        }
+        return mv;
+    }
+
+    /**
+     * 功能描述：访问我的页面
+     *
+     * @author Ajie
+     * @date 2019/10/19 0019
+     */
+    @RequestMapping(value = "/toCenter")
+    public ModelAndView toCenter() throws Exception {
+        ModelAndView mv = this.getModelAndView();
+        if (is_login()) {
+            User user = (User) Jurisdiction.getSession().getAttribute(Const.J9User_SESSION_USER);
+            PageData pd = new PageData();
+            pd.put("PHONE", user.getPHONE());
+            pd = j91008_userService.findByPhone(pd);
+            mv.setViewName("j91008/center");
+            mv.addObject("user", pd);
+        } else {
+            mv.setViewName("j91008/login");
+        }
+        return mv;
+    }
 
     /**
      * @描述：清空系统数据，保留顶点账号和参数
@@ -101,6 +218,8 @@ public class MainController extends BaseController {
             public void run() {
                 try {
                     j91008_userService.wipeData(pd);
+                    pd.put("userId", 10000);
+                    j91008_userService.wipeReNumber(pd);
                     notice_recService.wipeData(pd);
                     rotation_chartService.wipeDate(pd);
                 } catch (Exception e) {
@@ -130,7 +249,7 @@ public class MainController extends BaseController {
      */
     @RequestMapping(value = "/register")
     @ResponseBody
-    protected String register(@RequestParam("USER") String userInfo[]) throws Exception {
+    protected String register(@RequestParam("USER") String[] userInfo) throws Exception {
         PageData pd = new PageData();
         PageData pd1;
         PageData pd2;
@@ -148,9 +267,9 @@ public class MainController extends BaseController {
             return "phoneError";
         }
         // 验证手机号是否已经注册
-        pd.put("PHONE",phone);
+        pd.put("PHONE", phone);
         pd2 = j91008_userService.findByPhone(pd);
-        if (!"".equals(pd2) || pd2 != null){
+        if (pd2 != null) {
             return "alreadyExist";
         }
         // 加密后的密码和确认密码验证
@@ -158,37 +277,37 @@ public class MainController extends BaseController {
             return "passwordError";
         }
         // 验证推荐人是否存在
-        pd.put("J91008_USER_ID", recommender);
-        pd1 = j91008_userService.findById(pd);
+        pd.put("PHONE", recommender);
+        pd1 = j91008_userService.findByPhone(pd);
         if ("".equals(pd1) || pd1 == null) {
             return "recommenderError";
         }
         // 验证推荐人是否领养(激活)
-        int IS_ADOPTION = Integer.parseInt(pd1.getString("IS_ADOPTION"));
+        int IS_ADOPTION = Integer.parseInt(pd1.get("IS_ADOPTION").toString());
         if (IS_ADOPTION == 0) {
             return "nonAdoption";
         }
         // 验证是否有HTNL标签
-        if (Tools.checkHTML(userInfo[1]) || Tools.checkHTML(userInfo[2])){
+        if (Tools.checkHTML(userInfo[1]) || Tools.checkHTML(userInfo[2])) {
             return "illegal";
         }
 
 
         // 传数据去保存新注册用户
-        addRegisterUser(userInfo,pd1);
+        addRegisterUser(userInfo, pd1);
         return "success";
     }
 
     /**
-     *@描述：保存新注册用户信息
-     *@参数：注册页传过来的用户信息和查询数据得到推荐人信息
-     *@返回值：
-     *@创建人：Ajie
-     *@创建时间：2019/10/16 0016
+     * @描述：保存新注册用户信息
+     * @参数：注册页传过来的用户信息和查询数据得到推荐人信息
+     * @返回值：
+     * @创建人：Ajie
+     * @创建时间：2019/10/16 0016
      */
-    protected void addRegisterUser(String userInfo[],PageData Re) throws Exception {
-        Date date = new Date();
+    protected void addRegisterUser(String[] userInfo, PageData Re) throws Exception {
         PageData pd = new PageData();
+        PageData pd1 = new PageData();
         // 推荐关系路径、推荐人ID
         String rePath = Re.getString("RE_PATH");
         String reId = Re.getString("J91008_USER_ID");
@@ -201,10 +320,10 @@ public class MainController extends BaseController {
         }
         pd.put("GMT_CREATE", getTime());
         pd.put("GMT_MODIFIED", "");
-        pd.put("IS_DELETED", 0);
-        pd.put("IS_WITHDRAW ", 0);
+        pd.put("TEAM_PERFORMANCE", 0);
+        pd.put("IS_WITHDRAW", 0);
         pd.put("PHONE", userInfo[0]);
-        pd.put("PASSWORD", userInfo[1]);
+        pd.put("PASSWORD", Tools.encrypt(userInfo[1]));
         pd.put("FEEDING_TODAY", 0);
         pd.put("MONEY", 0);
         pd.put("RECOMMENDED_NUMBER", 0);
@@ -213,18 +332,19 @@ public class MainController extends BaseController {
         pd.put("LOVE_COIN", 0);
         pd.put("NICKNAME", "");
         pd.put("IS_ADOPTION", 0);
+        pd.put("J91008_USER_ID", "");
         j91008_userService.save(pd);
         pd = j91008_userService.findByPhone(pd);
         // 把新注册的用户添加到服务器缓存中
         applicati.setAttribute(userInfo[0], pd);
         // 更新推荐人的推荐数量
-        int number = Integer.parseInt(Re.getString("RECOMMENDED_NUMBER"));
-        pd.put("RECOMMENDED_NUMBER", (number + 1));
-        pd.put("PHONE", Re.getString("PHONE"));
-        j91008_userService.addReNumber(pd);
+        int number = Integer.parseInt(Re.get("RECOMMENDED_NUMBER").toString());
+        pd1.put("RECOMMENDED_NUMBER", (number + 1));
+        pd1.put("PHONE", Re.get("PHONE"));
+        j91008_userService.addReNumber(pd1);
         // 根据推荐人ID查信息，重复赋值到服务器缓存中
-        pd = j91008_userService.findById(Re);
-        applicati.setAttribute(pd.getString("PHONE"), pd);
+        pd1 = j91008_userService.findById(Re);
+        applicati.setAttribute(pd1.get("PHONE").toString(), pd1);
     }
 
 
@@ -238,16 +358,16 @@ public class MainController extends BaseController {
     @ResponseBody
     private String login() throws Exception {
         PageData pd = new PageData();
-        PageData pd1;
+        PageData pd1 = new PageData();
         // 获取前台传过来的登录信息
         pd = this.getPageData();
         // 登录过来的手机号和密码
         String phone = pd.getString("phone");
         String password = Tools.encrypt(pd.getString("password"));
         //验证手机号是否正确
-        pd.put("PHONE",phone);
+        pd.put("PHONE", phone);
         pd = j91008_userService.findByPhone(pd);
-        if ("".equals(pd) || pd == null){
+        if ("".equals(pd) || pd == null) {
             return "phoneError";
         }
         // 验证密码和手机号是否匹配
@@ -255,21 +375,25 @@ public class MainController extends BaseController {
         pd1 = (PageData) applicati.getAttribute(phone);
         boolean is_phone;
         boolean is_password;
-        if (!"".equals(pd1) || pd1 != null){
-            is_phone = phone.equals(pd1.getString("PHONE"));
+        if (!"".equals(pd1) || pd1 != null) {
+            is_phone = phone.equals(pd1.get("PHONE").toString());
             is_password = password.equals(pd1.getString("PASSWORD"));
             // 如果密码或者手机号不匹配
-            if (!is_phone || !is_password){
+            if (!is_phone || !is_password) {
                 return "error";
             }
             pd = pd1;
-        }else {
+        } else {
             pd = j91008_userService.findByPhoneAndpassword(pd);
-            if ("".equals(pd) || pd == null){
+            if ("".equals(pd) || pd == null) {
                 return "error";
             }
             // 把从数据库查到的用户信息添加到服务器缓存中
-            applicati.setAttribute(pd.getString("PHONE"),pd);
+            applicati.setAttribute(pd.get("PHONE").toString(), pd);
+        }
+        // 验证是否有html标签
+        if (Tools.checkHTML(pd.getString("password"))) {
+            return "illegal";
         }
         // 调用方法赋值到实体类中
         savaUser(pd);
@@ -277,27 +401,255 @@ public class MainController extends BaseController {
     }
 
     /**
-     *@描述：保存信息到实体类并存放到session中
-     *@参数：通过验证的用户信息
-     *@返回值：
-     *@创建人：Ajie
-     *@创建时间：2019/10/16 0016
+     * @描述：保存信息到实体类并存放到session中
+     * @参数：通过验证的用户信息
+     * @返回值：
+     * @创建人：Ajie
+     * @创建时间：2019/10/16 0016
      */
     protected void savaUser(PageData pd) {
         // 创建实体类对象
         User user = new User();
-        user.setTEAM_PERFORMANCE(Integer.parseInt(pd.getString("TEAM_PERFORMANCE")));
-        user.setIS_WITHDRAW(Integer.parseInt(pd.getString("IS_WITHDRAW")));
-        user.setPHONE(pd.getString("IS_WITHDRAW"));
-        user.setPASSWORD(pd.getString("IS_DELETED"));
-        user.setFEEDING_TODAY(Integer.parseInt(pd.getString("FEEDING_TODAY")));
-        user.setRECOMMENDED_NUMBER(Integer.parseInt(pd.getString("RECOMMENDED_NUMBER")));
-        user.setRECOMMENDER(Integer.parseInt(pd.getString("RECOMMENDER")));
+        user.setTEAM_PERFORMANCE(Integer.parseInt(pd.get("TEAM_PERFORMANCE").toString()));
+        user.setIS_WITHDRAW(Integer.parseInt(pd.get("IS_WITHDRAW").toString()));
+        user.setPHONE(pd.get("PHONE").toString());
+        user.setPASSWORD(pd.getString("PASSWORD"));
+        user.setFEEDING_TODAY(Integer.parseInt(pd.get("FEEDING_TODAY").toString()));
+        user.setRECOMMENDED_NUMBER(Integer.parseInt(pd.get("RECOMMENDED_NUMBER").toString()));
+        if (pd.get("RECOMMENDER") != null) {
+            user.setRECOMMENDER(Integer.parseInt(pd.get("RECOMMENDER").toString()));
+        }
         user.setRE_PATH(pd.getString("RE_PATH"));
         user.setNICKNAME(pd.getString("NICKNAME"));
-        user.setIS_ADOPTION(Integer.parseInt(pd.getString("IS_ADOPTION")));
+        user.setIS_ADOPTION(Integer.parseInt(pd.get("IS_ADOPTION").toString()));
         // 放入session中
-        Jurisdiction.getSession().setAttribute(Const.J9User_SESSION_USER,user);
+        Jurisdiction.getSession().setAttribute(Const.J9User_SESSION_USER, user);
+    }
+
+    /**
+     * 功能描述：领养小鱼
+     *
+     * @return 是否成功
+     * @author Ajie
+     * @date 2019/10/18 0018
+     */
+    @RequestMapping(value = "/adopt")
+    @ResponseBody
+    protected String adopt() throws Exception {
+        PageData pd = new PageData();
+        // 获取前台传过来的手机号
+        pd = this.getPageData();
+        pd = j91008_userService.findByPhone(pd);
+        if (!is_login()) {
+            return "login";
+        }
+        // 验证账号钱是否足够
+        double money = Double.parseDouble(pd.get("MONEY").toString());
+        if (money <= 0) {
+            return "less";
+        }
+        // 执行领养，扣除1元饲料，更新状态为1（领养）
+        int cost = 1;
+        pd.put("COST", cost);
+        j91008_userService.deducMoneyAndUpState(pd);
+        return "success";
+    }
+
+    /**
+     * 功能描述：充值饲料
+     *
+     * @param ：数额、支付方式、支付凭据
+     * @return 是否成功
+     * @author Ajie
+     * @date 2019/10/19 0019
+     */
+    @RequestMapping(value = "/charge")
+    @ResponseBody
+    public String recharge(@RequestParam("recInfo") String[] recInfo) throws Exception {
+        double money = Double.parseDouble(recInfo[0]);
+        // 验证是否登录
+        if (!is_login()) {
+            return "login";
+        }
+        // 验证充值的数额是否大于0
+        if (money <= 0) {
+            return "tooLittle";
+        }
+        // 验证是否选择了充值类型
+        if (Tools.isEmpty(recInfo[1])) {
+            return "typeEmpty";
+        }
+        // 验证是否上传支付凭证
+        if (Tools.isEmpty(recInfo[2])) {
+            return "imgEmpty";
+        }
+        // 创建未审核的充值订单
+        PageData pd = new PageData();
+        pd.put("GMT_CREATE", getTime());
+        pd.put("GMT_MODIFIED", "");
+        pd.put("NUMBER", money);
+        pd.put("USER_ID", Integer.parseInt(recInfo[3]));
+        pd.put("PAYMENT_TYPE", Integer.parseInt(recInfo[1]));
+        pd.put("VOUCHER", recInfo[2]);
+        pd.put("IS_DELETED", 0);
+        pd.put("IS_AUDITING", 0);
+        pd.put("RECHARGE_CASH_ID", this.get32UUID());
+        recharge_cashService.save(pd);
+        return "success";
+    }
+
+    /**
+     * 功能描述：充值饲料，确认审核
+     *
+     * @param :充值订单ID
+     * @return :是否成功
+     * @author Ajie
+     * @date 2019/10/19 0019
+     */
+    @RequestMapping(value = "/adoptExamine")
+    @ResponseBody
+    protected String adoptExamine() throws Exception {
+        PageData pd = new PageData();
+        pd = this.getPageData();
+        // 查询订单
+        pd = recharge_cashService.findById(pd);
+        // 判断是否已经审核
+        int i = Integer.parseInt(pd.get("IS_AUDITING").toString());
+        if (i == 1) {
+            return "processed";
+        }
+        String userId = pd.getString("USER_ID");
+        // 更改订单状态
+        pd.put("IS_AUDITING", 1);
+        pd.put("GMT_MODIFIED", getTime());
+        recharge_cashService.editState(pd);
+        double money = Double.parseDouble(pd.get("NUMBER").toString());
+        // 给用户增加饲料
+        addMoney(userId, money);
+        return "success";
+    }
+
+    /**
+     * 功能描述：喂养小鱼
+     *
+     * @param :手机号
+     * @return :是否成功
+     * @author Ajie
+     * @date 2019/10/19 0019
+     */
+    @RequestMapping(value = "/feedFish")
+    @ResponseBody
+    protected String feedFish() throws Exception {
+        PageData pd = new PageData();
+        PageData pd1 = new PageData();
+        pd = this.getPageData();
+        // 通过手机号查用户信息
+        pd = j91008_userService.findByPhone(pd);
+        double money = Double.parseDouble(pd.get("MONEY").toString());
+        // 验证是否处于登录状态
+        if (!is_login() || (pd == null)) {
+            return "login";
+        }
+        // 验证饲料（钱）是否够喂养小鱼
+        double cost = 50;
+        if (money < cost) {
+            return "less";
+        }
+        // 执行喂养
+        // 1.获取全部喂养记录累积，为了得到下一个排号
+        pd1 = feed_recordService.getRecCount(pd);
+        int count = Integer.parseInt(pd1.get("RECCOUNT").toString());
+        // 2.创建喂养记录
+        pd.put("GMT_CREATE",getTime());
+        pd.put("GMT_MODIFIED","");
+        pd.put("FEED_NUMBER",cost);
+        pd.put("USER_ID",pd.getString("J91008_USER_ID"));
+        pd.put("IS_OUT",0);
+        pd.put("ROW_NUMBER",++count);
+        pd.put("FEED_RECORD_ID","");
+        feed_recordService.save(pd);
+        // 3.用户今日喂养次数+1
+        j91008_userService.addFeedCount(pd);
+        // 4.扣除用户饲料（钱）
+        pd.put("COST",cost);
+        j91008_userService.deducMoney(pd);
+
+        // 调用是否出局的方法
+
+        return "success";
+    }
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 功能描述：给用户增加饲料（钱）
+     *
+     * @param :用户ID、数额
+     * @author Ajie
+     * @date 2019/10/19 0019
+     */
+    public void addMoney(String userId, double money) throws Exception {
+        PageData pd = new PageData();
+        pd.put("COST", money);
+        pd.put("J91008_USER_ID", userId);
+        j91008_userService.addMoney(pd);
+    }
+
+    /**
+     * 功能描述：创建明细流水记录
+     *
+     * @param :类型、数额、用户id、
+     * @author Ajie
+     * @date 2019/10/19 0019
+     */
+    public void createBonusRec(String type, double money, int userId) throws Exception {
+        PageData pd = new PageData();
+        pd.put("GMT_CREATE", getTime());
+        pd.put("GMT_MODIFIED", "");
+        pd.put("NUMBER", money);
+        pd.put("USER_ID", userId);
+        pd.put("TYPE", type);
+        pd.put("IS_DELETED", 0);
+        pd.put("STATE", 0);
+        pd.put("BONUS_REC_ID", "");
+        bonus_recService.save(pd);
+    }
+
+
+    /**
+     * 功能描述：验证用户是否处于登录状态
+     *
+     * @author Ajie
+     * @date 2019/10/18 0018
+     */
+    public boolean is_login() {
+        //session缓存的用户信息
+        User user = (User) Jurisdiction.getSession().getAttribute(Const.J9User_SESSION_USER);
+        //判断不等于空
+        if (user != null) {
+            return true;
+        } else {
+            removeSession();
+            return false;
+        }
+    }
+
+    /**
+     * 功能描述：清理session缓存
+     *
+     * @author Ajie
+     * @date 2019/10/18 0018
+     */
+    public void removeSession() {
+        Session session = Jurisdiction.getSession();    //以下清除session缓存
+        session.removeAttribute(Const.J9User_SESSION_USER);
     }
 
 

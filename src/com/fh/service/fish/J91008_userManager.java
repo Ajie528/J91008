@@ -30,6 +30,12 @@ public interface J91008_userManager{
 	 */
 	void wipeData(PageData pd)throws Exception;
 
+	/**清空推荐数量
+	 * @param pd
+	 * @throws Exception
+	 */
+	void wipeReNumber(PageData pd)throws Exception;
+
 	/**重置序列
 	 * @param pd
 	 * @throws Exception
@@ -41,6 +47,30 @@ public interface J91008_userManager{
 	 * @throws Exception
 	 */
 	public void edit(PageData pd)throws Exception;
+
+	/**喂养次数+1
+	 * @param pd
+	 * @throws Exception
+	 */
+	void addFeedCount(PageData pd)throws Exception;
+
+	/**增加饲料（钱）
+	 * @param pd
+	 * @throws Exception
+	 */
+	void addMoney(PageData pd)throws Exception;
+
+	/**减少饲料（钱）
+	 * @param pd
+	 * @throws Exception
+	 */
+	void deducMoney(PageData pd)throws Exception;
+
+	/**减少饲料（钱）并更新领养状态
+	 * @param pd
+	 * @throws Exception
+	 */
+	void deducMoneyAndUpState(PageData pd)throws Exception;
 
 	/**更新推荐人数
 	 * @param pd

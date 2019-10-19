@@ -8,7 +8,7 @@ import com.fh.entity.Page;
 import com.fh.util.PageData;
 import com.fh.service.fish.Feed_recordManager;
 
-/** 
+/**
  * 说明： 喂养记录
  * 创建人：Ajie
  * 创建时间：2019-10-14
@@ -19,7 +19,7 @@ public class Feed_recordService implements Feed_recordManager{
 
 	@Resource(name = "daoSupport")
 	private DaoSupport dao;
-	
+
 	/**新增
 	 * @param pd
 	 * @throws Exception
@@ -27,7 +27,7 @@ public class Feed_recordService implements Feed_recordManager{
 	public void save(PageData pd)throws Exception{
 		dao.save("Feed_recordMapper.save", pd);
 	}
-	
+
 	/**删除
 	 * @param pd
 	 * @throws Exception
@@ -35,7 +35,7 @@ public class Feed_recordService implements Feed_recordManager{
 	public void delete(PageData pd)throws Exception{
 		dao.delete("Feed_recordMapper.delete", pd);
 	}
-	
+
 	/**修改
 	 * @param pd
 	 * @throws Exception
@@ -43,7 +43,7 @@ public class Feed_recordService implements Feed_recordManager{
 	public void edit(PageData pd)throws Exception{
 		dao.update("Feed_recordMapper.edit", pd);
 	}
-	
+
 	/**列表
 	 * @param page
 	 * @throws Exception
@@ -52,7 +52,7 @@ public class Feed_recordService implements Feed_recordManager{
 	public List<PageData> list(Page page)throws Exception{
 		return (List<PageData>)dao.findForList("Feed_recordMapper.datalistPage", page);
 	}
-	
+
 	/**列表(全部)
 	 * @param pd
 	 * @throws Exception
@@ -61,7 +61,16 @@ public class Feed_recordService implements Feed_recordManager{
 	public List<PageData> listAll(PageData pd)throws Exception{
 		return (List<PageData>)dao.findForList("Feed_recordMapper.listAll", pd);
 	}
-	
+
+	/**列表(根据用户ID获取未出局的记录)
+	 * @param pd
+	 * @throws Exception
+	 */
+	@SuppressWarnings("unchecked")
+	public List<PageData> listByUerId(PageData pd)throws Exception{
+		return (List<PageData>)dao.findForList("Feed_recordMapper.listByUerId", pd);
+	}
+
 	/**通过id获取数据
 	 * @param pd
 	 * @throws Exception
@@ -69,7 +78,15 @@ public class Feed_recordService implements Feed_recordManager{
 	public PageData findById(PageData pd)throws Exception{
 		return (PageData)dao.findForObject("Feed_recordMapper.findById", pd);
 	}
-	
+
+	/**获取喂养记录累积
+	 * @param pd
+	 * @throws Exception
+	 */
+	public PageData getRecCount(PageData pd)throws Exception{
+		return (PageData)dao.findForObject("Feed_recordMapper.getRecCount", pd);
+	}
+
 	/**批量删除
 	 * @param ArrayDATA_IDS
 	 * @throws Exception
@@ -77,6 +94,6 @@ public class Feed_recordService implements Feed_recordManager{
 	public void deleteAll(String[] ArrayDATA_IDS)throws Exception{
 		dao.delete("Feed_recordMapper.deleteAll", ArrayDATA_IDS);
 	}
-	
+
 }
 

@@ -72,7 +72,7 @@
 									<th class="center">用户ID</th>
 									<th class="center">类型</th>
 									<th class="center">1 表示删除，0 表示未删除</th>
-									<th class="center">1 表示审核，0 表示未审核</th>
+									<th class="center">1:完成、0：未完成、2：异常</th>
 									<th class="center">操作</th>
 								</tr>
 							</thead>
@@ -94,7 +94,7 @@
 											<td class='center'>${var.USER_ID}</td>
 											<td class='center'>${var.TYPE}</td>
 											<td class='center'>${var.IS_DELETED}</td>
-											<td class='center'>${var.IS_AUDITING}</td>
+											<td class='center'>${var.STATE}</td>
 											<td class="center">
 												<c:if test="${QX.edit != 1 && QX.del != 1 }">
 												<span class="label label-large label-grey arrowed-in-right arrowed-in"><i class="ace-icon fa fa-lock" title="无权限"></i></span>

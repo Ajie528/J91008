@@ -57,48 +57,99 @@
                                         <c:if test="${QX.cha == 1 }">
                                             <tr>
                                                 <th class='center'>每天提现次数：</th>
-                                                <td class='center'><input type="number" name="WITHDRAW_TODAY"
+                                                <td class='center'><input class="forminput"  type="number"  name="WITHDRAW_TODAY"
                                                                           id="WITHDRAW_TODAY"
                                                                           value="${varList[0].WITHDRAW_TODAY}"
                                                                           maxlength="20" placeholder="这里输入每天提现次数"
                                                                           style="width:98%;"/></td>
                                                 <th class='center'>提现手续费：</th>
-                                                <td><input type="number" name="PAYMENT_FEE" id="PAYMENT_FEE"
+                                                <td><input class="forminput"  type="number" name="PAYMENT_FEE" id="PAYMENT_FEE"
                                                            value="${varList[0].PAYMENT_FEE}" maxlength="20"
                                                            placeholder="这里输入提现手续费" style="width:98%;"/>
                                                 </td>
                                                 <th class='center'>提现倍数：</th>
-                                                <td><input type="number" name="CASH_MULTIPLIER" id="CASH_MULTIPLIER"
+                                                <td><input class="forminput"  type="number" name="CASH_MULTIPLIER" id="CASH_MULTIPLIER"
                                                            value="${varList[0].CASH_MULTIPLIER}" maxlength="32"
                                                            placeholder="这里输入提现倍数" style="width:98%;"/></td>
                                             </tr>
                                             <tr>
                                                 <th class='center'>推广人数：</th>
-                                                <td><input type="number" name="EXTENSION" id="EXTENSION"
+                                                <td><input class="forminput" type="number" name="EXTENSION" id="EXTENSION"
                                                            value="${varList[0].EXTENSION}" maxlength="32"
                                                            placeholder="这里输入推广人数" style="width:98%;"/></td>
                                                 <th class='center'>获得喂养次数：</th>
-                                                <td><input type="number" name="GET_FREQUENCY" id="GET_FREQUENCY"
+                                                <td><input class="forminput" type="number" name="GET_FREQUENCY" id="GET_FREQUENCY"
                                                            value="${varList[0].GET_FREQUENCY}" maxlength="32"
                                                            placeholder="这里输入获得喂养次数" style="width:98%;"/></td>
                                                 <th class='center'>喂养封顶：</th>
-                                                <td><input type="number" name="FEED_CAPPING" id="FEED_CAPPING"
+                                                <td><input class="forminput" type="number" name="FEED_CAPPING" id="FEED_CAPPING"
                                                            value="${varList[0].FEED_CAPPING}" maxlength="32"
                                                            placeholder="这里输入喂养封顶" style="width:98%;"/></td>
                                             </tr>
                                             <tr>
                                                 <th class='center'>饲料价格：</th>
-                                                <td><input type="number" name="FEED_PRICE" id="FEED_PRICE"
+                                                <td><input class="forminput" class="forminput" type="number" name="FEED_PRICE" id="FEED_PRICE"
                                                            value="${varList[0].FEED_PRICE}" maxlength="32"
                                                            placeholder="这里输入饲料价格" style="width:98%;"/></td>
                                                 <th class='center'>出局收益：</th>
-                                                <td><input type="number" name="OUT_EARNINGS" id="OUT_EARNINGS"
+                                                <td><input class="forminput" type="number" name="OUT_EARNINGS" id="OUT_EARNINGS"
                                                            value="${varList[0].OUT_EARNINGS}" maxlength="32"
                                                            placeholder="这里输入出局收益" style="width:98%;"/></td>
                                                 <th class='center'>没有推人喂养次数：</th>
-                                                <td><input type="number" name="FEEDING_TIMES" id="FEEDING_TIMES"
+                                                <td><input class="forminput" type="number" name="FEEDING_TIMES" id="FEEDING_TIMES"
                                                            value="${varList[0].FEEDING_TIMES}" maxlength="32"
                                                            placeholder="这里输入没有推人喂养次数" style="width:98%;"/></td>
+                                            </tr>
+
+                                            <tr>
+                                                <th class='center'>微信收款码：</th>
+                                                <td>
+                                                    <input class="forminput" type="hidden" name="WECHAT" id="WECHAT"
+                                                           value="${varList[0].WECHAT}" maxlength="255"
+                                                           style="width:98%;"/>
+                                                    <p style="position:relative">
+                                                        <a class="imageup">
+                                                            <c:if test="${varList[0].WECHAT == null}">
+                                                                <img class="upload_pic" id="photourlShow1" height="150"
+                                                                     width="150"
+                                                                     src="<%=basePath%>static/images/upload.png"/>
+                                                            </c:if>
+                                                            <c:if test="${varList[0].WECHAT != null}">
+                                                                <img class="upload_pic" id="photourlShow1" height="150"
+                                                                     width="150" src="${varList[0].WECHAT}"/>
+                                                            </c:if>
+                                                            <input type="file" name="pictureFile"
+                                                                   onchange="setImg(this,1)" id="pictureFile"
+                                                                   class="preimg"/>
+                                                        </a>
+                                                    </p>
+                                                </td>
+                                                <th class='center'>支付宝收款码：</th>
+                                                <td>
+                                                    <input class="forminput" type="hidden" name="ALIPAY" id="ALIPAY"
+                                                           value="${varList[0].ALIPAY}" maxlength="255"
+                                                           style="width:98%;"/>
+                                                    <p style="position:relative">
+                                                        <a class="imageup">
+                                                            <c:if test="${varList[0].ALIPAY==null}">
+                                                                <img class="upload_pic" id="photourlShow2" height="150"
+                                                                     width="150"
+                                                                     src="<%=basePath%>static/images/upload.png"/>
+                                                            </c:if>
+                                                            <c:if test="${varList[0].ALIPAY!=null}">
+                                                                <img class="upload_pic" id="photourlShow2" height="150"
+                                                                     width="150" src="${varList[0].ALIPAY}"/>
+                                                            </c:if>
+                                                            <input type="file" name="pictureFile"
+                                                                   onchange="setImg(this,2)" id="pictureFile"
+                                                                   class="preimg"/>
+                                                        </a>
+                                                    </p>
+                                                </td>
+                                                <th class='center'>银行收款账号：</th>
+                                                <td><input class="forminput" type="number" name="BANK_NUMBER" id="BANK_NUMBER"
+                                                           value="${varList[0].BANK_NUMBER}" maxlength="32"
+                                                           placeholder="这里输入银行收款账号" style="width:98%;"/></td>
                                             </tr>
                                         </c:if>
                                         <c:if test="${QX.cha == 0 }">
@@ -176,13 +227,13 @@
 
 
     //清空数据
-    function wipeData(){
-        bootbox.confirm("确定要清空数据吗?", function(result) {
-            if(result) {
+    function wipeData() {
+        bootbox.confirm("确定要清空数据吗?", function (result) {
+            if (result) {
                 top.jzts();
                 var url = "fish/resetSystem.do";
-                $.get(url,function(data){
-                    if(data === "success") {
+                $.get(url, function (data) {
+                    if (data === "success") {
                         alert("清空数据成功！")
                         location.reload(); //刷新页面
                     }
@@ -197,15 +248,19 @@
     }
 
     //判断不能为空
-    function check() {  //Form是表单的ID
-        for (var i = 0; i < document.Form.elements.length - 1; i++) {
-            if (document.Form.elements[i].value === "") {
+    function check() { 
+        var lock = false;
+        $('input[class=forminput]').each(function() {
+            if($(this).val() == ''){
                 alert("当前表单不能有空项");
-                document.Form.elements[i].focus();
+                lock = false;
                 return false;
+            }else {
+                lock = true;
+                return true;
             }
-        }
-        return true;
+        });
+        return lock;
     }
 
     //获取from表单数据并传到后台
@@ -214,17 +269,10 @@
         finalRes = $("#Form").serializeArray().reduce(function (result, item) {
             result[item.name] = item.value;
             return result;
-        }, {})
-        //打印控制台查看数据是否符合
-        console.log(finalRes)
-        //验证是否为空
-        if (check()) {
-            var lock = true;
-        } else {
-            lock = false;
-        }
+        }, {});
+
         //通过ajax传到后台
-        if (lock) {
+        if (check()) {
             $.ajax({
                 url: "system_config/edit",
                 type: "post",
@@ -246,6 +294,43 @@
     //导出excel
     function toExcel() {
         window.location.href = '<%=basePath%>system_config/excel.do';
+    }
+
+    //用于进行图片上传格式验证
+    function setImg(obj, tag) {
+        var f = $(obj).val();
+        if (f == null || f == undefined || f == '') {
+            return false;
+        }
+        console.log(f)
+        if (!/\.(?:png|jpg|bmp|gif|PNG|JPG|BMP|GIF)$/.test(f)) {
+            $("#photourlShow" + tag).tips({side: 3, msg: '请上传图片文件!!!', bg: '#AE81FF', time: 2});
+            $("#photourlShow" + tag).focus();
+            $(obj).val('');
+            return false;
+        }
+        var url = "rotation_chart/addPic";
+        //异步提交表单(先确保jquery.form.js已经引入了)
+        var options = {
+            url: url,
+            success: function (data) {
+                picture_path = (data + "").trim();
+                var sta = picture_path;
+                $("#photourlShow" + tag).attr({src: sta});
+                switch (tag) {
+                    case 1:
+                        $("#WECHAT").attr("value", sta);
+                        break;
+                    case 2:
+                        $("#ALIPAY").attr("value", sta);
+                        break;
+                }
+                $(obj).val('');
+                $("#photourlShow" + tag).tips({side: 3, msg: '上传成功', bg: '#AE81FF', time: 2});
+                $("#photourlShow" + tag).focus();
+            }
+        };
+        $("#Form").ajaxSubmit(options);
     }
 
 
