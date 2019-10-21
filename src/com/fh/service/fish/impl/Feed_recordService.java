@@ -36,12 +36,28 @@ public class Feed_recordService implements Feed_recordManager{
 		dao.delete("Feed_recordMapper.delete", pd);
 	}
 
+	/**清空表
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void wipeData(PageData pd)throws Exception{
+		dao.delete("Feed_recordMapper.wipeData", pd);
+	}
+
 	/**修改
 	 * @param pd
 	 * @throws Exception
 	 */
 	public void edit(PageData pd)throws Exception{
 		dao.update("Feed_recordMapper.edit", pd);
+	}
+
+	/**更新出局状态和出局人数
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void editState(PageData pd)throws Exception{
+		dao.update("Feed_recordMapper.editState", pd);
 	}
 
 	/**列表
@@ -67,8 +83,8 @@ public class Feed_recordService implements Feed_recordManager{
 	 * @throws Exception
 	 */
 	@SuppressWarnings("unchecked")
-	public List<PageData> listByUerId(PageData pd)throws Exception{
-		return (List<PageData>)dao.findForList("Feed_recordMapper.listByUerId", pd);
+	public List<PageData> listByUserId(PageData pd)throws Exception{
+		return (List<PageData>)dao.findForList("Feed_recordMapper.listByUserId", pd);
 	}
 
 	/**通过id获取数据
@@ -77,6 +93,14 @@ public class Feed_recordService implements Feed_recordManager{
 	 */
 	public PageData findById(PageData pd)throws Exception{
 		return (PageData)dao.findForObject("Feed_recordMapper.findById", pd);
+	}
+
+	/**获取未出局的最小排号记录
+	 * @param pd
+	 * @throws Exception
+	 */
+	public PageData getNotOutMin(PageData pd)throws Exception{
+		return (PageData)dao.findForObject("Feed_recordMapper.getNotOutMin", pd);
 	}
 
 	/**获取喂养记录累积

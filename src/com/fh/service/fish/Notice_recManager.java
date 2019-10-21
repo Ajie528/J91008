@@ -53,7 +53,13 @@ public interface Notice_recManager{
 	 * @throws Exception
 	 */
 	public PageData findById(PageData pd)throws Exception;
-	
+
+	/**获取最新一条新闻公告
+	 * @param pd
+	 * @throws Exception
+	 */
+	PageData findByNewTime(PageData pd)throws Exception;
+
 	/**批量删除
 	 * @param ArrayDATA_IDS
 	 * @throws Exception

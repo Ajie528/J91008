@@ -3439,7 +3439,7 @@ body > .mui-progressbar {
     position: relative;
     display: inline-block;
     width: 100%;
-    height: 20%;
+    height: 100%;
     vertical-align: top;
     white-space: normal
 }

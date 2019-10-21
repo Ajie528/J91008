@@ -23,13 +23,25 @@ public interface Feed_recordManager{
 	 * @throws Exception
 	 */
 	public void delete(PageData pd)throws Exception;
-	
+
+	/**清空表
+	 * @param pd
+	 * @throws Exception
+	 */
+	void wipeData(PageData pd)throws Exception;
+
 	/**修改
 	 * @param pd
 	 * @throws Exception
 	 */
 	public void edit(PageData pd)throws Exception;
-	
+
+	/**更新出局状态和出局人数
+	 * @param pd
+	 * @throws Exception
+	 */
+	void editState(PageData pd)throws Exception;
+
 	/**列表
 	 * @param page
 	 * @throws Exception
@@ -46,13 +58,19 @@ public interface Feed_recordManager{
 	 * @param pd
 	 * @throws Exception
 	 */
-	List<PageData> listByUerId(PageData pd)throws Exception;
+	List<PageData> listByUserId(PageData pd)throws Exception;
 
 	/**通过id获取数据
 	 * @param pd
 	 * @throws Exception
 	 */
 	public PageData findById(PageData pd)throws Exception;
+
+	/**获取未出局的最小排号记录
+	 * @param pd
+	 * @throws Exception
+	 */
+	PageData getNotOutMin(PageData pd)throws Exception;
 
 	/**获取喂养记录累积
 	 * @param pd

@@ -23,7 +23,13 @@ public interface Withdraw_cashManager{
 	 * @throws Exception
 	 */
 	public void delete(PageData pd)throws Exception;
-	
+
+	/**清空表
+	 * @param pd
+	 * @throws Exception
+	 */
+	void wipeData(PageData pd)throws Exception;
+
 	/**修改
 	 * @param pd
 	 * @throws Exception
@@ -41,7 +47,13 @@ public interface Withdraw_cashManager{
 	 * @throws Exception
 	 */
 	public List<PageData> listAll(PageData pd)throws Exception;
-	
+
+	/**列表(根据用户ID列出)
+	 * @param pd
+	 * @throws Exception
+	 */
+	List<PageData> listByUserId(PageData pd)throws Exception;
+
 	/**通过id获取数据
 	 * @param pd
 	 * @throws Exception

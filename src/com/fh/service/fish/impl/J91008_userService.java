@@ -133,7 +133,16 @@ public class J91008_userService implements J91008_userManager{
 	public List<PageData> listAll(PageData pd)throws Exception{
 		return (List<PageData>)dao.findForList("J91008_userMapper.listAll", pd);
 	}
-	
+
+	/**根据推荐路径查找最高N人
+	 * @param pd
+	 * @throws Exception
+	 */
+	@SuppressWarnings("unchecked")
+	public List<PageData> listMostNumByPath(PageData pd)throws Exception{
+		return (List<PageData>)dao.findForList("J91008_userMapper.listMostNumByPath", pd);
+	}
+
 	/**通过id获取数据
 	 * @param pd
 	 * @throws Exception

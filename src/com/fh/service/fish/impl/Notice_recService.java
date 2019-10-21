@@ -77,7 +77,15 @@ public class Notice_recService implements Notice_recManager{
 	public PageData findById(PageData pd)throws Exception{
 		return (PageData)dao.findForObject("Notice_recMapper.findById", pd);
 	}
-	
+
+	/**获取最新一条新闻公告
+	 * @param pd
+	 * @throws Exception
+	 */
+	public PageData findByNewTime(PageData pd)throws Exception{
+		return (PageData)dao.findForObject("Notice_recMapper.findByNewTime", pd);
+	}
+
 	/**批量删除
 	 * @param ArrayDATA_IDS
 	 * @throws Exception

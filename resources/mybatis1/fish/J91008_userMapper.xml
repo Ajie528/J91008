@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="J91008_userMapper">
-	
+
 	<!--表名 -->
 	<sql id="tableName">
 		"J91008_USER"
 	</sql>
-	
+
 	<!-- 字段 -->
 	<sql id="Field">
 		"GMT_CREATE",	
@@ -25,7 +25,7 @@
 		"IS_ADOPTION",
 		"J91008_USER_ID"
 	</sql>
-	
+
 	<!-- 字段值 -->
 	<sql id="FieldValue">
 			#{GMT_CREATE},	
@@ -44,7 +44,7 @@
 			#{IS_ADOPTION},
 			#{J91008_USER_ID}
 	</sql>
-	
+
 	<!-- 新增-->
 	<insert id="save" parameterType="pd">
 		insert into
@@ -55,12 +55,12 @@
 		<include refid="FieldValue"></include>
 		)
 	</insert>
-	
+
 	<!-- 删除-->
 	<delete id="delete" parameterType="pd">
 		delete from
 		<include refid="tableName"></include>
-		where 
+		where
 			"J91008_USER_ID" = #{J91008_USER_ID}
 	</delete>
 
@@ -74,26 +74,27 @@
 
 	<!-- 清空推荐数量-->
 	<update id="wipeReNumber" parameterType="pd">
-		delete from
+        update
 		<include refid="tableName"/>
 		set
-		"RECOMMENDED_NUMBER" = 0
+		"RECOMMENDED_NUMBER" = 0,
+        "FEEDING_TODAY" = 0
 		where
-		"J91008_USER_ID" = #{userId};
+		"J91008_USER_ID" = '10000'
 	</update>
 
 	<!-- 修改 -->
 	<update id="edit" parameterType="pd">
 		update
 		<include refid="tableName"></include>
-			set 
-				"PASSWORD" = #{PASSWORD},	
-				"MONEY" = #{MONEY},	
-				"LOVE_COIN" = #{LOVE_COIN},	
-				"NICKNAME" = #{NICKNAME},	
-				"IS_ADOPTION" = #{IS_ADOPTION},	
+			set
+				"PASSWORD" = #{PASSWORD},
+				"MONEY" = #{MONEY},
+				"LOVE_COIN" = #{LOVE_COIN},
+				"NICKNAME" = #{NICKNAME},
+				"IS_ADOPTION" = #{IS_ADOPTION},
 			"J91008_USER_ID" = "J91008_USER_ID"
-			where 
+			where
 				"J91008_USER_ID" = #{J91008_USER_ID}
 	</update>
 
@@ -159,11 +160,11 @@
 
 	<!-- 通过ID获取数据 -->
 	<select id="findById" parameterType="pd" resultType="pd">
-		select 
+		select
 		<include refid="Field"/>
-		from 
+		from
 		<include refid="tableName"/>
-		where 
+		where
 			"J91008_USER_ID" = #{J91008_USER_ID}
 	</select>
 
@@ -202,7 +203,7 @@
 	<select id="datalistPage" parameterType="page" resultType="pd">
 		select
 		<include refid="Field"></include>
-		from 
+		from
 		<include refid="tableName"></include>
 		where 1=1
 		<if test="pd.keywords!= null and pd.keywords != ''"><!-- 关键词检索 -->
@@ -210,31 +211,44 @@
 				(
 				<!--	根据需求自己加检索条件
 					字段1 LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%')
-					 or 
-					字段2 LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%') 
+					 or
+					字段2 LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%')
 				-->
 				)
 		</if>
 	</select>
-	
+
 	<!-- 列表(全部) -->
 	<select id="listAll" parameterType="pd" resultType="pd">
 		select
-		<include refid="Field"></include>
-		from 
-		<include refid="tableName"></include>
+		<include refid="Field"/>
+		from
+		<include refid="tableName"/>
 	</select>
-	
+
+	<!-- 根据推荐路径查找最高N人 -->
+	<select id="listMostNumByPath" parameterType="pd" resultType="pd">
+		select
+		<include refid="Field"/>
+		from
+		<include refid="tableName"/>
+		WHERE
+		"J91008_USER_ID" IN （${PATH}）
+		AND ROWNUM &lt;= #{NUM}
+		ORDER BY
+		"J91008_USER_ID" DESC
+	</select>
+
 	<!-- 批量删除 -->
 	<delete id="deleteAll" parameterType="String">
 		delete from
 		<include refid="tableName"></include>
-		where 
+		where
 			"J91008_USER_ID" in
 		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
                  #{item}
 		</foreach>
 	</delete>
-	
+
 	<!-- fh313596790qq(青苔) -->
 </mapper>

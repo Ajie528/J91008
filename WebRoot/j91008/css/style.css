@@ -332,7 +332,7 @@ img{
 }
 
 /*我的*/
-.slider-height .mui-slider-group .mui-slider-item img {
+.slider-height .mui-slider-group .mui-slider-item {
     width: 100%;
     height: 200px;
 }
@@ -611,7 +611,7 @@ img{
     transform: scaleY(.5);
     background-color: #c8c7cc;
 }
-.slider-height1 .mui-slider-group .mui-slider-item img {
+.slider-height1 .mui-slider-group .mui-slider-item {
     width: 100%;
     height: 160px;
 }
@@ -685,7 +685,31 @@ img{
 	padding-bottom: 10px;
 }
 
-
+.order-view{
+	background-color: #fff;
+	border-radius: 6px;
+}
+.th-body{
+	height: 40px;
+}
+.th-body th {
+	font-size: 16px;
+	font-weight: normal;
+	color: #333;
+	text-align: center;
+	padding: 0 10px;
+}
+.tr-text {
+	height: 36px;
+	font-size: 14px;
+	font-weight: normal;
+	text-align: center;
+	color: #666;
+	border-top: 1px solid #ddd;
+}
+.tr-text td{
+	padding: 10px;
+}
 
 
 

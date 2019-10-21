@@ -3,10 +3,7 @@ package com.fh.controller.fish;
 import com.fh.controller.base.BaseController;
 import com.fh.entity.User;
 import com.fh.service.fish.*;
-import com.fh.util.Const;
-import com.fh.util.Jurisdiction;
-import com.fh.util.PageData;
-import com.fh.util.Tools;
+import com.fh.util.*;
 import com.fh.util.express.ThreadManagers;
 import org.apache.shiro.session.Session;
 import org.springframework.stereotype.Controller;
@@ -18,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.fh.util.DateUtil.*;
@@ -76,6 +74,7 @@ public class MainController extends BaseController {
     public ModelAndView toLogin() {
         ModelAndView mv = this.getModelAndView();
         mv.setViewName("j91008/login");
+        removeSession();
         return mv;
     }
 
@@ -168,11 +167,11 @@ public class MainController extends BaseController {
             PageData pd = new PageData();
             pd.put("PHONE", user.getPHONE());
             pd = j91008_userService.findByPhone(pd);
-            pd.put("USER_ID",pd.getString("J91008_USER_ID"));
-            List<PageData> feedList = feed_recordService.listByUerId(pd);
+            pd.put("USER_ID", pd.getString("J91008_USER_ID"));
+            List<PageData> feedList = feed_recordService.listByUserId(pd);
             mv.setViewName("j91008/platoon");
             mv.addObject("user", pd);
-            mv.addObject("feedRec",feedList);
+            mv.addObject("feedRec", feedList);
         } else {
             mv.setViewName("j91008/login");
         }
@@ -193,13 +192,58 @@ public class MainController extends BaseController {
             PageData pd = new PageData();
             pd.put("PHONE", user.getPHONE());
             pd = j91008_userService.findByPhone(pd);
+            // 获取轮播图列表
+            List<PageData> rotationChartList = rotation_chartService.listAll(pd);
+            // 获取新闻公告
+            PageData news = notice_recService.findByNewTime(pd);
             mv.setViewName("j91008/center");
             mv.addObject("user", pd);
+            mv.addObject("pic", rotationChartList);
+            mv.addObject("news", news);
         } else {
             mv.setViewName("j91008/login");
         }
         return mv;
     }
+
+    /**
+     * 功能描述：访问奖金明细页面
+     * @author Ajie
+     * @date 2019/10/21 0021
+     */
+    @RequestMapping(value = "/toBonusRec")
+    public ModelAndView toBonusRec() throws Exception {
+        ModelAndView mv = this.getModelAndView();
+        if (is_login()) {
+            User user = (User) Jurisdiction.getSession().getAttribute(Const.J9User_SESSION_USER);
+            PageData pd = new PageData();
+            pd.put("PHONE", user.getPHONE());
+            pd = j91008_userService.findByPhone(pd);
+            pd.put("USER_ID", pd.getString("J91008_USER_ID"));
+            // 奖金记录
+            List<PageData> bonusList = bonus_recService.listByUserId(pd);
+            // 充值记录
+            List<PageData> rechargeList = recharge_cashService.listByUserId(pd);
+            // 提现记录
+            List<PageData> withdrawList = withdraw_cashService.listByUserId(pd);
+            List<PageData> total = new ArrayList<>(18);
+            total.addAll(bonusList);
+            if (rechargeList.size()>0){
+                total.addAll(rechargeList);
+            }
+            if (withdrawList.size()>0){
+                total.addAll(withdrawList);
+            }
+            total = SortUtil.sortTime(total);
+            mv.setViewName("j91008/fundDetails");
+            mv.addObject("user", pd);
+            mv.addObject("bonusRec", total);
+        } else {
+            mv.setViewName("j91008/login");
+        }
+        return mv;
+    }
+
 
     /**
      * @描述：清空系统数据，保留顶点账号和参数
@@ -218,10 +262,12 @@ public class MainController extends BaseController {
             public void run() {
                 try {
                     j91008_userService.wipeData(pd);
-                    pd.put("userId", 10000);
                     j91008_userService.wipeReNumber(pd);
                     notice_recService.wipeData(pd);
-                    rotation_chartService.wipeDate(pd);
+                    recharge_cashService.wipeData(pd);
+                    bonus_recService.wipeData(pd);
+                    feed_recordService.wipeData(pd);
+                    withdraw_cashService.wipeData(pd);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -542,9 +588,11 @@ public class MainController extends BaseController {
     protected String feedFish() throws Exception {
         PageData pd = new PageData();
         PageData pd1 = new PageData();
+        PageData par = (PageData) applicati.getAttribute(Const.Par);
         pd = this.getPageData();
         // 通过手机号查用户信息
         pd = j91008_userService.findByPhone(pd);
+        String userId = pd.getString("J91008_USER_ID");
         double money = Double.parseDouble(pd.get("MONEY").toString());
         // 验证是否处于登录状态
         if (!is_login() || (pd == null)) {
@@ -555,38 +603,150 @@ public class MainController extends BaseController {
         if (money < cost) {
             return "less";
         }
+        // 验证是否达到今天喂养封顶次数
+        int count = Integer.parseInt(pd.get("FEEDING_TODAY").toString()); // 今日喂养次数
+        int feedingTimes = Integer.parseInt(par.get("FEEDING_TIMES").toString()); // 没有推人进来的喂养次数
+        int Max = Integer.parseInt(par.get("FEED_CAPPING").toString()); // 推荐人进来最大可获得的喂养次数
+        int recommendedNumber = Integer.parseInt(pd.get("RECOMMENDED_NUMBER").toString()); // 推荐数量
+        int getFeed = Integer.parseInt(par.get("GET_FREQUENCY").toString()); // 推荐人进来获得的喂养次数
+        boolean is_feed = (recommendedNumber <= 0 && count == 0) || (count < Max+feedingTimes && count < recommendedNumber*getFeed+feedingTimes);
+        if (!is_feed){
+            return "MaxFeed";
+        }
         // 执行喂养
-        // 1.获取全部喂养记录累积，为了得到下一个排号
+        // 1.获取全部喂养记录累积，为了得到下一个排号,和已出局人数
         pd1 = feed_recordService.getRecCount(pd);
-        int count = Integer.parseInt(pd1.get("RECCOUNT").toString());
+        int recCount = Integer.parseInt(pd1.get("REC_COUNT").toString());
+        int outCount = Integer.parseInt(pd1.get("OUT_COUNT").toString());
         // 2.创建喂养记录
-        pd.put("GMT_CREATE",getTime());
-        pd.put("GMT_MODIFIED","");
-        pd.put("FEED_NUMBER",cost);
-        pd.put("USER_ID",pd.getString("J91008_USER_ID"));
-        pd.put("IS_OUT",0);
-        pd.put("ROW_NUMBER",++count);
-        pd.put("FEED_RECORD_ID","");
+        pd.put("GMT_CREATE", getTime());
+        pd.put("GMT_MODIFIED", "");
+        pd.put("FEED_NUMBER", cost);
+        pd.put("USER_ID", pd.getString("J91008_USER_ID"));
+        pd.put("IS_OUT", 0);
+        pd.put("ROW_NUMBER", ++recCount);
+        pd.put("COUNT_OUT", outCount);
+        pd.put("FEED_RECORD_ID", "");
         feed_recordService.save(pd);
         // 3.用户今日喂养次数+1
         j91008_userService.addFeedCount(pd);
         // 4.扣除用户饲料（钱）
-        pd.put("COST",cost);
+        pd.put("COST", cost);
         j91008_userService.deducMoney(pd);
-
-        // 调用是否出局的方法
-
+        // 调用奖金结算的方法
+        bonusSettlement(userId,cost);
+        outBonusSettlement(cost);
         return "success";
     }
 
+    /**
+     * 功能描述：动态奖金结算
+     * @author Ajie
+     * @date 2019/10/21 0021
+     * @param : 用户ID,喂养成本
+     */
+    public void bonusSettlement(String userId, double cost) throws Exception {
+        // 如果是顶点账号 不用发奖金
+        if (userId.equals("10000")) {
+            return;
+        }
+        PageData pd = new PageData();
+        pd.put("J91008_USER_ID", userId);
+        // 查找用户信息
+        pd = j91008_userService.findById(pd);
+        // 推荐人
+        String Recommender = pd.get("RECOMMENDER").toString();
+        String recommenPath = pd.getString("RE_PATH");
+        // 发推荐奖
+        double re_profit = 0.02;
+        double money = re_profit * cost;
+        addMoney(Recommender, money);
+        bonusRec(Recommender,money,"动态");
+        // 发管理奖
+        double ad_profit = 0.01;
+        money = ad_profit * cost;
+        int MaxNumber = 7;
+        // 字符串截取
+        if (recommenPath.startsWith(",")) {
+            recommenPath = recommenPath.substring(1);
+        }
+        if (recommenPath.endsWith(",")) {
+            recommenPath = recommenPath.substring(0,recommenPath.length()-1);
+        }
+        // 根据推荐路径 查最高7人
+        pd.put("PATH",recommenPath);
+        pd.put("NUM",MaxNumber);
+        List<PageData> listRe = j91008_userService.listMostNumByPath(pd);
+        if (listRe.size() < 2) {
+            return;
+        }
+        // 删除列表第一个元素，因为已经发了推荐奖了
+        listRe.remove(0);
+        // 给符合条件的用户发钱
+        for (PageData i : listRe) {
+            userId = i.getString("J91008_USER_ID");
+            addMoney(userId,money);
+            bonusRec(userId,money,"动态");
+        }
+    }
+
+    /**
+     * 功能描述：静态奖金结算（出局奖金）
+     * @author Ajie
+     * @date 2019/10/21 0021
+     * @param :成本
+     * @return
+     */
+    public void outBonusSettlement(double cost) throws Exception {
+        PageData pd = new PageData();
+        PageData par = (PageData) applicati.getAttribute(Const.Par);
+        // 查询已出局人数和当前排号累积
+        pd = feed_recordService.getRecCount(pd);
+        int count = Integer.parseInt(pd.get("REC_COUNT").toString());
+        int out_count = Integer.parseInt(pd.get("OUT_COUNT").toString());
+        ++out_count;
+        int number = 7;
+        boolean is_adopt = out_count*number <= count;
+        // 发放奖金
+        while (is_adopt){
+            // 查询未出局最小排号记录信息
+            pd = feed_recordService.getNotOutMin(pd);
+            String userId = pd.getString("USER_ID");
+            // 更改记录状态
+            pd.put("IS_OUT",1);
+            pd.put("COUNT_OUT",out_count);
+            feed_recordService.editState(pd);
+            // 给用户发钱并且做记录
+            double money = Double.parseDouble(par.get("OUT_EARNINGS").toString());
+            addMoney(userId,money);
+            bonusRec(userId,money,"出局");
+            // 出局人数累积
+            out_count++;
+            is_adopt = out_count*number <= count;
+        }
+
+    }
 
 
-
-
-
-
-
-
+    /**
+     * 功能描述：创建奖金记录
+     *
+     * @param ：用户ID、数额、类型
+     * @author Ajie
+     * @date 2019/10/21 0021
+     */
+    public void bonusRec(String userId, double money, String type) throws Exception {
+        PageData pd = new PageData();
+        pd.put("GMT_CREATE", getTime());
+        pd.put("GMT_MODIFIED", "");
+        pd.put("NUMBER", money);
+        pd.put("USER_ID", userId);
+        pd.put("TYPE", type);
+        pd.put("IS_DELETED", 0);
+        pd.put("STATE", 1);
+        pd.put("BONUS_REC_ID", "");
+        bonus_recService.save(pd);
+    }
 
     /**
      * 功能描述：给用户增加饲料（钱）
@@ -601,27 +761,6 @@ public class MainController extends BaseController {
         pd.put("J91008_USER_ID", userId);
         j91008_userService.addMoney(pd);
     }
-
-    /**
-     * 功能描述：创建明细流水记录
-     *
-     * @param :类型、数额、用户id、
-     * @author Ajie
-     * @date 2019/10/19 0019
-     */
-    public void createBonusRec(String type, double money, int userId) throws Exception {
-        PageData pd = new PageData();
-        pd.put("GMT_CREATE", getTime());
-        pd.put("GMT_MODIFIED", "");
-        pd.put("NUMBER", money);
-        pd.put("USER_ID", userId);
-        pd.put("TYPE", type);
-        pd.put("IS_DELETED", 0);
-        pd.put("STATE", 0);
-        pd.put("BONUS_REC_ID", "");
-        bonus_recService.save(pd);
-    }
-
 
     /**
      * 功能描述：验证用户是否处于登录状态

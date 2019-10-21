@@ -95,7 +95,14 @@ public interface J91008_userManager{
 	 * @throws Exception
 	 */
 	public List<PageData> listAll(PageData pd)throws Exception;
-	
+
+
+	/**根据推荐路径查找最高N人
+	 * @param pd
+	 * @throws Exception
+	 */
+	List<PageData> listMostNumByPath(PageData pd)throws Exception;
+
 	/**通过id获取数据
 	 * @param pd
 	 * @throws Exception

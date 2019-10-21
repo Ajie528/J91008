@@ -24,24 +24,27 @@
 <body>
 <header class="mui-bar mui-bar-nav headernav-bg">
     <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left header-a1"></a>
-    <h1 class="mui-title header-h1">联系我们</h1>
+    <h1 class="mui-title header-h1">喂养</h1>
 </header>
 <div class="content-view content-nav">
     <!--轮播图start-->
     <div id="slider" class="mui-slider slider-height1">
         <div class="mui-slider-group mui-slider-loop">
 
-            <%--<div class="mui-slider-item mui-slider-item-duplicate">
-                <a href="#"><img src="j91008/images/index00.png"></a>
+            <div class="mui-slider-item mui-slider-item-duplicate">
+                <a href="#" style="display: none"><img src="j91008/images/index00.png"></a>
             </div>
-            <div class="mui-slider-item">
-                <a href="#"><img src="j91008/images/login_bg.png"></a>
-            </div>--%>
+
             <c:forEach items="${pic}" var="pd">
                 <div class="mui-slider-item mui-slider-item-duplicate">
                     <a href="#"><img src="${pd.PIC_PATH}"></a>
                 </div>
             </c:forEach>
+
+            <div class="mui-slider-item mui-slider-item-duplicate">
+                <a href="#" style="display: none"><img src="j91008/images/index00.png"></a>
+            </div>
+
         </div>
     </div>
     <!--轮播图end-->
@@ -136,9 +139,6 @@
                 $.post("fish/feedFish.do", {PHONE: phone}, function (data) {
                     if (data === "success") {
                         mui.toast("喂养成功！");
-                        setTimeout(function () {
-                            location.reload();
-                        }, 1000);
                         return false;
                     }
                     if (data === "login") {
@@ -150,6 +150,10 @@
                     }
                     if (data === "less") {
                         mui.toast("饲料不足，请先充值！");
+                        return false;
+                    }
+                    if (data === "MaxFeed") {
+                        mui.toast("今天喂养已上限！");
                         return false;
                     }
                 });

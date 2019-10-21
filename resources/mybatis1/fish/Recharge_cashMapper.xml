@@ -52,6 +52,13 @@
 		"RECHARGE_CASH_ID" = #{RECHARGE_CASH_ID}
 	</delete>
 
+	<!-- 清空表-->
+	<delete id="wipeData" parameterType="pd">
+		delete from
+		<include refid="tableName"></include>
+	</delete>
+
+
 	<!-- 修改 -->
 	<update id="edit" parameterType="pd">
 		update
@@ -110,7 +117,18 @@
 		from 
 		<include refid="tableName"></include>
 	</select>
-	
+
+	<!-- 列表(根据用户ID列出) -->
+	<select id="listByUserId" parameterType="pd" resultType="pd">
+		select
+		<include refid="Field"/>
+		from
+		<include refid="tableName"/>
+		where
+		"USER_ID" = #{USER_ID}
+		order by "GMT_CREATE"
+	</select>
+
 	<!-- 批量删除 -->
 	<delete id="deleteAll" parameterType="String">
 		delete from

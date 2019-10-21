@@ -72,7 +72,18 @@
 		where 
 			"NOTICE_REC_ID" = #{NOTICE_REC_ID}
 	</select>
-	
+
+	<!-- 获取最新一条新闻公告 -->
+	<select id="findByNewTime" parameterType="pd" resultType="pd">
+		select
+		<include refid="Field"/>
+		from
+		<include refid="tableName"/>
+		where
+			ROWNUM &lt;= 1
+			order by "GMT_MODIFIED"
+	</select>
+
 	<!-- 列表 -->
 	<select id="datalistPage" parameterType="page" resultType="pd">
 		select

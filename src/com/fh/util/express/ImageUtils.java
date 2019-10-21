@@ -11,6 +11,7 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.fh.util.Const;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -44,13 +45,13 @@ public class ImageUtils {
 			// 获取文件的扩展名
 			String ext = FilenameUtils.getExtension(pictureFile.getOriginalFilename());
 			// 设置图片上传路径
-			String url = request.getSession().getServletContext().getRealPath("/upload");
+			String url = request.getSession().getServletContext().getRealPath(Const.FILEPATHIMG);
 			// 检验文件夹是否存在
 			isFolderExists(url);
 			// 以绝对路径保存重名命后的图片
 			pictureFile.transferTo(new File(url + "/" + name + "." + ext));
 			// 装配图片地址
-			imgPath = "upload/" + name + "." + ext;
+			imgPath = Const.FILEPATHIMG + name + "." + ext;
 		}
 		return imgPath;
 	}

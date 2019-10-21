@@ -35,7 +35,15 @@ public class Bonus_recService implements Bonus_recManager{
 	public void delete(PageData pd)throws Exception{
 		dao.delete("Bonus_recMapper.delete", pd);
 	}
-	
+
+	/**清空表
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void wipeData(PageData pd)throws Exception{
+		dao.delete("Bonus_recMapper.wipeData", pd);
+	}
+
 	/**修改
 	 * @param pd
 	 * @throws Exception
@@ -52,7 +60,16 @@ public class Bonus_recService implements Bonus_recManager{
 	public List<PageData> list(Page page)throws Exception{
 		return (List<PageData>)dao.findForList("Bonus_recMapper.datalistPage", page);
 	}
-	
+
+	/**根据用户ID列出
+	 * @param pd
+	 * @throws Exception
+	 */
+	@SuppressWarnings("unchecked")
+	public List<PageData> listByUserId(PageData pd)throws Exception{
+		return (List<PageData>)dao.findForList("Bonus_recMapper.listByUserId", pd);
+	}
+
 	/**列表(全部)
 	 * @param pd
 	 * @throws Exception

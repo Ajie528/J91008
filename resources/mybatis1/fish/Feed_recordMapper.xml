@@ -13,8 +13,9 @@
 		"GMT_MODIFIED",	
 		"FEED_NUMBER",	
 		"USER_ID",
-		"IS_OUT",	
+		"IS_OUT",
 		"ROW_NUMBER",
+		"COUNT_OUT",
 		"FEED_RECORD_ID"
 	</sql>
 	
@@ -26,6 +27,7 @@
 			#{USER_ID},
 			#{IS_OUT},	
 			#{ROW_NUMBER},
+			#{COUNT_OUT},
 			#{FEED_RECORD_ID}
 	</sql>
 	
@@ -47,7 +49,13 @@
 		where 
 			"FEED_RECORD_ID" = #{FEED_RECORD_ID}
 	</delete>
-	
+
+	<!-- 清空表 -->
+	<delete id="wipeData" parameterType="pd">
+		delete from
+		<include refid="tableName"/>
+	</delete>
+
 	<!-- 修改 -->
 	<update id="edit" parameterType="pd">
 		update
@@ -56,28 +64,52 @@
 				"GMT_CREATE" = #{GMT_CREATE},	
 				"GMT_MODIFIED" = #{GMT_MODIFIED},	
 				"FEED_NUMBER" = #{FEED_NUMBER},	
-				"用户ID" = #{用户ID},	
+				"USER_ID" = #{USER_ID},
 				"IS_OUT" = #{IS_OUT},	
 				"ROW_NUMBER" = #{ROW_NUMBER},	
 			"FEED_RECORD_ID" = "FEED_RECORD_ID"
 			where 
 				"FEED_RECORD_ID" = #{FEED_RECORD_ID}
 	</update>
-	
+
+	<!-- 修改是否出局 -->
+	<update id="editState" parameterType="pd">
+		update
+		<include refid="tableName"></include>
+		set
+		"IS_OUT" = #{IS_OUT}，
+		"COUNT_OUT" = #{COUNT_OUT}
+		where
+		"FEED_RECORD_ID" = #{FEED_RECORD_ID}
+	</update>
+
 	<!-- 通过ID获取数据 -->
 	<select id="findById" parameterType="pd" resultType="pd">
 		select 
-		<include refid="Field"></include>
+		<include refid="Field"/>
 		from 
 		<include refid="tableName"></include>
 		where 
 			"FEED_RECORD_ID" = #{FEED_RECORD_ID}
 	</select>
 
+	<!-- 获取未出局的最小排号记录 -->
+	<select id="getNotOutMin" parameterType="pd" resultType="pd">
+		select
+			<include refid="Field"/>
+		from
+		<include refid="tableName"/>
+			where "ROW_NUMBER" =
+			(
+			SELECT MIN("ROW_NUMBER") FROM <include refid="tableName"/> WHERE "IS_OUT" = 0
+			)
+	</select>
+
 	<!-- 获取喂养记录累积 -->
 	<select id="getRecCount" parameterType="pd" resultType="pd">
 		select
-			COUNT("FEED_RECORD_ID") AS recCount
+			COUNT("FEED_RECORD_ID") AS REC_COUNT,
+			DECODE(MAX("COUNT_OUT"), null, 0,MAX("COUNT_OUT"))  AS OUT_COUNT
 		from
 			<include refid="tableName"/>
 	</select>
@@ -110,7 +142,7 @@
 	</select>
 
 	<!-- 列表(根据用户ID获取未出局的记录) -->
-	<select id="listByUerId" parameterType="pd" resultType="pd">
+	<select id="listByUserId" parameterType="pd" resultType="pd">
 		select
 		<include refid="Field"></include>
 		from
@@ -119,7 +151,7 @@
 			"USER_ID" = #{USER_ID}
 			and
 			"IS_OUT" = 0
-			order by "FEED_RECORD_ID"
+			order by "ROW_NUMBER"
 	</select>
 
 	<!-- 批量删除 -->

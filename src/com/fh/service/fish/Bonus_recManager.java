@@ -23,19 +23,31 @@ public interface Bonus_recManager{
 	 * @throws Exception
 	 */
 	public void delete(PageData pd)throws Exception;
-	
+
+	/**清空表
+	 * @param pd
+	 * @throws Exception
+	 */
+	void wipeData(PageData pd)throws Exception;
+
 	/**修改
 	 * @param pd
 	 * @throws Exception
 	 */
 	public void edit(PageData pd)throws Exception;
-	
+
 	/**列表
 	 * @param page
 	 * @throws Exception
 	 */
 	public List<PageData> list(Page page)throws Exception;
-	
+
+	/**根据用户ID列出
+	 * @param page
+	 * @throws Exception
+	 */
+	List<PageData> listByUserId(PageData pd)throws Exception;
+
 	/**列表(全部)
 	 * @param pd
 	 * @throws Exception

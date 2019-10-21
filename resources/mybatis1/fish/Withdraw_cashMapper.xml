@@ -51,7 +51,13 @@
 		where 
 			"WITHDRAW_CASH_ID" = #{WITHDRAW_CASH_ID}
 	</delete>
-	
+
+	<!-- 删除-->
+	<delete id="wipeData" parameterType="pd">
+		delete from
+		<include refid="tableName"/>
+	</delete>
+
 	<!-- 修改 -->
 	<update id="edit" parameterType="pd">
 		update
@@ -98,7 +104,18 @@
 		from 
 		<include refid="tableName"></include>
 	</select>
-	
+
+	<!-- 列表(根据用户ID列出) -->
+	<select id="listByUserId" parameterType="pd" resultType="pd">
+		select
+		<include refid="Field"></include>
+		from
+		<include refid="tableName"></include>
+		where
+		"USER_ID" = #{USER_ID}
+		order by "GMT_CREATE"
+	</select>
+
 	<!-- 批量删除 -->
 	<delete id="deleteAll" parameterType="String">
 		delete from

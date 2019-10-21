@@ -35,7 +35,15 @@ public class Withdraw_cashService implements Withdraw_cashManager{
 	public void delete(PageData pd)throws Exception{
 		dao.delete("Withdraw_cashMapper.delete", pd);
 	}
-	
+
+	/**清空表
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void wipeData(PageData pd)throws Exception{
+		dao.delete("Withdraw_cashMapper.wipeData", pd);
+	}
+
 	/**修改
 	 * @param pd
 	 * @throws Exception
@@ -61,7 +69,16 @@ public class Withdraw_cashService implements Withdraw_cashManager{
 	public List<PageData> listAll(PageData pd)throws Exception{
 		return (List<PageData>)dao.findForList("Withdraw_cashMapper.listAll", pd);
 	}
-	
+
+	/**列表(根据用户ID列出)
+	 * @param pd
+	 * @throws Exception
+	 */
+	@SuppressWarnings("unchecked")
+	public List<PageData> listByUserId(PageData pd)throws Exception{
+		return (List<PageData>)dao.findForList("Withdraw_cashMapper.listByUserId", pd);
+	}
+
 	/**通过id获取数据
 	 * @param pd
 	 * @throws Exception
