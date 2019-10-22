@@ -27,10 +27,10 @@
     <!--header -->
     <div class="index_header mui-row">
         <div class="index_header_tab1 mui-col-xs-3">
-            <a href="fish/toCharge">
+            <a href="fish/toCharge.do">
                 <div class="index_header_charge_cash">充值</div>
             </a>
-            <a href="j91008/cash.jsp">
+            <a href="fish/toCash.do">
                 <div class="index_header_charge_cash index_header_cash_mt">提现</div>
             </a>
         </div>

@@ -51,7 +51,15 @@ public class Withdraw_cashService implements Withdraw_cashManager{
 	public void edit(PageData pd)throws Exception{
 		dao.update("Withdraw_cashMapper.edit", pd);
 	}
-	
+
+	/**更改订单状态
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void editState(PageData pd)throws Exception{
+		dao.update("Withdraw_cashMapper.editState", pd);
+	}
+
 	/**列表
 	 * @param page
 	 * @throws Exception

@@ -79,9 +79,9 @@
 									<th class="center">支付凭证</th>
 									<th class="center">充值数量</th>
 									<th class="center">用户ID</th>
-									<th class="center">1 表示微信、2、支付宝、3表示银行卡</th>
-									<th class="center">1 表示删除，0 表示未删除</th>
-									<th class="center">1 表示审核，0 表示未审核</th>
+									<th class="center">1：微信、2：支付宝、3：银行卡</th>
+									<th class="center">1：删除，0：未删除</th>
+									<th class="center">1:审核、0：未审核、2：驳回</th>
 									<th class="center">操作</th>
 								</tr>
 							</thead>
@@ -117,7 +117,7 @@
 													<a class="btn btn-xs btn-success" title="审核" onclick="processed('${var.RECHARGE_CASH_ID}','${var.IS_AUDITING}');">
 														审核
 													</a>
-													<a class="btn btn-xs " title="取消" onclick="edit('${var.RECHARGE_CASH_ID}');">
+													<a class="btn btn-xs " title="取消" onclick="cancel('${var.RECHARGE_CASH_ID}','${var.IS_AUDITING}');">
 														取消
 													</a>
 													</c:if>
@@ -136,12 +136,19 @@
 														<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
 															<c:if test="${QX.edit == 1 }">
 															<li>
-																<a style="cursor:pointer;" onclick="edit('${var.RECHARGE_CASH_ID}');" class="tooltip-success" data-rel="tooltip" title="修改">
+																<a style="cursor:pointer;" onclick="edit('${var.RECHARGE_CASH_ID}');" class="tooltip-success" data-rel="tooltip" title="审核">
 																	<span class="green">
-																		<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+																		审核
 																	</span>
 																</a>
 															</li>
+																<li>
+																	<a style="cursor:pointer;" onclick="cancel('${var.RECHARGE_CASH_ID}','${var.IS_AUDITING}');" class="tooltip-success" data-rel="tooltip" title="取消">
+																	<span class="green">
+																		取消
+																	</span>
+																	</a>
+																</li>
 															</c:if>
 															<c:if test="${QX.del == 1 }">
 															<li>
@@ -229,7 +236,7 @@
 
 		//显示图片
 		function showTU(path,TPID){
-			$("#"+TPID).html('<img width="800" src="'+path+'">');
+			$("#"+TPID).html('<img width="500" src="'+path+'">');
 			$("#"+TPID).show();
 		}
 
@@ -289,8 +296,8 @@
 		function processed(Id,tag){
 			bootbox.confirm("确定通过审核吗?", function(result) {
 				if(result) {
-					if (tag == 1) {
-						alert("已审核，不可重复审核！！");
+					if (tag != 0) {
+						alert("已审核或者已驳回！！");
 						tosearch();
 						return false;
 					}
@@ -312,6 +319,35 @@
 				}
 			});
 		}
+
+		//取消
+		function cancel(Id,tag){
+			bootbox.confirm("确定驳回吗?", function(result) {
+				if(result) {
+					if (tag != 0) {
+						alert("已审核或者已驳回！！");
+						tosearch();
+						return false;
+					}
+					top.jzts();
+					var url = "<%=basePath%>fish/rejectRecharge.do?RECHARGE_CASH_ID="+Id;
+					$.get(url,function(data){
+						if (data == "success") {
+							alert("驳回成功~");
+							tosearch();
+							return false;
+						}
+						if (data == "processed") {
+							alert("已审核或者已驳回！！");
+							tosearch();
+							return false;
+						}
+
+					});
+				}
+			});
+		}
+
 
 		//删除
 		function del(Id){

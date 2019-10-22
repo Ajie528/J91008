@@ -68,12 +68,28 @@ public class J91008_userService implements J91008_userManager{
 		dao.update("J91008_userMapper.edit", pd);
 	}
 
+	/**修改数据
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void editData(PageData pd)throws Exception{
+		dao.update("J91008_userMapper.editData", pd);
+	}
+
 	/**喂养次数+1
 	 * @param pd
 	 * @throws Exception
 	 */
 	public void addFeedCount(PageData pd)throws Exception{
 		dao.update("J91008_userMapper.addFeedCount", pd);
+	}
+
+	/**推荐人团队业绩次数+1
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void addTeamCount(PageData pd)throws Exception{
+		dao.update("J91008_userMapper.addTeamCount", pd);
 	}
 
 	/**增加饲料（钱）
@@ -132,6 +148,15 @@ public class J91008_userService implements J91008_userManager{
 	@SuppressWarnings("unchecked")
 	public List<PageData> listAll(PageData pd)throws Exception{
 		return (List<PageData>)dao.findForList("J91008_userMapper.listAll", pd);
+	}
+
+	/**列表(所有直接推荐下级)
+	 * @param pd
+	 * @throws Exception
+	 */
+	@SuppressWarnings("unchecked")
+	public List<PageData> listByRecommender(PageData pd)throws Exception{
+		return (List<PageData>)dao.findForList("J91008_userMapper.listByRecommender", pd);
 	}
 
 	/**根据推荐路径查找最高N人

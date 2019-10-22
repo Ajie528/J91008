@@ -215,12 +215,17 @@
                 console.log(data)
                 if (data === "success") {
                     mui.toast("等待后台审核！");
-                    location.reload();
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000);
                     return false;
                 }
                 if (data === "login") {
                     mui.toast("请先登录！");
-                    window.location.href = "fish/toLogin";
+                    setTimeout(function () {
+                        window.location.href = "fish/toLogin";
+                    }, 1500);
+
                     return false;
                 }
                 if (data === "tooLittle") {

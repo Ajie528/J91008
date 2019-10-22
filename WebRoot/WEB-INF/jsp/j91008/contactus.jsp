@@ -30,21 +30,22 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 	    	<div class="pwdset-view">
 				<div class="pwdset-tab">
 					<div class="contact-div">
-						<div class="qqimg"></div>
-						<span class="contact-span">14251478592</span>
+						<div class="qqimg"></div><%--QQ--%>
+						<span class="contact-span">${par.QQ_TOUCH}</span>
 					</div>
 				</div>
 				<div class="pwdset-tab">
 					<div class="contact-div">
-						<div class="chartimg"></div>
-						<span class="contact-span">14251478592</span>
+						<div class="chartimg"></div><%--微信--%>
+						<span class="contact-span">${par.WECHAT_TOUCH}</span>
 					</div>
 				</div>				
 			</div>		
 	    </div>  
 	</body>
-    <script type="text/javascript" src="j91008/j91008/js/mui.min.js" ></script>
+    <script type="text/javascript" src="j91008/js/mui.min.js" ></script>
 	<script type="text/javascript">
+
 		mui('body').on('tap', 'a', function() {
             var id = this.getAttribute('href');
             var href = this.href;

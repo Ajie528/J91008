@@ -48,11 +48,24 @@ public interface J91008_userManager{
 	 */
 	public void edit(PageData pd)throws Exception;
 
+	/**修改资料
+	 * @param pd
+	 * @throws Exception
+	 */
+	void editData(PageData pd)throws Exception;
+
+
 	/**喂养次数+1
 	 * @param pd
 	 * @throws Exception
 	 */
 	void addFeedCount(PageData pd)throws Exception;
+
+	/**推荐人团队业绩次数+1
+	 * @param pd
+	 * @throws Exception
+	 */
+	void addTeamCount(PageData pd)throws Exception;
 
 	/**增加饲料（钱）
 	 * @param pd
@@ -96,6 +109,11 @@ public interface J91008_userManager{
 	 */
 	public List<PageData> listAll(PageData pd)throws Exception;
 
+	/**列表(所有直接推荐下级)
+	 * @param pd
+	 * @throws Exception
+	 */
+	List<PageData> listByRecommender(PageData pd)throws Exception;
 
 	/**根据推荐路径查找最高N人
 	 * @param pd

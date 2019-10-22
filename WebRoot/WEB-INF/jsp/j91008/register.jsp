@@ -54,7 +54,7 @@
 
             <div class="reg-row">
                 <i class="iconfont icon-lianjie11 reg-icon"></i>
-                <input type="number" id="extend" value="TJB2K"/>
+                <input type="number" id="extend" value=""/>
                 <span class="promotion-text">推广号</span>
             </div>
             <div class="agreement mui-checkbox mui-left">
@@ -72,6 +72,14 @@
 <script type="text/javascript" src="j91008/js/md5.js"></script>
 <script type="text/javascript" src="j91008/js/jquery-3.4.1.js"></script>
 <script type="text/javascript">
+
+    $(function(){
+        var tag = '${tag}';
+        if (tag != '') {
+            $('#extend').attr({value:tag});
+            $('#extend').attr('readonly','readonly');
+        }
+    });
 
     // 当注册按钮被点击后
     $(".login-btn").click(function register () {

@@ -50,12 +50,14 @@
                             <p class="fund-row">数量：<span class="fund-text">+${pd.NUMBER}</span></p>
                         </c:if>
                         <c:if test="${pd.PAYMENT_TYPE > 0}">
-                            <p class="fund-row">数量：<span class="fund-text">+${pd.PAYMENT_TYPE}</span></p>
+                            <p class="fund-row">数量：<span class="fund-text">+${pd.NUMBER}</span></p>
                         </c:if>
-                        <c:if test="${pd.WITHDRAW_TYPE > 0 }">
-                            <p class="fund-row">数量：<span class="fund-text1">-${pd.WITHDRAW_TYPE}</span></p>
+                        <c:if test="${pd.WITHDRAW_TYPE > 0 and pd.IS_AUDITING < 2 }">
+                            <p class="fund-row">数量：<span class="fund-text1">-${pd.NUMBER}</span></p>
                         </c:if>
-
+                        <c:if test="${pd.WITHDRAW_TYPE > 0 and pd.IS_AUDITING == 2}">
+                            <p class="fund-row">数量：<span class="fund-text">+${pd.NUMBER}</span></p>
+                        </c:if>
                         <c:if test="${pd.STATE == 1}">
                         <p class="fund-row">状态：已完成</p>
                         </c:if>
@@ -81,7 +83,6 @@
 <script type="text/javascript" src="j91008/js/mui.min.js"></script>
 <script type="text/javascript" src="j91008/js/jquery-3.4.1.js"></script>
 <script type="text/javascript">
-
 
     mui('body').on('tap', 'a', function () {
         var id = this.getAttribute('href');

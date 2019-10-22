@@ -30,12 +30,18 @@ public interface Withdraw_cashManager{
 	 */
 	void wipeData(PageData pd)throws Exception;
 
-	/**修改
+	/**修改editState
 	 * @param pd
 	 * @throws Exception
 	 */
 	public void edit(PageData pd)throws Exception;
-	
+
+	/**更改订单状态
+	 * @param pd
+	 * @throws Exception
+	 */
+	void editState(PageData pd)throws Exception;
+
 	/**列表
 	 * @param page
 	 * @throws Exception

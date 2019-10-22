@@ -151,6 +151,16 @@
                                                            value="${varList[0].BANK_NUMBER}" maxlength="32"
                                                            placeholder="这里输入银行收款账号" style="width:98%;"/></td>
                                             </tr>
+                                            <tr>
+                                                <th class='center'>QQ联系：：</th>
+                                                <td><input class="forminput" type="number" name="QQ_TOUCH" id="QQ_TOUCH"
+                                                           value="${varList[0].QQ_TOUCH}" maxlength="32"
+                                                           placeholder="这里输入QQ联系" style="width:98%;"/></td>
+                                                <th class='center'>微信联系：</th>
+                                                <td><input class="forminput" type="number" name="WECHAT_TOUCH" id="WECHAT_TOUCH"
+                                                           value="${varList[0].WECHAT_TOUCH}" maxlength="32"
+                                                           placeholder="这里输入微信联系" style="width:98%;"/></td>
+                                            </tr>
                                         </c:if>
                                         <c:if test="${QX.cha == 0 }">
                                             <tr>

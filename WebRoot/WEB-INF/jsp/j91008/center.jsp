@@ -70,13 +70,13 @@
                 <a href="fish/toBonusRec.do">
                     <div class="center-tab-text"><i class="iconfont icon-zijinmingxi center-icon1"></i>奖金明细</div>
                 </a>
-                <a href="myteam.html">
+                <a href="fish/toMyteam.do">
                     <div class="center-tab-text"><i class="iconfont icon-tuandui4 center-icon1"></i>我的团队</div>
                 </a>
-                <a href="contactus.jsp">
+                <a href="fish/toContactus.do">
                     <div class="center-tab-text"><i class="iconfont icon-xinxi center-icon1"></i>联系我们</div>
                 </a>
-                <a href="#">
+                <a id="exchange" href="javascript:exchange()" >
                     <div class="center-tab-text"><i class="iconfont icon-banshidating center-icon1"></i>交易所</div>
                 </a>
 
@@ -84,19 +84,19 @@
         </div>
         <ul class="mui-table-view center-tab-cell center-bg">
             <li class="mui-table-view-cell center-cell-view">
-                <a href="invitation" class="mui-navigate-right center-cell-text"><i
+                <a href="fish/toInviteFriends.do" class="mui-navigate-right center-cell-text"><i
                         class="iconfont icon-yaoqing center-icon-list"></i>邀请好友</a>
             </li>
             <li class="mui-table-view-cell center-cell-view">
-                <a href="modifydata" class="mui-navigate-right center-cell-text"><i
+                <a href="fish/toMyData.do" class="mui-navigate-right center-cell-text"><i
                         class="iconfont icon-gerenxinxi center-icon-list"></i>个人信息</a>
             </li>
             <li class="mui-table-view-cell center-cell-view">
-                <a href="modifypwd" class="mui-navigate-right center-cell-text"><i
+                <a href="fish/toModifyPasswrod.do" class="mui-navigate-right center-cell-text"><i
                         class="iconfont icon-xiugaimima5 center-icon-list"></i>修改密码</a>
             </li>
             <li class="mui-table-view-cell center-cell-view">
-                <a href="fish/toLogin.to" class="mui-navigate-right center-cell-text"><i
+                <a href="javascript:out()" class="mui-navigate-right center-cell-text"><i
                         class="iconfont icon-tuichu9 center-icon-list"></i>安全退出</a>
             </li>
         </ul>
@@ -129,11 +129,30 @@
 <script type="text/javascript" src="j91008/js/jquery-3.4.1.js"></script>
 <script>
 
+    function out () {
+        var btnArray = ['取消', '确认'];
+        mui.confirm('是否退出登录？', '提示', btnArray, function (e) {
+            // 点击确认的回调
+            if (e.index == 1) {
+                window.location.href="fish/toLogin.to";
+            }
+        });
+    }
+
+    // 交易所
+    function exchange () {
+        mui.toast("开发中~！敬请期待")
+    }
+
     // 充值
-    $(".center-feed-charge-btn").click(function charge() {
+    $(".center-feed-charge-btn").click(function() {
         window.location.href="fish/toCharge.do"
     });
 
+    // 提现
+    $(".center-feed-cash-btn").click(function() {
+        window.location.href="fish/toCash.do"
+    });
 
 
     var slider = mui("#slider");

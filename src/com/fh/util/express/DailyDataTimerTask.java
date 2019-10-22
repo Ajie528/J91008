@@ -34,7 +34,7 @@ public class DailyDataTimerTask extends TimerTask {
 	public void run() {
 		try {
 			// 在这里写你要执行的内容
-			log.info("定时任务执行时间：//"+DateUtil.getTime());
+			out.println("定时任务执行时间：//"+DateUtil.getTime());
 			ServletContext applicati = ContextLoader.getCurrentWebApplicationContext().getServletContext();
 			ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{
 					"classpath:spring/ApplicationContext-dataSource.xml",

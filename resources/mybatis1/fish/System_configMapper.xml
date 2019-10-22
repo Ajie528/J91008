@@ -23,6 +23,8 @@
 		"WECHAT",
 		"ALIPAY",
 		"BANK_NUMBER",
+		"QQ_TOUCH",
+		"WECHAT_TOUCH",
 		"SYSTEM_CONFIG_ID"
 	</sql>
 
@@ -42,6 +44,8 @@
 			#{WECHAT},
 			#{ALIPAY},
 			#{BANK_NUMBER},
+			#{QQ_TOUCH},
+			#{WECHAT_TOUCH},
 			#{SYSTEM_CONFIG_ID}
 	</sql>
 
