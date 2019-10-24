@@ -30,7 +30,7 @@
 						<div class="col-xs-12">
 							
 						<!-- 检索  -->
-						<form action="j91008_user/list.do" method="post" name="Form" id="Form">
+						<form action="user_j91008/list.do" method="post" name="Form" id="Form">
 						<table style="margin-top:5px;">
 							<tr>
 								<td>
@@ -62,16 +62,12 @@
 						<table id="simple-table" class="table table-striped table-bordered table-hover" style="margin-top:5px;">	
 							<thead>
 								<tr>
-									<th class="center" style="width:35px;">
-									<label class="pos-rel"><input type="checkbox" class="ace" id="zcheckbox" /><span class="lbl"></span></label>
-									</th>
+
 									<th class="center" style="width:50px;">序号</th>
 									<th class="center">创建时间</th>
 									<th class="center">创建时间</th>
-									<th class="center">1 表示删除，0 表示未删除</th>
-									<th class="center">1 表示已提现，0 表示未提现。每日0时 重置为0</th>
+									<th class="center">今天提现次数</th>
 									<th class="center">手机号</th>
-									<th class="center">密码</th>
 									<th class="center">今天喂养</th>
 									<th class="center">钱</th>
 									<th class="center">推荐人数</th>
@@ -79,7 +75,7 @@
 									<th class="center">推荐路径</th>
 									<th class="center">爱心币</th>
 									<th class="center">昵称</th>
-									<th class="center">1 表示领养，0 表示未领养</th>
+									<th class="center">1 领养，0 未领养</th>
 									<th class="center">操作</th>
 								</tr>
 							</thead>
@@ -91,16 +87,11 @@
 									<c:if test="${QX.cha == 1 }">
 									<c:forEach items="${varList}" var="var" varStatus="vs">
 										<tr>
-											<td class='center'>
-												<label class="pos-rel"><input type='checkbox' name='ids' value="${var.J91008_USER_ID}" class="ace" /><span class="lbl"></span></label>
-											</td>
 											<td class='center' style="width: 30px;">${vs.index+1}</td>
 											<td class='center'>${var.GMT_CREATE}</td>
 											<td class='center'>${var.GMT_MODIFIED}</td>
-											<td class='center'>${var.IS_DELETED}</td>
 											<td class='center'>${var.IS_WITHDRAW }</td>
 											<td class='center'>${var.PHONE}</td>
-											<td class='center'>${var.PASSWORD}</td>
 											<td class='center'>${var.FEEDING_TODAY}</td>
 											<td class='center'>${var.MONEY}</td>
 											<td class='center'>${var.RECOMMENDED_NUMBER}</td>
@@ -119,11 +110,7 @@
 														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="编辑"></i>
 													</a>
 													</c:if>
-													<c:if test="${QX.del == 1 }">
-													<a class="btn btn-xs btn-danger" onclick="del('${var.J91008_USER_ID}');">
-														<i class="ace-icon fa fa-trash-o bigger-120" title="删除"></i>
-													</a>
-													</c:if>
+
 												</div>
 												<div class="hidden-md hidden-lg">
 													<div class="inline pos-rel">
@@ -141,15 +128,7 @@
 																</a>
 															</li>
 															</c:if>
-															<c:if test="${QX.del == 1 }">
-															<li>
-																<a style="cursor:pointer;" onclick="del('${var.J91008_USER_ID}');" class="tooltip-error" data-rel="tooltip" title="删除">
-																	<span class="red">
-																		<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																	</span>
-																</a>
-															</li>
-															</c:if>
+
 														</ul>
 													</div>
 												</div>
@@ -175,14 +154,6 @@
 						<div class="page-header position-relative">
 						<table style="width:100%;">
 							<tr>
-								<td style="vertical-align:top;">
-									<c:if test="${QX.add == 1 }">
-									<a class="btn btn-mini btn-success" onclick="add();">新增</a>
-									</c:if>
-									<c:if test="${QX.del == 1 }">
-									<a class="btn btn-mini btn-danger" onclick="makeAll('确定要删除选中的数据吗?');" title="批量删除" ><i class='ace-icon fa fa-trash-o bigger-120'></i></a>
-									</c:if>
-								</td>
 								<td style="vertical-align:top;"><div class="pagination" style="float: right;padding-top: 0px;margin-top: 0px;">${page.pageStr}</div></td>
 							</tr>
 						</table>
@@ -280,7 +251,7 @@
 			 var diag = new top.Dialog();
 			 diag.Drag=true;
 			 diag.Title ="新增";
-			 diag.URL = '<%=basePath%>j91008_user/goAdd.do';
+			 diag.URL = '<%=basePath%>user_j91008/goAdd.do';
 			 diag.Width = 450;
 			 diag.Height = 355;
 			 diag.Modal = true;				//有无遮罩窗口
@@ -304,7 +275,7 @@
 			bootbox.confirm("确定要删除吗?", function(result) {
 				if(result) {
 					top.jzts();
-					var url = "<%=basePath%>j91008_user/delete.do?J91008_USER_ID="+Id+"&tm="+new Date().getTime();
+					var url = "<%=basePath%>user_j91008/delete.do?J91008_USER_ID="+Id+"&tm="+new Date().getTime();
 					$.get(url,function(data){
 						tosearch();
 					});
@@ -318,7 +289,7 @@
 			 var diag = new top.Dialog();
 			 diag.Drag=true;
 			 diag.Title ="编辑";
-			 diag.URL = '<%=basePath%>j91008_user/goEdit.do?J91008_USER_ID='+Id;
+			 diag.URL = '<%=basePath%>user_j91008/goEdit.do?J91008_USER_ID='+Id;
 			 diag.Width = 450;
 			 diag.Height = 355;
 			 diag.Modal = true;				//有无遮罩窗口
@@ -362,7 +333,7 @@
 							top.jzts();
 							$.ajax({
 								type: "POST",
-								url: '<%=basePath%>j91008_user/deleteAll.do?tm='+new Date().getTime(),
+								url: '<%=basePath%>user_j91008/deleteAll.do?tm='+new Date().getTime(),
 						    	data: {DATA_IDS:str},
 								dataType:'json',
 								//beforeSend: validateData,

@@ -75,12 +75,11 @@
 									</th>
 									<th class="center" style="width:50px;">序号</th>
 									<th class="center">创建时间</th>
-									<th class="center">更新时间</th>
+									<th class="center">会员账号</th>
 									<th class="center">支付凭证</th>
 									<th class="center">充值数量</th>
 									<th class="center">用户ID</th>
 									<th class="center">1：微信、2：支付宝、3：银行卡</th>
-									<th class="center">1：删除，0：未删除</th>
 									<th class="center">1:审核、0：未审核、2：驳回</th>
 									<th class="center">操作</th>
 								</tr>
@@ -98,7 +97,7 @@
 											</td>
 											<td class='center' style="width: 30px;">${vs.index+1}</td>
 											<td class='center'>${var.GMT_CREATE}</td>
-											<td class='center'>${var.GMT_MODIFIED}</td>
+											<td class='center'>${var.PHONE}</td>
 											<td class='center'>
 												<a style="cursor:pointer;" onmouseover="showTU('${var.VOUCHER}','yulantu${vs.index+1}');" onmouseout="hideTU('yulantu${vs.index+1}');">[预览]</a>
 												<div class="yulantu" id="yulantu${vs.index+1}"></div>
@@ -106,7 +105,6 @@
 											<td class='center'>${var.NUMBER}</td>
 											<td class='center'>${var.USER_ID}</td>
 											<td class='center'>${var.PAYMENT_TYPE}</td>
-											<td class='center'>${var.IS_DELETED}</td>
 											<td class='center'>${var.IS_AUDITING}</td>
 											<td class="center">
 												<c:if test="${QX.edit != 1 && QX.del != 1 }">
@@ -185,6 +183,9 @@
 						<table style="width:100%;">
 							<tr>
 								<td style="vertical-align:top;">
+									<c:if test="${QX.add == 1 }">
+										<a class="btn btn-mini btn-success" onclick="add();">充值</a>
+									</c:if>
 									<c:if test="${QX.del == 1 }">
 									<a class="btn btn-mini btn-danger" onclick="makeAll('确定要删除选中的数据吗?');" title="批量删除" ><i class='ace-icon fa fa-trash-o bigger-120'></i></a>
 									</c:if>
@@ -348,6 +349,30 @@
 			});
 		}
 
+		//充值
+		function add(){
+			top.jzts();
+			var diag = new top.Dialog();
+			diag.Drag=true;
+			diag.Title ="充值";
+			diag.URL = '<%=basePath%>recharge_cash/goAdd.do';
+			diag.Width = 450;
+			diag.Height = 355;
+			diag.Modal = true;				//有无遮罩窗口
+			diag. ShowMaxButton = true;	//最大化按钮
+			diag.ShowMinButton = true;		//最小化按钮
+			diag.CancelEvent = function(){ //关闭事件
+				if(diag.innerFrame.contentWindow.document.getElementById('zhongxin').style.display == 'none'){
+					if('${page.currentPage}' == '0'){
+						tosearch();
+					}else{
+						tosearch();
+					}
+				}
+				diag.close();
+			};
+			diag.show();
+		}
 
 		//删除
 		function del(Id){

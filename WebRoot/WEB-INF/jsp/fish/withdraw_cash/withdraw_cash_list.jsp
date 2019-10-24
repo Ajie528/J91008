@@ -75,12 +75,11 @@
 									</th>
 									<th class="center" style="width:50px;">序号</th>
 									<th class="center">创建时间</th>
-									<th class="center">更新时间</th>
+									<th class="center">会员账号</th>
 									<th class="center">收款账号</th>
 									<th class="center">提现数量</th>
 									<th class="center">用户ID</th>
 									<th class="center">1 ：微信、2：支付宝、3：银行卡</th>
-									<th class="center">1 ：删除，0：未删除</th>
 									<th class="center">1:审核、0：未审核、2：驳回</th>
 									<th class="center">操作</th>
 								</tr>
@@ -98,7 +97,7 @@
 											</td>
 											<td class='center' style="width: 30px;">${vs.index+1}</td>
 											<td class='center'>${var.GMT_CREATE}</td>
-											<td class='center'>${var.GMT_MODIFIED}</td>
+											<td class='center'>${var.PHONE}</td>
 											<c:if test="${var.WITHDRAW_TYPE != 3}" >
 											<td class='center'>
 												<a style="cursor:pointer;" onmouseover="showTU('${var.VOUCHER}','yulantu${vs.index+1}');" onmouseout="hideTU('yulantu${vs.index+1}');">[预览]</a>
@@ -111,7 +110,6 @@
 											<td class='center'>${var.NUMBER}</td>
 											<td class='center'>${var.USER_ID}</td>
 											<td class='center'>${var.WITHDRAW_TYPE}</td>
-											<td class='center'>${var.IS_DELETED}</td>
 											<td class='center'>${var.IS_AUDITING}</td>
 											<td class="center">
 												<c:if test="${QX.edit != 1 && QX.del != 1 }">

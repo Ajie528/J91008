@@ -16,7 +16,8 @@
 		"WITHDRAW_TYPE",	
 		"VOUCHER",	
 		"IS_DELETED",	
-		"IS_AUDITING",	
+		"IS_AUDITING",
+		"PHONE",
 		"WITHDRAW_CASH_ID"
 	</sql>
 	
@@ -29,7 +30,8 @@
 			#{WITHDRAW_TYPE},	
 			#{VOUCHER},	
 			#{IS_DELETED},	
-			#{IS_AUDITING},	
+			#{IS_AUDITING},
+			#{PHONE},
 			#{WITHDRAW_CASH_ID}
 	</sql>
 	

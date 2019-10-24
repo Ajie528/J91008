@@ -68,6 +68,14 @@ public class J91008_userService implements J91008_userManager{
 		dao.update("J91008_userMapper.edit", pd);
 	}
 
+	/**增加提现次数
+	 * @param pd
+	 * @throws Exception
+	 */
+	public void addNumber(PageData pd)throws Exception{
+		dao.update("J91008_userMapper.addNumber", pd);
+	}
+
 	/**修改数据
 	 * @param pd
 	 * @throws Exception
@@ -148,6 +156,15 @@ public class J91008_userService implements J91008_userManager{
 	@SuppressWarnings("unchecked")
 	public List<PageData> listAll(PageData pd)throws Exception{
 		return (List<PageData>)dao.findForList("J91008_userMapper.listAll", pd);
+	}
+
+	/**列表(推荐图)
+	 * @param pd
+	 * @throws Exception
+	 */
+	@SuppressWarnings("unchecked")
+	public List<PageData> recommendationMap(PageData pd)throws Exception{
+		return (List<PageData>)dao.findForList("J91008_userMapper.recommendationMap", pd);
 	}
 
 	/**列表(所有直接推荐下级)

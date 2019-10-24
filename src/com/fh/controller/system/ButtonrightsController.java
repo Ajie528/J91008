@@ -1,14 +1,15 @@
 package com.fh.controller.system;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-
+import com.fh.controller.base.BaseController;
+import com.fh.entity.system.Role;
+import com.fh.service.system.ButtonrightsManager;
+import com.fh.service.system.FHlogManager;
+import com.fh.service.system.FhbuttonManager;
+import com.fh.service.system.RoleManager;
+import com.fh.util.AppUtil;
+import com.fh.util.Jurisdiction;
+import com.fh.util.PageData;
+import com.fh.util.Tools;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
@@ -17,16 +18,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fh.controller.base.BaseController;
-import com.fh.entity.system.Role;
-import com.fh.util.AppUtil;
-import com.fh.util.PageData;
-import com.fh.util.Jurisdiction;
-import com.fh.util.Tools;
-import com.fh.service.system.RoleManager;
-import com.fh.service.system.ButtonrightsManager;
-import com.fh.service.system.FhbuttonManager;
-import com.fh.service.system.FHlogManager;
+import javax.annotation.Resource;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /** 
  * 说明：按钮权限
@@ -73,7 +71,7 @@ public class ButtonrightsController extends BaseController {
 		mv.addObject("roleList_z", roleList_z);
 		mv.addObject("buttonlist", buttonlist);
 		mv.addObject("roleFhbuttonlist", roleFhbuttonlist);
-		mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
+		mv.addObject("QX", Jurisdiction.getHC());	//按钮权限
 		if("2".equals(type)){
 			mv.setViewName("system/buttonrights/buttonrights_list_r");
 		}else{

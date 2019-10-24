@@ -1,13 +1,12 @@
 package com.fh.controller.system;
 
-import java.io.PrintWriter;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-
-import javax.annotation.Resource;
-
+import com.fh.controller.base.BaseController;
+import com.fh.entity.Page;
+import com.fh.service.system.LogInImgManager;
+import com.fh.util.DelAllFile;
+import com.fh.util.Jurisdiction;
+import com.fh.util.PageData;
+import com.fh.util.PathUtil;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
@@ -15,13 +14,12 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fh.controller.base.BaseController;
-import com.fh.entity.Page;
-import com.fh.service.system.LogInImgManager;
-import com.fh.util.DelAllFile;
-import com.fh.util.PageData;
-import com.fh.util.Jurisdiction;
-import com.fh.util.PathUtil;
+import javax.annotation.Resource;
+import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 /** 
  * 说明：登录页面背景图片
@@ -100,7 +98,7 @@ public class LogInImgController extends BaseController {
 		mv.setViewName("system/loginimg/loginimg_list");
 		mv.addObject("varList", varList);
 		mv.addObject("pd", pd);
-		mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
+		mv.addObject("QX", Jurisdiction.getHC());	//按钮权限
 		return mv;
 	}
 	

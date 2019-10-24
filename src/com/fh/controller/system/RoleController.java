@@ -1,15 +1,11 @@
 package com.fh.controller.system;
 
-import java.io.PrintWriter;
-import java.math.BigInteger;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-
+import com.fh.controller.base.BaseController;
+import com.fh.entity.system.Menu;
+import com.fh.entity.system.Role;
+import com.fh.service.system.*;
+import com.fh.util.*;
 import net.sf.json.JSONArray;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,20 +14,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fh.controller.base.BaseController;
-import com.fh.entity.system.Menu;
-import com.fh.entity.system.Role;
-import com.fh.service.system.AppuserManager;
-import com.fh.service.system.MenuManager;
-import com.fh.service.system.RoleManager;
-import com.fh.service.system.UserManager;
-import com.fh.service.system.FHlogManager;
-import com.fh.util.AppUtil;
-import com.fh.util.Jurisdiction;
-import com.fh.util.PageData;
-import com.fh.util.RightsHelper;
-import com.fh.util.Tools;
-/** 
+import javax.annotation.Resource;
+import java.io.PrintWriter;
+import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
  * 类名称：RoleController 角色权限管理
  * 创建人：FH Q313596790
  * 修改时间：2018年7月6日
@@ -75,7 +65,7 @@ public class RoleController extends BaseController {
 			mv.addObject("pd", pd);
 			mv.addObject("roleList", roleList);
 			mv.addObject("roleList_z", roleList_z);
-			mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
+			mv.addObject("QX", Jurisdiction.getHC());	//按钮权限
 			mv.setViewName("system/role/role_list");
 		} catch(Exception e){
 			logger.error(e.toString(), e);
@@ -106,7 +96,7 @@ public class RoleController extends BaseController {
 	 * @return
 	 * @throws Exception
 	 */
-	@RequestMapping(value="/add",method=RequestMethod.POST)
+	@RequestMapping(value="/add",method= RequestMethod.POST)
 	public ModelAndView add()throws Exception{
 		if(!Jurisdiction.buttonJurisdiction(menuUrl, "add")){return null;} //校验权限
 		logBefore(logger, Jurisdiction.getUsername()+"新增角色");
@@ -143,7 +133,7 @@ public class RoleController extends BaseController {
 	 * @throws Exception
 	 */
 	@RequestMapping(value="/toEdit")
-	public ModelAndView toEdit( String ROLE_ID )throws Exception{
+	public ModelAndView toEdit(String ROLE_ID )throws Exception{
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		try{
@@ -224,7 +214,7 @@ public class RoleController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value="/menuqx")
-	public ModelAndView listAllMenu(Model model,String ROLE_ID)throws Exception{
+	public ModelAndView listAllMenu(Model model, String ROLE_ID)throws Exception{
 		ModelAndView mv = this.getModelAndView();
 		try{
 			Role role = roleService.getRoleById(ROLE_ID);			//根据角色ID获取角色对象
@@ -250,7 +240,7 @@ public class RoleController extends BaseController {
 	 * @throws Exception
 	 */
 	@RequestMapping(value="/saveMenuqx")
-	public void saveMenuqx(@RequestParam String ROLE_ID,@RequestParam String menuIds,PrintWriter out)throws Exception{
+	public void saveMenuqx(@RequestParam String ROLE_ID, @RequestParam String menuIds, PrintWriter out)throws Exception{
 		if(!Jurisdiction.buttonJurisdiction(menuUrl, "edit")){} //校验权限
 		logBefore(logger, Jurisdiction.getUsername()+"修改菜单权限");
 		FHLOG.save(Jurisdiction.getUsername(), "修改角色菜单权限，角色ID为:"+ROLE_ID);
@@ -288,7 +278,7 @@ public class RoleController extends BaseController {
 	 * @throws Exception
 	 */
 	@RequestMapping(value="/b4Button")
-	public ModelAndView b4Button(@RequestParam String ROLE_ID,@RequestParam String msg,Model model)throws Exception{
+	public ModelAndView b4Button(@RequestParam String ROLE_ID, @RequestParam String msg, Model model)throws Exception{
 		ModelAndView mv = this.getModelAndView();
 		try{
 			List<Menu> menuList = menuService.listAllMenuQx("0"); //获取所有菜单
@@ -322,7 +312,7 @@ public class RoleController extends BaseController {
 	 * @param roleRights：加密的权限字符串
 	 * @return
 	 */
-	public List<Menu> readMenu(List<Menu> menuList,String roleRights){
+	public List<Menu> readMenu(List<Menu> menuList, String roleRights){
 		for(int i=0;i<menuList.size();i++){
 			menuList.get(i).setHasMenu(RightsHelper.testRights(roleRights, menuList.get(i).getMENU_ID()));
 			this.readMenu(menuList.get(i).getSubMenu(), roleRights);					//是：继续排查其子菜单
@@ -341,7 +331,7 @@ public class RoleController extends BaseController {
 	 * @throws Exception
 	 */
 	@RequestMapping(value="/saveB4Button")
-	public void saveB4Button(@RequestParam String ROLE_ID,@RequestParam String menuIds,@RequestParam String msg,PrintWriter out)throws Exception{
+	public void saveB4Button(@RequestParam String ROLE_ID, @RequestParam String menuIds, @RequestParam String msg, PrintWriter out)throws Exception{
 		if(!Jurisdiction.buttonJurisdiction(menuUrl, "edit")){} //校验权限
 		logBefore(logger, Jurisdiction.getUsername()+"修改"+msg+"权限");
 		FHLOG.save(Jurisdiction.getUsername(), "修改"+msg+"权限，角色ID为:"+ROLE_ID);

@@ -52,6 +52,8 @@
 				/fish/**					= anon
 				/rotation_chart/**			= anon
 				/j91008/**					= anon
+				/J91008/**					= anon
+				/login_toLogin				= anon
 				/**							= authc
 				</value>
 			</property>

@@ -32,8 +32,12 @@
 						<div id="zhongxin" style="padding-top: 13px;">
 						<table id="table_report" class="table table-striped table-bordered table-hover">
 							<tr>
-								<td style="width:75px;text-align: right;padding-top: 13px;">1 表示审核，0 表示未审核:</td>
-								<td><input type="number" name="IS_AUDITING" id="IS_AUDITING" value="${pd.IS_AUDITING}" maxlength="32" placeholder="这里输入1 表示审核，0 表示未审核" title="1 表示审核，0 表示未审核" style="width:98%;"/></td>
+								<td style="width:75px;text-align: right;padding-top: 13px;">会员账号:</td>
+								<td><input type="number" name="PHONE" id="PHONE" value="${pd.PHONE}" oninput="if(value.length>11) value=value.slice(0,11)" placeholder="这里输入会员账号" title="会员账号" style="width:98%;"/></td>
+							</tr>
+							<tr>
+								<td style="width:75px;text-align: right;padding-top: 13px;">数额:</td>
+								<td><input type="number" name="NUMBER" id="NUMBER" value="${pd.NUMBER}" oninput="if(value.length>18) value=value.slice(0,18)" placeholder="这里输入数额" title="数额" style="width:98%;"/></td>
 							</tr>
 							<tr>
 								<td style="text-align: center;" colspan="10">
@@ -70,19 +74,50 @@
 		$(top.hangge());
 		//保存
 		function save(){
-			if($("#IS_AUDITING").val()==""){
-				$("#IS_AUDITING").tips({
+			var phone = $("#PHONE").val();
+			if($("#PHONE").val()==""){
+				$("#PHONE").tips({
 					side:3,
-		            msg:'请输入1 表示审核，0 表示未审核',
+		            msg:'请输入会员账号',
 		            bg:'#AE81FF',
 		            time:2
 		        });
-				$("#IS_AUDITING").focus();
+				$("#PHONE").focus();
 			return false;
 			}
+			$.post("recharge_cash/is_phone",{PHONE:phone},function(data) {
+				if (data == "error") {
+					$("#PHONE").tips({
+						side:3,
+						msg:'会员账号不存在',
+						bg:'#AE81FF',
+						time:2
+					});
+					$("#PHONE").focus();
+					return false;
+				}
+			});
+			if($("#NUMBER").val()==""){
+				$("#NUMBER").tips({
+					side:3,
+					msg:'请输入数额',
+					bg:'#AE81FF',
+					time:2
+				});
+				$("#NUMBER").focus();
+				return false;
+			}
+
+
+
+
 			$("#Form").submit();
 			$("#zhongxin").hide();
 			$("#zhongxin2").show();
+		}
+
+		function is_phone (phone) {
+
 		}
 		
 		$(function() {

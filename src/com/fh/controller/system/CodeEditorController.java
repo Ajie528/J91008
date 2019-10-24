@@ -1,19 +1,5 @@
 package com.fh.controller.system;
 
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-
 import com.fh.controller.base.BaseController;
 import com.fh.entity.Page;
 import com.fh.service.system.CodeEditorManager;
@@ -21,6 +7,14 @@ import com.fh.util.AppUtil;
 import com.fh.util.Jurisdiction;
 import com.fh.util.PageData;
 import com.fh.util.Tools;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.annotation.Resource;
+import java.io.PrintWriter;
+import java.util.*;
 
 /** 
  * 说明：代码编辑器
@@ -166,7 +160,7 @@ public class CodeEditorController extends BaseController {
 		mv.setViewName("system/codeeditor/codeeditor_list");
 		mv.addObject("varList", varList);
 		mv.addObject("pd", pd);
-		mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
+		mv.addObject("QX", Jurisdiction.getHC());	//按钮权限
 		return mv;
 	}
 	
@@ -234,7 +228,7 @@ public class CodeEditorController extends BaseController {
 	@ResponseBody
 	public Object deleteAll() throws Exception{
 		logBefore(logger, Jurisdiction.getUsername()+"批量删除CodeEditor");
-		PageData pd = new PageData();		
+		PageData pd = new PageData();
 		Map<String,Object> map = new HashMap<String,Object>();
 		pd = this.getPageData();
 		List<PageData> pdList = new ArrayList<PageData>();

@@ -25,7 +25,10 @@
 		"BANK_NUMBER",
 		"QQ_TOUCH",
 		"WECHAT_TOUCH",
-		"SYSTEM_CONFIG_ID"
+		"BANK_NUMBER",
+		"N_OUT_ONE",
+		"PROFIT_ONE",
+		"TWO_N_PROFIT"
 	</sql>
 
     <!-- 字段值 -->
@@ -46,7 +49,10 @@
 			#{BANK_NUMBER},
 			#{QQ_TOUCH},
 			#{WECHAT_TOUCH},
-			#{SYSTEM_CONFIG_ID}
+			#{BANK_NUMBER},
+			#{N_OUT_ONE},
+			#{PROFIT_ONE},
+			#{TWO_N_PROFIT}
 	</sql>
 
     <!-- 新增-->

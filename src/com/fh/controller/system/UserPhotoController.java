@@ -1,22 +1,15 @@
 package com.fh.controller.system;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.annotation.Resource;
-
+import com.fh.controller.base.BaseController;
+import com.fh.service.system.UserPhotoManager;
+import com.fh.util.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.fh.controller.base.BaseController;
-import com.fh.service.system.UserPhotoManager;
-import com.fh.util.AppUtil;
-import com.fh.util.DelAllFile;
-import com.fh.util.PageData;
-import com.fh.util.Jurisdiction;
-import com.fh.util.PathUtil;
-import com.fh.util.Tools;
+import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 /** 
  * 说明：用户头像

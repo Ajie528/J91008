@@ -134,7 +134,9 @@
         mui.confirm('是否退出登录？', '提示', btnArray, function (e) {
             // 点击确认的回调
             if (e.index == 1) {
-                window.location.href="fish/toLogin.to";
+                $.get("fish/out_login.to", function (data) {
+                    window.location.href="fish/toLogin.to";
+                });
             }
         });
     }

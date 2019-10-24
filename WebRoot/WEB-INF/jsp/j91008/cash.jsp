@@ -67,7 +67,7 @@
         </div>
         <div class="charge-row mui-row">
             <div class="mui-col-xs-4"><label>提现现金：</label></div>
-            <div class="mui-col-xs-8"><input type="number" placeholder="请输入提现金额" oninput="synchro(this.value)"
+            <div class="mui-col-xs-8"><input type="number" id="cash" placeholder="请输入提现金额" oninput="synchro(this.value)"
                                              class="cash-input"/></div>
         </div>
         <div class="charge-row mui-row">
@@ -131,11 +131,15 @@
 
     // 提现倍数
     var multiple = ${par.CASH_MULTIPLIER};
+    // 提现手续费
+    var charge = ${par.PAYMENT_FEE}
+
     // 饲料
     var sum = ${user.MONEY};
 
-    // 提现多少钱就显示到账多少钱
+    // 提现多少钱就显示扣除手续费到账多少钱
     function synchro(num) {
+        num -= charge*num
         $("#show").attr({value: num});
     }
 
@@ -155,7 +159,7 @@
     // 提现
     $(".charge-btn").click(function recharge() {
         // 获取提现多少钱
-        var money = $("#show").val();
+        var money = $("#cash").val();
         // 获取支付方式
         var type = $("#showUserPicker").text();
         // 验证是否为空
@@ -173,6 +177,7 @@
             mui.toast('请输入' +multiple+' 的倍数');
             return false;
         }
+        console.log(money);
         // 验证是否为空
         if (type === "请选择提现方式") {
             mui.toast('请选择提现方式！');
@@ -191,6 +196,7 @@
             return false;
         }
         // 把数据添加到数组中
+        var cost = $("#show").val();
         var array = [];
         array.push(money);
         array.push(i);
@@ -198,6 +204,7 @@
         array.push('${user.J91008_USER_ID}');
         array.push(bankNumber);
         array.push(multiple);
+        array.push(cost);
         serverCheck(array)
     });
 
@@ -224,6 +231,10 @@
                     setTimeout(function () {
                         window.location.href = "fish/toLogin";
                     }, 1500);
+                    return false;
+                }
+                if (data === "MaxSum") {
+                    mui.toast('提现已达今天封顶次数！');
                     return false;
                 }
                 if (data === "tooLittle") {
@@ -262,7 +273,7 @@
             $(obj).val('');
             return false;
         }
-        var url = "rotation_chart/addPic.do";
+        var url = "fish/addPic.do";
         //异步提交表单(先确保jquery.form.js已经引入了)
         console.log(url)
         var options = {
@@ -289,16 +300,32 @@
 
     });
 
-    mui('body').on('tap', 'a', function () {
-        var id = this.getAttribute('href');
-        var href = this.href;
-        mui.openWindow({
-            id: id,
-            url: this.href,
-            show: {
-                autoShow: true
+    mui('body').on('tap', 'a', function() {
+        var href = this.getAttribute('href');
+        if(href != null) {
+            //非plus环境，直接走href跳转
+            if(!mui.os.plus) {
+                location.href = href;
+                return;
             }
-        });
+            if(href) {
+                //打开窗口的相关参数
+                var options = {
+                    styles: {
+                        popGesture: "close"
+                    },
+                    setFun: "refreshlocation",
+                    show: {
+                        duration: "100", //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+                    },
+                    waiting: {
+                        autoShow: true, //自动显示等待框，默认为true
+                    },
+                };
+                //打开新窗口
+                mui.openWindow(href, id, options);
+            }
+        }
     });
 
     (function ($, doc) {

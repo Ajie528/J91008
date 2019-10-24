@@ -1,8 +1,7 @@
 package com.fh.controller.system;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import com.fh.controller.base.BaseController;
+import com.fh.util.Jurisdiction;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
@@ -10,8 +9,9 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fh.controller.base.BaseController;
-import com.fh.util.Jurisdiction;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /** 
  * 类名称：在线管理列表
@@ -33,7 +33,7 @@ public class OnlineManagerController extends BaseController {
 		if(!Jurisdiction.buttonJurisdiction(menuUrl, "cha")){return null;} //校验权限
 		ModelAndView mv = this.getModelAndView();
 		mv.setViewName("system/onlinemanager/onlinemanager_list");
-		mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
+		mv.addObject("QX", Jurisdiction.getHC());	//按钮权限
 		return mv;
 	}
 	

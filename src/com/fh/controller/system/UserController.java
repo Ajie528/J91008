@@ -1,17 +1,13 @@
 package com.fh.controller.system;
 
-import java.io.PrintWriter;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletResponse;
-
+import com.fh.controller.base.BaseController;
+import com.fh.entity.Page;
+import com.fh.entity.system.Role;
+import com.fh.service.system.FHlogManager;
+import com.fh.service.system.MenuManager;
+import com.fh.service.system.RoleManager;
+import com.fh.service.system.UserManager;
+import com.fh.util.*;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -23,24 +19,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fh.controller.base.BaseController;
-import com.fh.entity.Page;
-import com.fh.entity.system.Role;
-import com.fh.service.system.MenuManager;
-import com.fh.service.system.RoleManager;
-import com.fh.service.system.UserManager;
-import com.fh.service.system.FHlogManager;
-import com.fh.util.AppUtil;
-import com.fh.util.Const;
-import com.fh.util.FileDownload;
-import com.fh.util.FileUpload;
-import com.fh.util.GetPinyin;
-import com.fh.util.Jurisdiction;
-import com.fh.util.ObjectExcelRead;
-import com.fh.util.PageData;
-import com.fh.util.ObjectExcelView;
-import com.fh.util.PathUtil;
-import com.fh.util.Tools;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /** 
  * 类名称：UserController
@@ -92,7 +76,7 @@ public class UserController extends BaseController {
 		mv.addObject("userList", userList);
 		mv.addObject("roleList", roleList);
 		mv.addObject("pd", pd);
-		mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
+		mv.addObject("QX", Jurisdiction.getHC());	//按钮权限
 		return mv;
 	}
 	
@@ -256,6 +240,7 @@ public class UserController extends BaseController {
 		}else{
 			froleList = roleList;
 		}
+
 		mv.setViewName("system/user/user_edit");
 		mv.addObject("msg", "editU");
 		mv.addObject("pd", pd);
@@ -494,7 +479,7 @@ public class UserController extends BaseController {
 		if (null != file && !file.isEmpty()) {
 			String filePath = PathUtil.getClasspath() + Const.FILEPATHFILE;								//文件上传路径
 			String fileName =  FileUpload.fileUp(file, filePath, "userexcel");							//执行上传
-			List<PageData> listPd = (List)ObjectExcelRead.readExcel(filePath, fileName, 2, 0, 0);		//执行读EXCEL操作,读出的数据导入List 2:从第3行开始；0:从第A列开始；0:第0个sheet
+			List<PageData> listPd = (List) ObjectExcelRead.readExcel(filePath, fileName, 2, 0, 0);		//执行读EXCEL操作,读出的数据导入List 2:从第3行开始；0:从第A列开始；0:第0个sheet
 			/*存入数据库操作======================================*/
 			pd.put("RIGHTS", "");					//权限
 			pd.put("LAST_LOGIN", "");				//最后登录时间
@@ -519,7 +504,7 @@ public class UserController extends BaseController {
 				String USERNAME = GetPinyin.getPingYin(listPd.get(i).getString("var1"));	//根据姓名汉字生成全拼
 				pd.put("USERNAME", USERNAME);	
 				if(userService.findByUsername(pd) != null){									//判断用户名是否重复
-					USERNAME = GetPinyin.getPingYin(listPd.get(i).getString("var1"))+Tools.getRandomNum();
+					USERNAME = GetPinyin.getPingYin(listPd.get(i).getString("var1"))+ Tools.getRandomNum();
 					pd.put("USERNAME", USERNAME);
 				}
 				pd.put("BZ", listPd.get(i).getString("var4"));								//备注

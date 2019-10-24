@@ -31,7 +31,7 @@ import com.fh.service.fish.J91008_userManager;
  * 创建时间：2019-10-14
  */
 @Controller
-@RequestMapping(value="/j91008_user")
+@RequestMapping(value="/user_j91008")
 public class J91008_userController extends BaseController {
 	
 	String menuUrl = "j91008_user/list.do"; //菜单地址(权限用)
@@ -91,6 +91,11 @@ public class J91008_userController extends BaseController {
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();
+		String pwd = pd.getString("PASSWORD");
+		pwd = Tools.encrypt(pwd);
+		// 密码加密
+		pd.put("PASSWORD",pwd);
+
 		j91008_userService.edit(pd);
 		mv.addObject("msg","success");
 		mv.setViewName("save_result");
@@ -120,7 +125,7 @@ public class J91008_userController extends BaseController {
 		mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
 		return mv;
 	}
-	
+
 	/**去新增页面
 	 * @param
 	 * @throws Exception

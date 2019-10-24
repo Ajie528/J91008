@@ -1,31 +1,23 @@
 package com.fh.controller.system;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-
+import com.fh.controller.base.BaseController;
+import com.fh.service.system.AppuserManager;
+import com.fh.service.system.FhsmsManager;
+import com.fh.service.system.UserManager;
+import com.fh.service.system.UserPhotoManager;
+import com.fh.util.*;
+import com.fh.util.mail.SimpleMailSender;
 import org.apache.shiro.session.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fh.controller.base.BaseController;
-import com.fh.service.system.AppuserManager;
-import com.fh.service.system.FhsmsManager;
-import com.fh.service.system.UserManager;
-import com.fh.service.system.UserPhotoManager;
-import com.fh.util.AppUtil;
-import com.fh.util.Const;
-import com.fh.util.Jurisdiction;
-import com.fh.util.PageData;
-import com.fh.util.SmsUtil;
-import com.fh.util.Tools;
-import com.fh.util.Watermark;
-import com.fh.util.mail.SimpleMailSender;
+import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /** 
  * 类名称：HeadController
@@ -38,7 +30,7 @@ import com.fh.util.mail.SimpleMailSender;
 public class HeadController extends BaseController {
 	
 	@Resource(name="userService")
-	private UserManager userService;	
+	private UserManager userService;
 	@Resource(name="appuserService")
 	private AppuserManager appuserService;
 	@Resource(name="fhsmsService")

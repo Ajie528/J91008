@@ -1,13 +1,12 @@
 package com.fh.controller.system;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-
+import com.fh.controller.base.BaseController;
+import com.fh.entity.system.Menu;
+import com.fh.entity.system.Role;
+import com.fh.entity.system.User;
+import com.fh.service.fhoa.DatajurManager;
+import com.fh.service.system.*;
+import com.fh.util.*;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -20,34 +19,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fh.controller.base.BaseController;
-import com.fh.service.fhoa.DatajurManager;
-import com.fh.service.system.AppuserManager;
-import com.fh.service.system.LogInImgManager;
-import com.fh.service.system.MenuManager;
-import com.fh.service.system.RoleManager;
-import com.fh.service.system.UserManager;
-import com.fh.service.system.ButtonrightsManager;
-import com.fh.service.system.FhbuttonManager;
-import com.fh.service.system.FHlogManager;
-import com.fh.entity.system.Menu;
-import com.fh.entity.system.Role;
-import com.fh.entity.system.User;
-import com.fh.util.AppUtil;
-import com.fh.util.Const;
-import com.fh.util.DateUtil;
-import com.fh.util.Jurisdiction;
-import com.fh.util.PageData;
-import com.fh.util.RightsHelper;
-import com.fh.util.Tools;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * 总入口
  * @author fh QQ 3 1 3 5 9 6 7 9 0[青苔]
  * 修改日期：2018/8/2
- */
-/**
- * @author Administrator
- *
  */
 @Controller
 public class LoginController extends BaseController {
@@ -97,7 +79,7 @@ public class LoginController extends BaseController {
 		PageData pd = new PageData();
 		pd = this.getPageData();
 		String errInfo = "";
-		String[] KEYDATA = pd.getString("KEYDATA").replaceAll("qq313596790fh", "").replaceAll("QQ978336446fh", "").split(",fh,");
+		String KEYDATA[] = pd.getString("KEYDATA").replaceAll("qq313596790fh", "").replaceAll("QQ978336446fh", "").split(",fh,");
 		if(null != KEYDATA && KEYDATA.length == 2){
 			Session session = Jurisdiction.getSession();
 			String sessionCode = (String)session.getAttribute(Const.SESSION_SECURITY_CODE);		//获取session中的验证码
@@ -114,7 +96,7 @@ public class LoginController extends BaseController {
 					pd = userService.getUserByNameAndPwd(pd);	//根据用户名和密码去读取用户信息
 					if(pd != null){
 						this.removeSession(USERNAME);//请缓存
-						pd.put("LAST_LOGIN",DateUtil.getTime().toString());
+						pd.put("LAST_LOGIN", DateUtil.getTime().toString());
 						userService.updateLastLogin(pd);
 						User user = new User();
 						user.setUSER_ID(pd.getString("USER_ID"));
@@ -129,11 +111,11 @@ public class LoginController extends BaseController {
 						session.setAttribute(Const.SESSION_USER, user);			//把用户信息放session中
 						session.removeAttribute(Const.SESSION_SECURITY_CODE);	//清除登录验证码的session
 						//shiro加入身份验证
-						Subject subject = SecurityUtils.getSubject(); 
-					    UsernamePasswordToken token = new UsernamePasswordToken(USERNAME, PASSWORD); 
+						Subject subject = SecurityUtils.getSubject();
+					    UsernamePasswordToken token = new UsernamePasswordToken(USERNAME, PASSWORD);
 					    try { 
 					        subject.login(token); 
-					    } catch (AuthenticationException e) { 
+					    } catch (AuthenticationException e) {
 					    	errInfo = "身份验证失败！";
 					    }
 					}else{
@@ -156,7 +138,8 @@ public class LoginController extends BaseController {
 		map.put("result", errInfo);
 		return AppUtil.returnObject(new PageData(), map);
 	}
-	
+
+
 	/**访问系统首页
 	 * @param changeMenu：切换菜单参数
 	 * @return
@@ -173,7 +156,7 @@ public class LoginController extends BaseController {
 				User userr = (User)session.getAttribute(Const.SESSION_USERROL);				//读取session中的用户信息(含角色信息)
 				if(null == userr){
 					user = userService.getUserAndRoleById(user.getUSER_ID());				//通过用户ID读取用户信息和角色信息
-					session.setAttribute(Const.SESSION_USERROL, user);						//存入session	
+					session.setAttribute(Const.SESSION_USERROL, user);						//存入session
 				}else{
 					user = userr;
 				}
@@ -218,7 +201,7 @@ public class LoginController extends BaseController {
 	public List<String> getArrayRoleRights(String ROLE_IDS) throws Exception{
 		if(Tools.notEmpty(ROLE_IDS)){
 			List<String> list = new ArrayList<String>();
-			String[] arryROLE_ID = ROLE_IDS.split(",fh,");
+			String arryROLE_ID[] = ROLE_IDS.split(",fh,");
 			for(int i=0;i<arryROLE_ID.length;i++){
 				PageData pd = new PageData();
 				pd.put("ROLE_ID", arryROLE_ID[i]);
@@ -246,7 +229,7 @@ public class LoginController extends BaseController {
 	@SuppressWarnings("unchecked")
 	public List<Menu> getAttributeMenu(Session session, String USERNAME, String roleRights, List<String> arrayRoleRights) throws Exception{
 		List<Menu> allmenuList = new ArrayList<Menu>();
-		if(null == session.getAttribute(USERNAME + Const.SESSION_allmenuList)){	
+		if(null == session.getAttribute(USERNAME + Const.SESSION_allmenuList)){
 			allmenuList = menuService.listAllMenuQx("0");							//获取所有菜单
 			if(Tools.notEmpty(roleRights)){
 				allmenuList = this.readMenu(allmenuList, roleRights, arrayRoleRights);				//根据角色权限获取本权限的菜单列表
@@ -263,7 +246,7 @@ public class LoginController extends BaseController {
 	 * @param roleRights：加密的权限字符串
 	 * @return
 	 */
-	public List<Menu> readMenu(List<Menu> menuList,String roleRights, List<String> arrayRoleRights){
+	public List<Menu> readMenu(List<Menu> menuList, String roleRights, List<String> arrayRoleRights){
 		for(int i=0;i<menuList.size();i++){
 			Boolean b1 = RightsHelper.testRights(roleRights, menuList.get(i).getMENU_ID());
 			menuList.get(i).setHasMenu(b1); //赋予主职角色菜单权限
@@ -395,7 +378,7 @@ public class LoginController extends BaseController {
 		PageData pd = new PageData();
 		this.removeSession(USERNAME);//请缓存
 		//shiro销毁登录
-		Subject subject = SecurityUtils.getSubject(); 
+		Subject subject = SecurityUtils.getSubject();
 		subject.logout();
 		pd = this.getPageData();
 		pd.put("msg", pd.getString("msg"));
@@ -433,7 +416,7 @@ public class LoginController extends BaseController {
 		pd.put("SYSNAME", Tools.readTxtFile(Const.SYSNAME)); 		//读取系统名称
 		String strLOGINEDIT = Tools.readTxtFile(Const.LOGINEDIT);	//读取登录页面配置
 		if(null != strLOGINEDIT && !"".equals(strLOGINEDIT)){
-			String[] strLo = strLOGINEDIT.split(",fh,");
+			String strLo[] = strLOGINEDIT.split(",fh,");
 			if(strLo.length == 2){
 				pd.put("isZhuce", strLo[0]);
 				pd.put("isMusic", strLo[1]);
@@ -474,7 +457,7 @@ public class LoginController extends BaseController {
 			}else{
 				if(Tools.notEmpty(ROLE_IDS)){//(主副职角色综合按钮权限)
 					ROLE_IDS = ROLE_IDS + ROLE_ID;
-					String[] arryROLE_ID = ROLE_IDS.split(",fh,");
+					String arryROLE_ID[] = ROLE_IDS.split(",fh,");
 					buttonQXnamelist = buttonrightsService.listAllBrAndQxnameByZF(arryROLE_ID);
 				}else{	//(主职角色按钮权限)
 					buttonQXnamelist = buttonrightsService.listAllBrAndQxname(pd);	//此角色拥有的按钮权限标识列表
@@ -502,7 +485,7 @@ public class LoginController extends BaseController {
 			userpd = userService.findByUsername(pd);	//通过用户名获取用户信息
 			String ROLE_IDS = userpd.getString("ROLE_IDS");
 			if(Tools.notEmpty(ROLE_IDS)){
-				String[] arryROLE_ID = ROLE_IDS.split(",fh,");
+				String arryROLE_ID[] = ROLE_IDS.split(",fh,");
 				PageData rolePd = new PageData();
 				List<String> addsList = new ArrayList<String>();
 				List<String> delsList = new ArrayList<String>();

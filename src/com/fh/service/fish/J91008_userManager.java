@@ -48,6 +48,12 @@ public interface J91008_userManager{
 	 */
 	public void edit(PageData pd)throws Exception;
 
+	/**增加提现次数
+	 * @param pd
+	 * @throws Exception
+	 */
+	void addNumber(PageData pd)throws Exception;
+
 	/**修改资料
 	 * @param pd
 	 * @throws Exception
@@ -108,6 +114,12 @@ public interface J91008_userManager{
 	 * @throws Exception
 	 */
 	public List<PageData> listAll(PageData pd)throws Exception;
+
+	/**列表(推荐图)
+	 * @param pd
+	 * @throws Exception
+	 */
+	List<PageData> recommendationMap(PageData pd)throws Exception;
 
 	/**列表(所有直接推荐下级)
 	 * @param pd

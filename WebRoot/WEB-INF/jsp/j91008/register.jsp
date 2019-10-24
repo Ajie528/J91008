@@ -40,7 +40,7 @@
                     <!--<span>+86中国</span>-->
                 </div>
                 <div class="reg-phone1">
-                    <input type="number" id="phone" placeholder="请输入手机号"/>
+                    <input type="number" id="phone" oninput="if(value.length>11) value=value.slice(0,11)" placeholder="请输入手机号"/>
                 </div>
             </div>
             <div class="reg-row">
@@ -55,7 +55,7 @@
             <div class="reg-row">
                 <i class="iconfont icon-lianjie11 reg-icon"></i>
                 <input type="number" id="extend" value=""/>
-                <span class="promotion-text">推广号</span>
+                <span class="promotion-text" oninput="if(value.length>11) value=value.slice(0,11)" >推广号</span>
             </div>
             <div class="agreement mui-checkbox mui-left">
                 <input type="checkbox"/> <span>已阅读并同意<a href="javascript:void(0);">《用户协议》</a></span>
@@ -183,16 +183,32 @@
         return hex_md5(param);
     }
 
-    mui('body').on('tap', 'a', function () {
-        var id = this.getAttribute('href');
-        var href = this.href;
-        mui.openWindow({
-            id: id,
-            url: this.href,
-            show: {
-                autoShow: true
+    mui('body').on('tap', 'a', function() {
+        var href = this.getAttribute('href');
+        if(href != null) {
+            //非plus环境，直接走href跳转
+            if(!mui.os.plus) {
+                location.href = href;
+                return;
             }
-        });
+            if(href) {
+                //打开窗口的相关参数
+                var options = {
+                    styles: {
+                        popGesture: "close"
+                    },
+                    setFun: "refreshlocation",
+                    show: {
+                        duration: "100", //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+                    },
+                    waiting: {
+                        autoShow: true, //自动显示等待框，默认为true
+                    },
+                };
+                //打开新窗口
+                mui.openWindow(href, id, options);
+            }
+        }
     });
 
 </script>

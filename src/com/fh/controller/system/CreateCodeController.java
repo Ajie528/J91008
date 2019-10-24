@@ -1,32 +1,18 @@
 package com.fh.controller.system;
 
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletResponse;
-
+import com.fh.controller.base.BaseController;
+import com.fh.entity.Page;
+import com.fh.service.system.CreateCodeManager;
+import com.fh.util.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fh.controller.base.BaseController;
-import com.fh.entity.Page;
-import com.fh.service.system.CreateCodeManager;
-import com.fh.util.AppUtil;
-import com.fh.util.DateUtil;
-import com.fh.util.DelAllFile;
-import com.fh.util.FileDownload;
-import com.fh.util.FileZip;
-import com.fh.util.Freemarker;
-import com.fh.util.Jurisdiction;
-import com.fh.util.PageData;
-import com.fh.util.PathUtil;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
+import java.util.*;
 
 /** 
  * 类名称： 代码生成器
@@ -62,7 +48,7 @@ public class CreateCodeController extends BaseController {
 		mv.setViewName("system/createcode/createcode_list");
 		mv.addObject("varList", varList);
 		mv.addObject("pd", pd);
-		mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
+		mv.addObject("QX", Jurisdiction.getHC());	//按钮权限
 		return mv;
 	}
 	
@@ -228,7 +214,7 @@ public class CreateCodeController extends BaseController {
 	public Object deleteAll() throws Exception {
 		logBefore(logger, Jurisdiction.getUsername()+"批量删除CreateCode");
 		if(!Jurisdiction.buttonJurisdiction(menuUrl, "dell")){return null;} //校验权限
-		PageData pd = new PageData();		
+		PageData pd = new PageData();
 		Map<String,Object> map = new HashMap<String,Object>();
 		try {
 			pd = this.getPageData();

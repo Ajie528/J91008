@@ -51,129 +51,138 @@
                             <table id="simple-table" class="table table-striped table-bordered table-hover"
                                    style="margin-top:5px;">
                                 <tbody>
-                                <!-- 开始循环 -->
-                                <c:choose>
-                                    <c:when test="${not empty varList}">
-                                        <c:if test="${QX.cha == 1 }">
-                                            <tr>
-                                                <th class='center'>每天提现次数：</th>
-                                                <td class='center'><input class="forminput"  type="number"  name="WITHDRAW_TODAY"
-                                                                          id="WITHDRAW_TODAY"
-                                                                          value="${varList[0].WITHDRAW_TODAY}"
-                                                                          maxlength="20" placeholder="这里输入每天提现次数"
-                                                                          style="width:98%;"/></td>
-                                                <th class='center'>提现手续费：</th>
-                                                <td><input class="forminput"  type="number" name="PAYMENT_FEE" id="PAYMENT_FEE"
-                                                           value="${varList[0].PAYMENT_FEE}" maxlength="20"
-                                                           placeholder="这里输入提现手续费" style="width:98%;"/>
-                                                </td>
-                                                <th class='center'>提现倍数：</th>
-                                                <td><input class="forminput"  type="number" name="CASH_MULTIPLIER" id="CASH_MULTIPLIER"
-                                                           value="${varList[0].CASH_MULTIPLIER}" maxlength="32"
-                                                           placeholder="这里输入提现倍数" style="width:98%;"/></td>
-                                            </tr>
-                                            <tr>
-                                                <th class='center'>推广人数：</th>
-                                                <td><input class="forminput" type="number" name="EXTENSION" id="EXTENSION"
-                                                           value="${varList[0].EXTENSION}" maxlength="32"
-                                                           placeholder="这里输入推广人数" style="width:98%;"/></td>
-                                                <th class='center'>获得喂养次数：</th>
-                                                <td><input class="forminput" type="number" name="GET_FREQUENCY" id="GET_FREQUENCY"
-                                                           value="${varList[0].GET_FREQUENCY}" maxlength="32"
-                                                           placeholder="这里输入获得喂养次数" style="width:98%;"/></td>
-                                                <th class='center'>喂养封顶：</th>
-                                                <td><input class="forminput" type="number" name="FEED_CAPPING" id="FEED_CAPPING"
-                                                           value="${varList[0].FEED_CAPPING}" maxlength="32"
-                                                           placeholder="这里输入喂养封顶" style="width:98%;"/></td>
-                                            </tr>
-                                            <tr>
-                                                <th class='center'>饲料价格：</th>
-                                                <td><input class="forminput" class="forminput" type="number" name="FEED_PRICE" id="FEED_PRICE"
-                                                           value="${varList[0].FEED_PRICE}" maxlength="32"
-                                                           placeholder="这里输入饲料价格" style="width:98%;"/></td>
-                                                <th class='center'>出局收益：</th>
-                                                <td><input class="forminput" type="number" name="OUT_EARNINGS" id="OUT_EARNINGS"
-                                                           value="${varList[0].OUT_EARNINGS}" maxlength="32"
-                                                           placeholder="这里输入出局收益" style="width:98%;"/></td>
-                                                <th class='center'>没有推人喂养次数：</th>
-                                                <td><input class="forminput" type="number" name="FEEDING_TIMES" id="FEEDING_TIMES"
-                                                           value="${varList[0].FEEDING_TIMES}" maxlength="32"
-                                                           placeholder="这里输入没有推人喂养次数" style="width:98%;"/></td>
-                                            </tr>
 
-                                            <tr>
-                                                <th class='center'>微信收款码：</th>
-                                                <td>
-                                                    <input class="forminput" type="hidden" name="WECHAT" id="WECHAT"
-                                                           value="${varList[0].WECHAT}" maxlength="255"
-                                                           style="width:98%;"/>
-                                                    <p style="position:relative">
-                                                        <a class="imageup">
-                                                            <c:if test="${varList[0].WECHAT == null}">
-                                                                <img class="upload_pic" id="photourlShow1" height="150"
-                                                                     width="150"
-                                                                     src="<%=basePath%>static/images/upload.png"/>
-                                                            </c:if>
-                                                            <c:if test="${varList[0].WECHAT != null}">
-                                                                <img class="upload_pic" id="photourlShow1" height="150"
-                                                                     width="150" src="${varList[0].WECHAT}"/>
-                                                            </c:if>
-                                                            <input type="file" name="pictureFile"
-                                                                   onchange="setImg(this,1)" id="pictureFile"
-                                                                   class="preimg"/>
-                                                        </a>
-                                                    </p>
-                                                </td>
-                                                <th class='center'>支付宝收款码：</th>
-                                                <td>
-                                                    <input class="forminput" type="hidden" name="ALIPAY" id="ALIPAY"
-                                                           value="${varList[0].ALIPAY}" maxlength="255"
-                                                           style="width:98%;"/>
-                                                    <p style="position:relative">
-                                                        <a class="imageup">
-                                                            <c:if test="${varList[0].ALIPAY==null}">
-                                                                <img class="upload_pic" id="photourlShow2" height="150"
-                                                                     width="150"
-                                                                     src="<%=basePath%>static/images/upload.png"/>
-                                                            </c:if>
-                                                            <c:if test="${varList[0].ALIPAY!=null}">
-                                                                <img class="upload_pic" id="photourlShow2" height="150"
-                                                                     width="150" src="${varList[0].ALIPAY}"/>
-                                                            </c:if>
-                                                            <input type="file" name="pictureFile"
-                                                                   onchange="setImg(this,2)" id="pictureFile"
-                                                                   class="preimg"/>
-                                                        </a>
-                                                    </p>
-                                                </td>
-                                                <th class='center'>银行收款账号：</th>
-                                                <td><input class="forminput" type="number" name="BANK_NUMBER" id="BANK_NUMBER"
-                                                           value="${varList[0].BANK_NUMBER}" maxlength="32"
-                                                           placeholder="这里输入银行收款账号" style="width:98%;"/></td>
-                                            </tr>
-                                            <tr>
-                                                <th class='center'>QQ联系：：</th>
-                                                <td><input class="forminput" type="number" name="QQ_TOUCH" id="QQ_TOUCH"
-                                                           value="${varList[0].QQ_TOUCH}" maxlength="32"
-                                                           placeholder="这里输入QQ联系" style="width:98%;"/></td>
-                                                <th class='center'>微信联系：</th>
-                                                <td><input class="forminput" type="number" name="WECHAT_TOUCH" id="WECHAT_TOUCH"
-                                                           value="${varList[0].WECHAT_TOUCH}" maxlength="32"
-                                                           placeholder="这里输入微信联系" style="width:98%;"/></td>
-                                            </tr>
-                                        </c:if>
-                                        <c:if test="${QX.cha == 0 }">
-                                            <tr>
-                                                <td colspan="100" class="center">您无权查看</td>
-                                            </tr>
-                                        </c:if>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <tr class="main_info">
-                                            <td colspan="100" class="center">没有相关数据</td>
-                                        </tr>
-                                    </c:otherwise>
-                                </c:choose>
+                                <c:if test="${QX.cha == 1 }">
+                                    <tr>
+                                        <th class='center'>每天提现次数：</th>
+                                        <td class='center'><input class="forminput" type="number" name="WITHDRAW_TODAY"
+                                                                  id="WITHDRAW_TODAY"
+                                                                  value="${pd.WITHDRAW_TODAY}"
+                                                                  maxlength="20" placeholder="这里输入每天提现次数"
+                                                                  style="width:98%;"/></td>
+                                        <th class='center'>提现手续费：</th>
+                                        <td><input class="forminput" type="number" name="PAYMENT_FEE" id="PAYMENT_FEE"
+                                                   value="${pd.PAYMENT_FEE}" maxlength="20"
+                                                   placeholder="这里输入提现手续费" style="width:98%;"/>
+                                        </td>
+                                        <th class='center'>提现倍数：</th>
+                                        <td><input class="forminput" type="number" name="CASH_MULTIPLIER"
+                                                   id="CASH_MULTIPLIER"
+                                                   value="${pd.CASH_MULTIPLIER}" maxlength="32"
+                                                   placeholder="这里输入提现倍数" style="width:98%;"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th class='center'>推广人数：</th>
+                                        <td><input class="forminput" type="number" name="EXTENSION" id="EXTENSION"
+                                                   value="${pd.EXTENSION}" maxlength="32"
+                                                   placeholder="这里输入推广人数" style="width:98%;"/></td>
+                                        <th class='center'>获得喂养次数：</th>
+                                        <td><input class="forminput" type="number" name="GET_FREQUENCY"
+                                                   id="GET_FREQUENCY"
+                                                   value="${pd.GET_FREQUENCY}" maxlength="32"
+                                                   placeholder="这里输入获得喂养次数" style="width:98%;"/></td>
+                                        <th class='center'>喂养封顶：</th>
+                                        <td><input class="forminput" type="number" name="FEED_CAPPING" id="FEED_CAPPING"
+                                                   value="${pd.FEED_CAPPING}" maxlength="32"
+                                                   placeholder="这里输入喂养封顶" style="width:98%;"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th class='center'>饲料价格：</th>
+                                        <td><input class="forminput" class="forminput" type="number" name="FEED_PRICE"
+                                                   id="FEED_PRICE"
+                                                   value="${pd.FEED_PRICE}" maxlength="32"
+                                                   placeholder="这里输入饲料价格" style="width:98%;"/></td>
+                                        <th class='center'>出局收益：</th>
+                                        <td><input class="forminput" type="number" name="OUT_EARNINGS" id="OUT_EARNINGS"
+                                                   value="${pd.OUT_EARNINGS}" maxlength="32"
+                                                   placeholder="这里输入出局收益" style="width:98%;"/></td>
+                                        <th class='center'>没有推人喂养次数：</th>
+                                        <td><input class="forminput" type="number" name="FEEDING_TIMES"
+                                                   id="FEEDING_TIMES"
+                                                   value="${pd.FEEDING_TIMES}" maxlength="32"
+                                                   placeholder="这里输入没有推人喂养次数" style="width:98%;"/></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th class='center'>微信收款码：</th>
+                                        <td>
+                                            <input class="forminput" type="hidden" name="WECHAT" id="WECHAT"
+                                                   value="${pd.WECHAT}" maxlength="255"
+                                                   style="width:98%;"/>
+                                            <p style="position:relative">
+                                                <a class="imageup">
+                                                    <c:if test="${pd.WECHAT == null}">
+                                                        <img class="upload_pic" id="photourlShow1" height="150"
+                                                             width="150"
+                                                             src="<%=basePath%>static/images/upload.png"/>
+                                                    </c:if>
+                                                    <c:if test="${pd.WECHAT != null}">
+                                                        <img class="upload_pic" id="photourlShow1" height="150"
+                                                             width="150" src="${pd.WECHAT}"/>
+                                                    </c:if>
+                                                    <input type="file" name="pictureFile"
+                                                           onchange="setImg(this,1)" id="pictureFile"
+                                                           class="preimg"/>
+                                                </a>
+                                            </p>
+                                        </td>
+                                        <th class='center'>支付宝收款码：</th>
+                                        <td>
+                                            <input class="forminput" type="hidden" name="ALIPAY" id="ALIPAY"
+                                                   value="${pd.ALIPAY}" maxlength="255"
+                                                   style="width:98%;"/>
+                                            <p style="position:relative">
+                                                <a class="imageup">
+                                                    <c:if test="${pd.ALIPAY==null}">
+                                                        <img class="upload_pic" id="photourlShow2" height="150"
+                                                             width="150"
+                                                             src="<%=basePath%>static/images/upload.png"/>
+                                                    </c:if>
+                                                    <c:if test="${pd.ALIPAY!=null}">
+                                                        <img class="upload_pic" id="photourlShow2" height="150"
+                                                             width="150" src="${pd.ALIPAY}"/>
+                                                    </c:if>
+                                                    <input type="file" name="pictureFile"
+                                                           onchange="setImg(this,2)" id="pictureFile"
+                                                           class="preimg"/>
+                                                </a>
+                                            </p>
+                                        </td>
+                                        <th class='center'>银行收款账号：</th>
+                                        <td><input class="forminput" type="number" name="BANK_NUMBER" id="BANK_NUMBER"
+                                                   value="${pd.BANK_NUMBER}" maxlength="32"
+                                                   placeholder="这里输入银行收款账号" style="width:98%;"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th class='center'>QQ联系：</th>
+                                        <td><input class="forminput" type="number" name="QQ_TOUCH" id="QQ_TOUCH"
+                                                   value="${pd.QQ_TOUCH}" maxlength="32"
+                                                   placeholder="这里输入QQ联系" style="width:98%;"/></td>
+                                        <th class='center'>微信联系：</th>
+                                        <td><input class="forminput" type="number" name="WECHAT_TOUCH" id="WECHAT_TOUCH"
+                                                   value="${pd.WECHAT_TOUCH}" maxlength="32"
+                                                   placeholder="这里输入微信联系" style="width:98%;"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th class='center'>第N个后出一个：</th>
+                                        <td><input class="forminput" type="number" name="N_OUT_ONE" id="N_OUT_ONE"
+                                                   value="${pd.N_OUT_ONE}" maxlength="32"
+                                                   placeholder="这里输入第N个后出一个" style="width:98%;"/></td>
+                                        <th class='center'>动态第一人收益：</th>
+                                        <td><input class="forminput" type="number" name="PROFIT_ONE" id="PROFIT_ONE"
+                                                   value="${pd.PROFIT_ONE}" maxlength="32"
+                                                   placeholder="这里输入动态第一人收益" style="width:98%;"/></td>
+                                        <th class='center'>2至N个收益：</th>
+                                        <td><input class="forminput" type="number" name="TWO_N_PROFIT" id="TWO_N_PROFIT"
+                                                   value="${pd.TWO_N_PROFIT}" maxlength="32"
+                                                   placeholder="这里输入微信联系" style="width:98%;"/></td>
+                                    </tr>
+                                </c:if>
+                                <c:if test="${QX.cha == 0 }">
+                                    <tr>
+                                        <td colspan="100" class="center">您无权查看</td>
+                                    </tr>
+                                </c:if>
                                 </tbody>
                             </table>
                             <div class="page-header position-relative">
@@ -258,14 +267,14 @@
     }
 
     //判断不能为空
-    function check() { 
+    function check() {
         var lock = false;
-        $('input[class=forminput]').each(function() {
-            if($(this).val() == ''){
+        $('input[class=forminput]').each(function () {
+            if ($(this).val() == '') {
                 alert("当前表单不能有空项");
                 lock = false;
                 return false;
-            }else {
+            } else {
                 lock = true;
                 return true;
             }

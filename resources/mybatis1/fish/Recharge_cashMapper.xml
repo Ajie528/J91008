@@ -16,7 +16,8 @@
 		"PAYMENT_TYPE",	
 		"VOUCHER",	
 		"IS_DELETED",	
-		"IS_AUDITING",	
+		"IS_AUDITING",
+		"PHONE",
 		"RECHARGE_CASH_ID"
 	</sql>
 	
@@ -29,7 +30,8 @@
 			#{PAYMENT_TYPE},	
 			#{VOUCHER},	
 			#{IS_DELETED},	
-			#{IS_AUDITING},	
+			#{IS_AUDITING},
+			#{PHONE},
 			#{RECHARGE_CASH_ID}
 	</sql>
 	

@@ -1,21 +1,20 @@
 package com.fh.controller.system;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-
 import com.fh.controller.base.BaseController;
 import com.fh.util.AppUtil;
 import com.fh.util.DbFH;
 import com.fh.util.Jurisdiction;
 import com.fh.util.PageData;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /** 
  * 类名称： 反向生成
@@ -37,7 +36,7 @@ public class ReverseCreateCodeController extends BaseController {
 		if(!Jurisdiction.buttonJurisdiction(menuUrl, "cha")){} 	//校验权限
 		ModelAndView mv = this.getModelAndView();
 		mv.setViewName("system/createcode/recreatecode_list");
-		mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
+		mv.addObject("QX", Jurisdiction.getHC());	//按钮权限
 		return mv;
 	}
 	
@@ -50,7 +49,7 @@ public class ReverseCreateCodeController extends BaseController {
 	@ResponseBody
 	public Object listAllTable(){
 		if(!Jurisdiction.buttonJurisdiction(menuUrl, "cha")){return null;} //校验权限
-		PageData pd = new PageData();		
+		PageData pd = new PageData();
 		pd = this.getPageData();
 		Map<String,Object> map = new HashMap<String,Object>();
 		List<PageData> pdList = new ArrayList<PageData>();

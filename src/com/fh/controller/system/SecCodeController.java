@@ -1,26 +1,22 @@
 package com.fh.controller.system;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics2D;
-import java.awt.font.FontRenderContext;
-import java.awt.geom.Rectangle2D;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.util.Random;
-
-import javax.imageio.ImageIO;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
-
+import com.fh.util.Const;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.fh.util.Const;
+import javax.imageio.ImageIO;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import java.awt.*;
+import java.awt.font.FontRenderContext;
+import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.Random;
 
 /** 
  * 类名称：登录验证码
@@ -38,7 +34,7 @@ public class SecCodeController {
 		ByteArrayOutputStream output = new ByteArrayOutputStream();
 		String code = drawImg(output);
 		
-		Subject currentUser = SecurityUtils.getSubject();  
+		Subject currentUser = SecurityUtils.getSubject();
 		Session session = currentUser.getSession();
 		session.setAttribute(Const.SESSION_SECURITY_CODE, code);
 		

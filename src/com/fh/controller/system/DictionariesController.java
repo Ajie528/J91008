@@ -1,16 +1,12 @@
 package com.fh.controller.system;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-
+import com.fh.controller.base.BaseController;
+import com.fh.entity.Page;
+import com.fh.service.system.DictionariesManager;
+import com.fh.util.AppUtil;
+import com.fh.util.Jurisdiction;
+import com.fh.util.PageData;
 import net.sf.json.JSONArray;
-
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,12 +17,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fh.controller.base.BaseController;
-import com.fh.entity.Page;
-import com.fh.util.AppUtil;
-import com.fh.util.PageData;
-import com.fh.util.Jurisdiction;
-import com.fh.service.system.DictionariesManager;
+import javax.annotation.Resource;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /** 
  * 说明：数据字典
@@ -143,7 +140,7 @@ public class DictionariesController extends BaseController {
 		mv.addObject("DICTIONARIES_ID", DICTIONARIES_ID);			//上级ID
 		mv.setViewName("system/dictionaries/dictionaries_list");
 		mv.addObject("varList", varList);
-		mv.addObject("QX",Jurisdiction.getHC());					//按钮权限
+		mv.addObject("QX", Jurisdiction.getHC());					//按钮权限
 		return mv;
 	}
 	
@@ -153,7 +150,7 @@ public class DictionariesController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value="/listAllDict")
-	public ModelAndView listAllDict(Model model,String DICTIONARIES_ID)throws Exception{
+	public ModelAndView listAllDict(Model model, String DICTIONARIES_ID)throws Exception{
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();

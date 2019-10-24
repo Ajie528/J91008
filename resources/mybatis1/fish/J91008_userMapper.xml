@@ -79,7 +79,8 @@
 		set
 		"RECOMMENDED_NUMBER" = 0,
         "FEEDING_TODAY" = 0,
-        "TEAM_PERFORMANCE" = 0
+        "TEAM_PERFORMANCE" = 0,
+        "IS_WITHDRAW" = 0
 		where
 		"J91008_USER_ID" = '10000'
 	</update>
@@ -110,6 +111,16 @@
 		</if>
 		where
 		"PHONE" = #{PHONE}
+	</update>
+
+	<!-- 提现次数+1 -->
+	<update id="addNumber" parameterType="pd">
+		update
+		<include refid="tableName"/>
+		set
+		"IS_WITHDRAW" = "IS_WITHDRAW"+1
+		where
+		"J91008_USER_ID" = #{J91008_USER_ID}
 	</update>
 
     <!-- 喂养次数+1 -->
@@ -248,6 +259,17 @@
 		<include refid="Field"/>
 		from
 		<include refid="tableName"/>
+	</select>
+
+	<!-- 列表(推荐图) -->
+	<select id="recommendationMap" parameterType="pd" resultType="pd">
+		select
+		<include refid="Field"/>
+		from
+		<include refid="tableName"/>
+		where
+			"RE_PATH" LIKE CONCAT(CONCAT('%', #{J91008_USER_ID}),'%')
+			order by "J91008_USER_ID"
 	</select>
 
 	<!-- 列表(所有直接推荐下级) -->

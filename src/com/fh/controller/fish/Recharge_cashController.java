@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Resource;
+
+import com.fh.service.fish.J91008_userManager;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
@@ -37,7 +39,26 @@ public class Recharge_cashController extends BaseController {
 	String menuUrl = "recharge_cash/list.do"; //菜单地址(权限用)
 	@Resource(name="recharge_cashService")
 	private Recharge_cashManager recharge_cashService;
-	
+	// 用户管理
+	@Resource(name = "j91008_userService")
+	private J91008_userManager j91008_userService;
+
+	/**
+	 * 功能描述：验证手机号是否存在
+	 * @author Ajie
+	 * @date 2019/10/24 0024
+	 */
+	@RequestMapping(value = "/is_phone")
+	@ResponseBody
+	public String is_phone() throws Exception {
+		PageData pd = this.getPageData();
+		pd = j91008_userService.findByPhone(pd);
+		if (pd == null || "".equals(pd)) {
+			return "error";
+		}
+		return "success";
+	}
+
 	/**保存
 	 * @param
 	 * @throws Exception
@@ -49,15 +70,21 @@ public class Recharge_cashController extends BaseController {
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();
+		double money = Double.parseDouble(pd.get("NUMBER").toString());
+		pd = j91008_userService.findByPhone(pd);
 		pd.put("RECHARGE_CASH_ID", this.get32UUID());	//主键
 		pd.put("GMT_CREATE", Tools.date2Str(new Date()));	//创建时间
 		pd.put("GMT_MODIFIED", Tools.date2Str(new Date()));	//更新时间
-		pd.put("NUMBER", "0");	//充值数量
-		pd.put("USER_ID", "");	//用户ID
-		pd.put("PAYMENT_TYPE", "0");	//1 表示微信、2、支付宝、3表示银行卡
+		pd.put("NUMBER", money);	//充值数量
+		pd.put("USER_ID", pd.getString("J91008_USER_ID"));	//用户ID
+		pd.put("PAYMENT_TYPE", "6");	//1 表示微信、2、支付宝、3表示银行卡
 		pd.put("VOUCHER", "");	//支付凭证
-		pd.put("IS_DELETED", "0");	//1 表示删除，0 表示未删除
+		pd.put("IS_DELETED", 0);	//1 表示删除，0 表示未删除
+		pd.put("IS_AUDITING", 1);
 		recharge_cashService.save(pd);
+		// 给用户加钱
+		pd.put("COST",money);
+		j91008_userService.addMoney(pd);
 		mv.addObject("msg","success");
 		mv.setViewName("save_result");
 		return mv;

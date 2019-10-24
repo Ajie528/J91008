@@ -1,6 +1,18 @@
 package com.fh.controller.system;
 
 
+import com.fh.controller.base.BaseController;
+import com.fh.service.system.UserPhotoManager;
+import com.fh.util.*;
+import com.fh.util.express.GetExpressMsg;
+import org.json.JSONObject;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
@@ -8,31 +20,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletResponse;
-
-import org.json.JSONObject;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-
-import com.fh.controller.base.BaseController;
-import com.fh.service.system.UserPhotoManager;
-import com.fh.util.AppUtil;
-import com.fh.util.Const;
-import com.fh.util.DelAllFile;
-import com.fh.util.FileDownload;
-import com.fh.util.Freemarker;
-import com.fh.util.ImageAnd64Binary;
-import com.fh.util.Jurisdiction;
-import com.fh.util.MapDistance;
-import com.fh.util.PageData;
-import com.fh.util.PathUtil;
-import com.fh.util.Tools;
-import com.fh.util.TwoDimensionCode;
-import com.fh.util.express.GetExpressMsg;
 
 /** 
  * 类名称：ToolController 系统工具

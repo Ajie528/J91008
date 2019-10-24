@@ -5,12 +5,132 @@
   </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="/J91008" />
+      <artifact name="J91008" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80deab66-0af8-4317-bedc-e80c752b4330" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/chart/RecommendChart.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/js/clipboard.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/css/layui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/css/layui.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/css/modules/code.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/css/modules/layer/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/css/modules/layer/default/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/font/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/font/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/font/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/font/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/font/iconfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/10.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/11.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/12.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/13.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/14.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/15.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/17.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/18.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/19.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/20.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/21.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/22.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/23.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/25.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/26.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/27.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/28.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/29.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/30.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/31.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/32.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/33.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/34.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/35.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/36.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/37.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/38.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/39.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/40.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/41.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/42.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/43.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/44.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/45.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/46.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/47.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/48.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/49.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/5.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/50.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/51.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/52.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/53.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/54.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/55.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/56.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/57.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/58.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/59.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/6.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/60.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/61.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/62.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/63.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/64.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/65.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/66.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/67.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/68.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/69.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/7.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/70.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/71.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/8.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/images/face/9.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/code.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/colorpicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/element.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/flow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/laydate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/layedit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/laypage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/laytpl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/mobile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/rate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/transfer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/tree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/lay/modules/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/layui.all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/j91008/layui/layui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/spring/ApplicationContext-shiro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/spring/ApplicationContext-shiro.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/bonus_rec/bonus_rec_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/bonus_rec/bonus_rec_list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/j91008_user/j91008_user_edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/j91008_user/j91008_user_edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/j91008_user/j91008_user_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/j91008_user/j91008_user_list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/recharge_cash/recharge_cash_edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/recharge_cash/recharge_cash_edit.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/recharge_cash/recharge_cash_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/recharge_cash/recharge_cash_list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/system_config/system_config_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/system_config/system_config_list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/withdraw_cash/withdraw_cash_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/withdraw_cash/withdraw_cash_list.jsp" afterDir="false" />
@@ -18,22 +138,51 @@
       <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/center.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/center.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/charge.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/charge.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/contactus.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/contactus.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/feeding.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/feeding.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/fundDetails.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/fundDetails.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/invitation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/invitation.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifydata.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifydata.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifypwd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifypwd.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/myteam.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/myteam.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/platoon.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/platoon.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/j91008/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/j91008/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/mybatis1/fish/Bonus_recMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/mybatis1/fish/Bonus_recMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/mybatis1/fish/J91008_userMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/mybatis1/fish/J91008_userMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/mybatis1/fish/Recharge_cashMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/mybatis1/fish/Recharge_cashMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/mybatis1/fish/System_configMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/mybatis1/fish/System_configMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/mybatis1/fish/Withdraw_cashMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/mybatis1/fish/Withdraw_cashMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/spring/ApplicationContext-shiro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/spring/ApplicationContext-shiro.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/fish/J91008_userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/fish/J91008_userController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/fh/controller/fish/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/fish/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/fish/Recharge_cashController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/fish/Recharge_cashController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/fish/System_configController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/fish/System_configController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/AppuserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/AppuserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/ButtonrightsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/ButtonrightsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/CodeEditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/CodeEditorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/CreateCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/CreateCodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/DictionariesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/DictionariesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/FHlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/FHlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/FhbuttonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/FhbuttonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/FhsmsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/FhsmsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/HeadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/HeadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/LogInImgController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/LogInImgController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/OnlineManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/OnlineManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/ReverseCreateCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/ReverseCreateCodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/SecCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/SecCodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/ToolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/ToolController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/controller/system/UserPhotoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/controller/system/UserPhotoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/interceptor/LoginHandlerInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/interceptor/LoginHandlerInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/fh/service/fish/J91008_userManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/service/fish/J91008_userManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/fh/service/fish/Withdraw_cashManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/service/fish/Withdraw_cashManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/fh/service/fish/impl/J91008_userService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/service/fish/impl/J91008_userService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/fh/service/fish/impl/Withdraw_cashService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/service/fish/impl/Withdraw_cashService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/fh/util/express/DailyDataTimerTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/util/express/DailyDataTimerTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/fh/util/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fh/util/Const.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/WebRoot/WEB-INF/classes/" />
@@ -71,130 +220,206 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2404">
-              <caret line="978" column="92" selection-start-line="978" selection-start-column="92" selection-end-line="978" selection-end-column="92" />
+            <state relative-caret-position="590">
+              <caret line="968" column="51" selection-start-line="968" selection-start-column="51" selection-end-line="968" selection-end-column="51" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;method#toRegister#0;class#MainController#0" />
-                <element signature="method#toRegister#0;class#MainController#0" />
-                <element signature="docComment;method#toLogin#0;class#MainController#0" />
-                <element signature="method#toLogin#0;class#MainController#0" />
-                <element signature="docComment;method#toIndex#0;class#MainController#0" />
-                <element signature="method#toIndex#0;class#MainController#0" />
-                <element signature="docComment;method#toCharge#0;class#MainController#0" />
-                <element signature="method#toCharge#0;class#MainController#0" />
-                <element signature="docComment;method#toFeeding#0;class#MainController#0" />
-                <element signature="method#toFeeding#0;class#MainController#0" />
-                <element signature="docComment;method#toPlatoon#0;class#MainController#0" />
-                <element signature="method#toPlatoon#0;class#MainController#0" />
-                <element signature="docComment;method#toCenter#0;class#MainController#0" />
-                <element signature="method#toCenter#0;class#MainController#0" />
-                <element signature="docComment;method#toBonusRec#0;class#MainController#0" />
-                <element signature="method#toBonusRec#0;class#MainController#0" />
-                <element signature="docComment;method#toC1harge#0;class#MainController#0" />
-                <element signature="method#toC1harge#0;class#MainController#0" />
-                <element signature="docComment;method#toCas1h#0;class#MainController#0" />
-                <element signature="method#toCash#1;class#MainController#0" />
-                <element signature="e#10009#10090#0" />
-                <element signature="method#toMyteam#1;class#MainController#0" />
-                <element signature="docComment;method#toContac1tus#0;class#MainController#0" />
-                <element signature="method#toContactus#1;class#MainController#0" />
-                <element signature="docComment;method#qrCode#0;class#MainController#0" />
-                <element signature="method#qrCode#0;class#MainController#0" />
-                <element signature="docComment;method#toMyData#0;class#MainController#0" />
-                <element signature="method#toInviteFriends#1;class#MainController#0" />
-                <element signature="docComment;method#toModifyPasswrod#0;class#MainController#0" />
-                <element signature="method#toMyData#1;class#MainController#0" />
-                <element signature="docComment;method#resetSystem#0;class#MainController#0" />
-                <element signature="method#resetSystem#0;class#MainController#0" />
-                <element signature="docComment;method#register#0;class#MainController#0" />
-                <element signature="method#register#0;class#MainController#0" />
-                <element signature="docComment;method#addRegisterUser#0;class#MainController#0" />
-                <element signature="method#addRegisterUser#0;class#MainController#0" />
-                <element signature="docComment;method#login#0;class#MainController#0" />
-                <element signature="method#login#0;class#MainController#0" />
-                <element signature="docComment;method#savaUser#0;class#MainController#0" />
-                <element signature="method#savaUser#0;class#MainController#0" />
-                <element signature="docComment;method#adopt#0;class#MainController#0" />
-                <element signature="method#adopt#0;class#MainController#0" />
-                <element signature="docComment;method#recharge#0;class#MainController#0" />
-                <element signature="method#recharge#0;class#MainController#0" />
-                <element signature="docComment;method#adoptExamine#0;class#MainController#0" />
-                <element signature="method#adoptExamine#0;class#MainController#0" />
-                <element signature="docComment;method#feedFish#0;class#MainController#0" />
-                <element signature="method#feedFish#0;class#MainController#0" />
-                <element signature="docComment;method#cash#0;class#MainController#0" />
-                <element signature="method#cash#0;class#MainController#0" />
-                <element signature="e#22924#22974#1" />
-                <element signature="e#22998#23048#1" />
-                <element signature="docComment;method#adoptExamine1#0;class#MainController#0" />
-                <element signature="method#adoptExamine1#0;class#MainController#0" />
-                <element signature="docComment;method#rejectRecharge#0;class#MainController#0" />
-                <element signature="method#rejectRecharge#0;class#MainController#0" />
-                <element signature="docComment;method#rejectCash#0;class#MainController#0" />
-                <element signature="method#rejectRecharge#1;class#MainController#0" />
-                <element signature="docComment;method#es#0;class#MainController#0" />
-                <element signature="method#es#0;class#MainController#0" />
-                <element signature="e#30769#30878#0" />
-                <element signature="e#30773#31214#0" />
-                <element signature="docComment;method#bonusSettlement#0;class#MainController#0" />
-                <element signature="method#bonusSettlement#0;class#MainController#0" />
-                <element signature="docComment;method#outBonusSettlement#0;class#MainController#0" />
-                <element signature="method#outBonusSettlement#0;class#MainController#0" />
-                <element signature="docComment;method#bonusRec#0;class#MainController#0" />
-                <element signature="method#bonusRec#0;class#MainController#0" />
-                <element signature="docComment;method#addMoney#0;class#MainController#0" />
-                <element signature="method#addMoney#0;class#MainController#0" />
-                <element signature="docComment;method#is_login#0;class#MainController#0" />
-                <element signature="method#is_login#0;class#MainController#0" />
-                <element signature="docComment;method#removeSession#0;class#MainController#0" />
-                <element signature="method#removeSession#0;class#MainController#0" />
+                <element signature="docComment;class#MainController#0" />
+                <element signature="e#1057#1068#0" />
+                <element signature="e#1917#1995#0" />
+                <element signature="e#1917#2534#0" />
+                <element signature="e#2540#2614#0" />
+                <element signature="e#2540#3078#0" />
+                <element signature="e#2953#3001#1" />
+                <element signature="e#3006#3053#1" />
+                <element signature="e#3084#3164#0" />
+                <element signature="e#3084#3355#0" />
+                <element signature="e#3361#3440#0" />
+                <element signature="e#3361#4020#0" />
+                <element signature="e#3608#3934#1" />
+                <element signature="e#3940#3995#1" />
+                <element signature="e#4026#4112#0" />
+                <element signature="e#4026#4831#0" />
+                <element signature="e#4282#4745#1" />
+                <element signature="e#4751#4806#1" />
+                <element signature="e#4837#4923#0" />
+                <element signature="e#4837#5802#0" />
+                <element signature="e#5095#5716#1" />
+                <element signature="e#5722#5777#1" />
+                <element signature="e#5808#5894#0" />
+                <element signature="e#5808#6665#0" />
+                <element signature="e#6066#6579#1" />
+                <element signature="e#6585#6640#1" />
+                <element signature="e#6671#6757#0" />
+                <element signature="e#6671#7624#0" />
+                <element signature="e#6927#7538#1" />
+                <element signature="e#7544#7599#1" />
+                <element signature="e#7630#7718#0" />
+                <element signature="e#7630#9055#0" />
+                <element signature="e#7892#8969#1" />
+                <element signature="e#8620#8679#1" />
+                <element signature="e#8721#8780#1" />
+                <element signature="e#8975#9030#1" />
+                <element signature="e#9061#9147#0" />
+                <element signature="e#9061#9860#0" />
+                <element signature="e#9313#9774#1" />
+                <element signature="e#9780#9835#1" />
+                <element signature="e#9866#9947#0" />
+                <element signature="e#9866#10869#0" />
+                <element signature="e#10117#10783#1" />
+                <element signature="e#10789#10844#1" />
+                <element signature="e#10875#10956#0" />
+                <element signature="e#10875#11413#0" />
+                <element signature="e#11132#11327#1" />
+                <element signature="e#11333#11388#1" />
+                <element signature="e#11419#11500#0" />
+                <element signature="e#11419#12101#0" />
+                <element signature="e#11684#12015#1" />
+                <element signature="e#12021#12076#1" />
+                <element signature="e#12107#12226#0" />
+                <element signature="e#12107#12844#0" />
+                <element signature="e#12850#12931#0" />
+                <element signature="e#12850#13518#0" />
+                <element signature="e#13101#13432#1" />
+                <element signature="e#13438#13493#1" />
+                <element signature="e#13524#13605#0" />
+                <element signature="e#13524#13936#0" />
+                <element signature="e#13791#13850#1" />
+                <element signature="e#13856#13911#1" />
+                <element signature="e#13943#14045#0" />
+                <element signature="e#14050#14089#0" />
+                <element signature="e#13943#15316#0" />
+                <element signature="class#14321:14908" />
+                <element signature="method#run#0;class#14321:14908" />
+                <element signature="e#14408#14803#0" />
+                <element signature="e#14824#14884#0" />
+                <element signature="e#15322#15440#0" />
+                <element signature="e#15445#15481#0" />
+                <element signature="e#15322#16992#0" />
+                <element signature="e#15722#15763#1" />
+                <element signature="e#16040#16084#1" />
+                <element signature="e#16215#16261#1" />
+                <element signature="e#16326#16373#1" />
+                <element signature="e#16526#16576#1" />
+                <element signature="e#16711#16756#1" />
+                <element signature="e#16854#16895#1" />
+                <element signature="e#16998#17124#0" />
+                <element signature="e#16998#18721#0" />
+                <element signature="e#17502#17550#1" />
+                <element signature="e#17556#17607#1" />
+                <element signature="e#18728#18825#0" />
+                <element signature="e#18830#18863#0" />
+                <element signature="e#18728#20357#0" />
+                <element signature="e#19340#19384#1" />
+                <element signature="e#19393#19408#0" />
+                <element signature="e#19593#19881#1" />
+                <element signature="e#19802#19849#1" />
+                <element signature="e#19887#20160#1" />
+                <element signature="e#19998#20045#1" />
+                <element signature="e#20239#20280#1" />
+                <element signature="e#20363#20486#0" />
+                <element signature="e#20363#21461#0" />
+                <element signature="e#21079#21175#1" />
+                <element signature="e#21467#21571#0" />
+                <element signature="e#21576#21609#0" />
+                <element signature="e#21467#22209#0" />
+                <element signature="e#21844#21883#1" />
+                <element signature="e#22000#22038#1" />
+                <element signature="e#22215#22347#0" />
+                <element signature="e#22352#22386#0" />
+                <element signature="e#22215#23453#0" />
+                <element signature="e#22592#22631#1" />
+                <element signature="e#22680#22723#1" />
+                <element signature="e#22786#22829#1" />
+                <element signature="e#22891#22933#1" />
+                <element signature="e#23459#23591#0" />
+                <element signature="e#23596#23636#0" />
+                <element signature="e#23459#24340#0" />
+                <element signature="e#23953#23996#1" />
+                <element signature="e#24346#24470#0" />
+                <element signature="e#24475#24511#0" />
+                <element signature="e#24346#27003#0" />
+                <element signature="e#25021#25060#1" />
+                <element signature="e#25139#25177#1" />
+                <element signature="e#25842#25883#1" />
+                <element signature="e#25892#25899#0" />
+                <element signature="e#26784#26832#1" />
+                <element signature="e#27009#27148#0" />
+                <element signature="e#27153#27185#0" />
+                <element signature="e#27009#29240#0" />
+                <element signature="e#27568#27607#1" />
+                <element signature="e#27802#27842#1" />
+                <element signature="e#27892#27935#1" />
+                <element signature="e#28045#28090#1" />
+                <element signature="e#28149#28192#1" />
+                <element signature="e#28308#28350#1" />
+                <element signature="e#28421#28464#1" />
+                <element signature="e#28864#28914#1" />
+                <element signature="e#28938#28988#1" />
+                <element signature="e#29246#29325#0" />
+                <element signature="e#29330#29371#0" />
+                <element signature="e#29246#30076#0" />
+                <element signature="e#29689#29732#1" />
+                <element signature="e#30082#30159#0" />
+                <element signature="e#30164#30206#0" />
+                <element signature="e#30082#30789#0" />
+                <element signature="e#30525#30568#1" />
+                <element signature="e#30795#30872#0" />
+                <element signature="e#30877#30915#0" />
+                <element signature="e#30795#31616#0" />
+                <element signature="e#31230#31273#1" />
+                <element signature="e#31622#31738#0" />
+                <element signature="e#31743#31784#0" />
+                <element signature="e#31622#32184#0" />
+                <element signature="e#32031#32070#1" />
+                <element signature="e#32190#32298#0" />
+                <element signature="e#32303#32338#0" />
+                <element signature="e#32190#33265#0" />
+                <element signature="e#32619#32658#1" />
+                <element signature="e#32858#32900#1" />
+                <element signature="e#33046#33088#1" />
+                <element signature="e#33272#33382#0" />
+                <element signature="e#33387#33419#0" />
+                <element signature="e#33272#34097#0" />
+                <element signature="e#33600#33904#0" />
+                <element signature="e#33732#33811#1" />
+                <element signature="e#33815#33894#1" />
+                <element signature="e#33927#34030#0" />
+                <element signature="e#34104#34216#0" />
+                <element signature="e#34104#35937#0" />
+                <element signature="e#34357#34388#1" />
+                <element signature="e#35242#35307#1" />
+                <element signature="e#35348#35440#1" />
+                <element signature="e#35642#35673#1" />
+                <element signature="e#35788#35931#1" />
+                <element signature="e#35943#36068#0" />
+                <element signature="e#35943#37239#0" />
+                <element signature="e#36652#37232#1" />
+                <element signature="e#37246#37358#0" />
+                <element signature="e#37246#37795#0" />
+                <element signature="e#37801#37914#0" />
+                <element signature="e#37801#38145#0" />
+                <element signature="e#38151#38228#0" />
+                <element signature="e#38233#38270#0" />
+                <element signature="e#38151#38389#0" />
+                <element signature="e#38395#38487#0" />
+                <element signature="e#38395#38790#0" />
+                <element signature="e#38676#38712#1" />
+                <element signature="e#38718#38784#1" />
+                <element signature="e#38796#38887#0" />
+                <element signature="e#38796#39053#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifypwd.jsp">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="95" column="55" selection-start-line="95" selection-start-column="55" selection-end-line="95" selection-end-column="55" />
-              <folding>
-                <element signature="e#1841#2151#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/register.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="167" column="4" selection-start-line="167" selection-start-column="4" selection-end-line="172" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/mybatis1/fish/J91008_userMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="106" column="33" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/center.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="144" column="5" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
-              <folding>
-                <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="620">
+              <caret line="92" column="29" lean-forward="true" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -211,19 +436,13 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>input</find>
-      <find>charge</find>
-      <find>wipeData</find>
-      <find>recharge</find>
       <find>nav-search-icon</find>
       <find>src=&quot;</find>
       <find>mui-tab-item nav-item</find>
       <find>.mui-slider .mui-slider-group .mui-slider-item</find>
       <find>slider-height1</find>
       <find>slider-height</find>
-      <find>addMoney</find>
       <find>uploadFiles</find>
-      <find>wipeReNumber</find>
       <find>getNotOutMin</find>
       <find>editState</find>
       <find>center-feed-charge-btn</find>
@@ -235,18 +454,26 @@
       <find>picPath</find>
       <find>resetRec</find>
       <find>cash</find>
-      <find>deducMoney</find>
       <find>addFeedCount</find>
       <find>invitation-code</find>
       <find>注册</find>
       <find>zcodeImg</find>
       <find>codeImg</find>
+      <find>top</find>
+      <find>action</find>
+      <find>varList[0]</find>
+      <find>share-btn</find>
+      <find>addMoney</find>
+      <find>wipeReNumber</find>
+      <find>deducMoney</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;forminput&quot;</replace>
       <replace>input class=&quot;forminput&quot;</replace>
       <replace>href=&quot;j91008/</replace>
       <replace>src=&quot;j91008/</replace>
+      <replace>action</replace>
+      <replace>pd</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -256,57 +483,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/fh/util/Tools.java" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/rotation_chart/rotation_chart_edit.jsp" />
-        <option value="$PROJECT_DIR$/src/com/fh/controller/fish/MonitorController.java" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/bonus_rec/bonus_rec_list.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/bonus_rec/bonus_rec_edit.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/login.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/feeding.html" />
-        <option value="$PROJECT_DIR$/WebRoot/j91008/css/mui.min.css" />
-        <option value="$PROJECT_DIR$/WebRoot/j91008/css/style.css" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/platoon.jsp" />
-        <option value="$PROJECT_DIR$/src/com/fh/util/Const.java" />
-        <option value="$PROJECT_DIR$/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/feeding.jsp" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/Notice_recManager.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/impl/Notice_recService.java" />
-        <option value="$PROJECT_DIR$/resources/mybatis1/fish/Notice_recMapper.xml" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/Feed_recordManager.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/impl/Feed_recordService.java" />
-        <option value="$PROJECT_DIR$/resources/mybatis1/fish/Feed_recordMapper.xml" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/Recharge_cashManager.java" />
-        <option value="$PROJECT_DIR$/src/com/fh/service/fish/impl/Recharge_cashService.java" />
-        <option value="$PROJECT_DIR$/resources/mybatis1/fish/Recharge_cashMapper.xml" />
         <option value="$PROJECT_DIR$/src/com/fh/service/fish/Bonus_recManager.java" />
         <option value="$PROJECT_DIR$/src/com/fh/service/fish/impl/Bonus_recService.java" />
-        <option value="$PROJECT_DIR$/resources/mybatis1/fish/Bonus_recMapper.xml" />
         <option value="$PROJECT_DIR$/src/com/fh/util/SortUtil.java" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/index.jsp" />
         <option value="$PROJECT_DIR$/src/com/fh/service/fish/Withdraw_cashManager.java" />
         <option value="$PROJECT_DIR$/src/com/fh/service/fish/impl/Withdraw_cashService.java" />
-        <option value="$PROJECT_DIR$/resources/mybatis1/fish/Withdraw_cashMapper.xml" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/fundDetails.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/myteam.jsp" />
         <option value="$PROJECT_DIR$/src/com/fh/util/express/DailyDataTimerTask.java" />
         <option value="$PROJECT_DIR$/src/com/fh/util/express/TimerManager.java" />
-        <option value="$PROJECT_DIR$/resources/mybatis1/fish/System_configMapper.xml" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/system_config/system_config_list.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/contactus.jsp" />
         <option value="$PROJECT_DIR$/src/com/fh/util/express/ImageUtils.java" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/invitation.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/register.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/chart/RecommendChart.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/platoon.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/contactus.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/fundDetails.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifydata.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifypwd.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/myteam.jsp" />
+        <option value="$PROJECT_DIR$/resources/mybatis1/fish/System_configMapper.xml" />
+        <option value="$PROJECT_DIR$/src/com/fh/controller/fish/System_configController.java" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/system_config/system_config_list.jsp" />
         <option value="$PROJECT_DIR$/src/com/fh/service/fish/J91008_userManager.java" />
         <option value="$PROJECT_DIR$/src/com/fh/service/fish/impl/J91008_userService.java" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifydata.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/center.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifypwd.jsp" />
-        <option value="$PROJECT_DIR$/src/com/fh/controller/fish/MainController.java" />
-        <option value="$PROJECT_DIR$/resources/mybatis1/fish/J91008_userMapper.xml" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/index.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/invitation.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/index.jsp" />
+        <option value="$PROJECT_DIR$/src/com/fh/service/system/RoleManager.java" />
+        <option value="$PROJECT_DIR$/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/src/com/fh/util/Jurisdiction.java" />
+        <option value="$PROJECT_DIR$/src/com/fh/interceptor/LoginHandlerInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/com/fh/controller/system/UserController.java" />
+        <option value="$PROJECT_DIR$/src/com/fh/controller/fish/J91008_userController.java" />
         <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/charge.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/cash.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/recharge_cash/recharge_cash_list.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/j91008_user/j91008_user_edit.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/center.jsp" />
+        <option value="$PROJECT_DIR$/resources/spring/ApplicationContext-shiro.xml" />
+        <option value="$PROJECT_DIR$/src/com/fh/util/Const.java" />
+        <option value="$PROJECT_DIR$/resources/mybatis1/fish/Bonus_recMapper.xml" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/bonus_rec/bonus_rec_list.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/j91008_user/j91008_user_list.jsp" />
         <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/withdraw_cash/withdraw_cash_list.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/recharge_cash/recharge_cash_list.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/register.jsp" />
+        <option value="$PROJECT_DIR$/resources/mybatis1/fish/Recharge_cashMapper.xml" />
+        <option value="$PROJECT_DIR$/resources/mybatis1/fish/Withdraw_cashMapper.xml" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/recharge_cash/recharge_cash_edit.jsp" />
+        <option value="$PROJECT_DIR$/src/com/fh/controller/fish/Recharge_cashController.java" />
+        <option value="$PROJECT_DIR$/resources/mybatis1/fish/J91008_userMapper.xml" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/cash.jsp" />
+        <option value="$PROJECT_DIR$/src/com/fh/controller/fish/MainController.java" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/login.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/j91008/css/login.css" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/feeding.jsp" />
       </list>
     </option>
   </component>
@@ -355,18 +582,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="J91008" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -375,7 +592,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/WebRoot/j91008/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/WebRoot" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -387,28 +604,28 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="project.structure.side.proportion" value="0.20248255" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="settings.editor.splitter.proportion" value="0.19920844" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.fh.controller.fish" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\idea-workpace\J91008\src" />
-      <recent name="D:\idea-workpace\J91008\resources\mybatis1" />
-      <recent name="D:\idea-workpace\J91008\WebRoot\static" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\idea-workpace\J91008\WebRoot\j91008\images" />
+      <recent name="D:\idea-workpace\J91008\WebRoot\j91008\css" />
+      <recent name="D:\idea-workpace\J91008\src\com\fh\controller" />
+      <recent name="D:\idea-workpace\J91008\WebRoot\j91008\js" />
+      <recent name="D:\idea-workpace\J91008\WebRoot\j91008" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\idea-workpace\J91008\WebRoot\j91008\js" />
-      <recent name="D:\idea-workpace\J91008\WebRoot\WEB-INF\jsp\j91008" />
-      <recent name="D:\idea-workpace\J91008\WebRoot\WEB-INF\lib" />
-      <recent name="D:\idea-workpace\J91008\WebRoot\j91008\css" />
-      <recent name="D:\idea-workpace\J91008\WebRoot\j91008" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\idea-workpace\J91008\src" />
+      <recent name="D:\idea-workpace\J91008\resources\mybatis1" />
+      <recent name="D:\idea-workpace\J91008\WebRoot\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -426,17 +643,17 @@
   <component name="RunManager">
     <configuration name="Tomcat 9.0.26" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.26" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8 -Xms768m -Xmx768m -XX:PermSize=64M -XX:MaxPermSize=512m" />
-      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="/">
+        <artifact name="J91008web">
           <settings>
-            <option name="CONTEXT_PATH" value="/" />
+            <option name="CONTEXT_PATH" value="/J91008" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Tomcat_9_0_26_J91008" />
+        <option name="HTTP_PORT" value="80" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -444,7 +661,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="58486" />
+        <option name="DEBUG_PORT" value="58480" />
       </RunnerSettings>
       <RunnerSettings RunnerId="JRebel Debug">
         <option name="DEBUG_PORT" value="58292" />
@@ -527,7 +744,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="/" />
+          <artifact name="J91008web" />
         </option>
       </method>
     </configuration>
@@ -704,6 +921,17 @@
       <workItem from="1571617578285" duration="31270000" />
       <workItem from="1571654561195" duration="18000" />
       <workItem from="1571703986175" duration="29216000" />
+      <workItem from="1571740925947" duration="346000" />
+      <workItem from="1571790340694" duration="14887000" />
+      <workItem from="1571807466053" duration="1339000" />
+      <workItem from="1571811326028" duration="4571000" />
+      <workItem from="1571816619240" duration="702000" />
+      <workItem from="1571817340832" duration="2331000" />
+      <workItem from="1571820330611" duration="4709000" />
+      <workItem from="1571825170583" duration="1098000" />
+      <workItem from="1571826505882" duration="368000" />
+      <workItem from="1571833034436" duration="4000" />
+      <workItem from="1571877485490" duration="16125000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交，只有一个ssm框架">
       <created>1570981819520</created>
@@ -782,7 +1010,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571654351873</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="把功能全部完成了">
+      <created>1571740981735</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1571740981736</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -812,7 +1047,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225005000" />
+    <option name="totallyTimeSpent" value="271485000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -826,13 +1061,13 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.496139" visible="true" weight="0.18435155" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49484536" visible="true" weight="0.19721329" />
       <window_info id="Structure" order="1" sideWeight="0.5009634" side_tool="true" weight="0.18649517" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.5025818" side_tool="true" weight="0.18060021" />
+      <window_info id="Favorites" order="6" sideWeight="0.5051546" side_tool="true" weight="0.20257235" />
       <window_info id="Web" order="7" sideWeight="0.5009634" side_tool="true" weight="0.18649517" />
       <window_info id="JRebel" order="8" sideWeight="0.503861" side_tool="true" weight="0.18060021" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -840,21 +1075,21 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.3283237" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49249732" weight="0.40115607" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49839228" weight="0.3283237" />
-      <window_info anchor="bottom" id="Application Servers" order="7" sideWeight="0.49356914" weight="0.32716763" />
-      <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.4994641" weight="0.32947975" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32947975" />
-      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50643086" side_tool="true" weight="0.32716763" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32485548" />
-      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32947975" />
-      <window_info anchor="bottom" id="Database Changes" order="14" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.3283237" />
-      <window_info anchor="bottom" id="Problems" order="16" weight="0.32947975" />
-      <window_info anchor="bottom" id="JRebel Executor" order="17" />
-      <window_info anchor="bottom" id="JRebel Console" order="18" sideWeight="0.50321543" side_tool="true" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection Results" order="19" weight="0.3283237" />
+      <window_info anchor="bottom" id="TODO" order="5" sideWeight="0.49839228" weight="0.3283237" />
+      <window_info anchor="bottom" id="Application Servers" order="6" sideWeight="0.49356914" weight="0.32716763" />
+      <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.4994641" weight="0.32947975" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32947975" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5080386" side_tool="true" weight="0.39306358" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32485548" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32947975" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.3283237" />
+      <window_info anchor="bottom" id="Problems" order="15" weight="0.32947975" />
+      <window_info anchor="bottom" id="JRebel Executor" order="16" weight="0.38612717" />
+      <window_info anchor="bottom" id="JRebel Console" order="17" sideWeight="0.50321543" side_tool="true" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection Results" order="18" weight="0.3283237" />
+      <window_info anchor="bottom" id="Debug" order="19" sideWeight="0.49196142" weight="0.39306358" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24973205" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -866,47 +1101,6 @@
       <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.329582" />
       <window_info anchor="right" id="Database" order="9" weight="0.329582" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.496139" visible="true" weight="0.18435155" />
-      <window_info id="Structure" order="1" sideWeight="0.5009634" side_tool="true" weight="0.18649517" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.5025818" side_tool="true" weight="0.18060021" />
-      <window_info id="Web" order="7" sideWeight="0.5009634" side_tool="true" weight="0.18649517" />
-      <window_info id="JRebel" order="8" sideWeight="0.503861" side_tool="true" weight="0.18060021" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3283237" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3283237" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49249732" visible="true" weight="0.40115607" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49839228" weight="0.3283237" />
-      <window_info anchor="bottom" id="Application Servers" order="7" sideWeight="0.49410504" weight="0.32716763" />
-      <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.4994641" weight="0.32947975" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32947975" />
-      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50589496" side_tool="true" weight="0.32716763" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32485548" />
-      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32947975" />
-      <window_info anchor="bottom" id="Database Changes" order="14" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.3283237" />
-      <window_info anchor="bottom" id="Problems" order="16" weight="0.32947975" />
-      <window_info anchor="bottom" id="JRebel Executor" order="17" />
-      <window_info anchor="bottom" id="JRebel Console" order="18" sideWeight="0.50321543" side_tool="true" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection Results" order="19" weight="0.3283237" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.24973205" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.329582" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.329582" />
-      <window_info anchor="right" id="Database" order="9" weight="0.329582" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -931,7 +1125,8 @@
     <MESSAGE value="添加了前台页面，页面注册js完成了90%" />
     <MESSAGE value="实现注册、登录、充值、喂养功能" />
     <MESSAGE value="实现奖金结算，个人中心页面的完善，奖金明细列表的显示" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现奖金结算，个人中心页面的完善，奖金明细列表的显示" />
+    <MESSAGE value="把功能全部完成了" />
+    <option name="LAST_COMMIT_MESSAGE" value="把功能全部完成了" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -948,448 +1143,561 @@
     <SUITE FILE_PATH="coverage/J91008$Tomcat_9_0_26.ic" NAME="Tomcat 9.0.26 Coverage Results" MODIFIED="1571302859660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/fh/util/Watermark.java">
+    <entry file="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/shiro-all-1.2.3.jar!/org/apache/shiro/SecurityUtils.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1332">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="108">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/dao/DaoSupport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="119" column="18" selection-start-line="119" selection-start-column="18" selection-end-line="119" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/Bonus_recManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/impl/Bonus_recService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/J91008_userController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-990">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/util/SortUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="26" column="62" lean-forward="true" selection-start-line="26" selection-start-column="62" selection-end-line="26" selection-end-column="62" />
-          <folding>
-            <element signature="e#884#914#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/login.jsp">
+    <entry file="file://$PROJECT_DIR$/resources/mybatis1/system/LogInImgMapper.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/index.jsp">
+    <entry file="file://$PROJECT_DIR$/resources/mybatis1/system/RoleMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+        <state relative-caret-position="143">
+          <caret line="37" column="17" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/interceptor/LoginHandlerInterceptor.java">
+    <entry file="file://$PROJECT_DIR$/src/com/fh/service/system/impl/RoleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="29" column="55" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/service/system/RoleManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-414">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/system/RoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/servlet-api.jar!/javax/servlet/http/HttpServlet.class">
+    <entry file="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/spring-webmvc-4.3.7.RELEASE.jar!/org/springframework/web/servlet/HandlerExecutionChain.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="163">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/system/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2502">
+          <caret line="181" column="55" selection-start-line="181" selection-start-column="55" selection-end-line="181" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/servlet-api.jar!/javax/servlet/http/HttpServletRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="40" column="11" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/java/jdk1.8.0_221/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="2119" column="19" selection-start-line="2119" selection-start-column="19" selection-end-line="2119" selection-end-column="19" />
           <folding>
-            <element signature="e#0#9546#0" expanded="true" />
+            <element signature="e#82616#82617#0" expanded="true" />
+            <element signature="e#82667#82668#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/util/DateUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/system/LogInImgController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
-          <folding>
-            <element signature="e#1235#1236#0" expanded="true" />
-            <element signature="e#1275#1276#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="108">
+          <caret line="37" column="13" lean-forward="true" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/Withdraw_cashManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/impl/Withdraw_cashService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="59" column="49" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/mybatis1/fish/Withdraw_cashMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/fh/entity/system/Role.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+          <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+          <folding>
+            <element signature="e#634#635#0" expanded="true" />
+            <element signature="e#654#655#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/plugins/fhim/dist/lay/modules/layer.js">
+    <entry file="file://$PROJECT_DIR$/src/com/fh/util/Jurisdiction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="414" column="22" selection-start-line="414" selection-start-column="22" selection-end-line="414" selection-end-column="22" />
+        <state relative-caret-position="-3179">
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding>
+            <element signature="e#7337#7338#0" expanded="true" />
+            <element signature="e#7411#7412#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/MonitorController.java">
+    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/system/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        <state relative-caret-position="307">
+          <caret line="299" column="49" lean-forward="true" selection-start-line="299" selection-start-column="49" selection-end-line="299" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/mybatis1/fish/Bonus_recMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/System_configController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="108" column="63" selection-start-line="108" selection-start-column="63" selection-end-line="108" selection-end-column="63" />
+        <state relative-caret-position="455">
+          <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/util/express/DailyDataTaskListener.java">
+    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/Rotation_chartController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="144">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="73" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/util/express/DailyDataTimerTask.java">
+    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/Withdraw_cashController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/util/express/TimerManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/mybatis1/fish/System_configMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+        <state relative-caret-position="-1746">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/contactus.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="39" column="69" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
+        <state relative-caret-position="-216" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/J91008_userController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="31" column="3" lean-forward="true" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
           <folding>
-            <element signature="e#1618#1889#0#HTML" />
+            <element signature="method#save#0;class#J91008_userController#0" />
+            <element signature="method#delete#0;class#J91008_userController#0" />
+            <element signature="method#edit#0;class#J91008_userController#0" />
+            <element signature="method#list#0;class#J91008_userController#0" />
+            <element signature="method#goAdd#0;class#J91008_userController#0" />
+            <element signature="method#goEdit#0;class#J91008_userController#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/j91008/js/jquery.qrcode.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/fundDetails.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="57" column="62" selection-start-line="57" selection-start-column="62" selection-end-line="57" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://F:/java/jdk1.8.0_221/src.zip!/javax/imageio/ImageIO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="1511" column="26" selection-start-line="1511" selection-start-column="26" selection-end-line="1511" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/util/express/ImageUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="38" column="58" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/util/Const.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/system/SecCodeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="36" column="53" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/util/TwoDimensionCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="46" column="72" selection-start-line="46" selection-start-column="66" selection-end-line="46" selection-end-column="72" />
-          <folding>
-            <element signature="e#672#673#0" expanded="true" />
-            <element signature="e#720#721#0" expanded="true" />
-            <element signature="e#905#906#0" expanded="true" />
-            <element signature="e#952#953#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/system/index/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="314" column="69" lean-forward="true" selection-start-line="314" selection-start-column="12" selection-end-line="314" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/invitation.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="e#1598#1908#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/platoon.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/findpwd.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/myteam.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="36" column="67" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/impl/J91008_userService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="75" column="46" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/spring-web-4.3.7.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="117" selection-start-line="117" selection-end-line="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifydata.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="99" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/feeding.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="137" column="16" lean-forward="true" selection-start-line="137" selection-start-column="16" selection-end-line="158" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/util/Tools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/J91008_userManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="167" column="4" selection-start-line="167" selection-start-column="4" selection-end-line="172" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/center.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="144" column="5" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
-          <folding>
-            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/modifypwd.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="95" column="55" selection-start-line="95" selection-start-column="55" selection-end-line="95" selection-end-column="55" />
-          <folding>
-            <element signature="e#1841#2151#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/mybatis1/fish/J91008_userMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="106" column="33" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/charge.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="217" column="20" lean-forward="true" selection-start-line="217" selection-start-column="20" selection-end-line="219" selection-end-column="29" />
+        <state relative-caret-position="4626">
+          <caret line="257" column="23" selection-start-line="257" selection-start-column="23" selection-end-line="257" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/cash.jsp">
+    <entry file="file://$PROJECT_DIR$/resources/spring/ApplicationContext-shiro.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="225" column="29" selection-start-line="225" selection-start-column="29" selection-end-line="225" selection-end-column="29" />
+        <state relative-caret-position="106">
+          <caret line="50" column="50" selection-start-line="50" selection-start-column="50" selection-end-line="50" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/system_config/system_config_list.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/fh/util/Const.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1898">
-          <caret line="161" column="80" selection-start-line="161" selection-start-column="80" selection-end-line="161" selection-end-column="80" />
+        <state relative-caret-position="373">
+          <caret line="45" column="166" selection-start-line="45" selection-start-column="166" selection-end-line="45" selection-end-column="166" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/interceptor/LoginHandlerInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/j91008_user/j91008_user_edit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="43" column="65" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/j91008_user/j91008_user_list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="68" column="61" selection-start-line="68" selection-start-column="61" selection-end-line="68" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/withdraw_cash/withdraw_cash_list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="235" column="43" selection-start-line="235" selection-start-column="43" selection-end-line="235" selection-end-column="43" />
+        <state relative-caret-position="-18">
+          <caret line="77" column="59" selection-start-line="77" selection-start-column="59" selection-end-line="77" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/bonus_rec/bonus_rec_list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="111" selection-start-line="111" selection-end-line="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/notice_rec/notice_rec_list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="256" column="4" selection-start-line="256" selection-start-column="4" selection-end-line="279" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/center.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="137" column="59" selection-start-line="137" selection-start-column="59" selection-end-line="137" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/spring-webmvc-4.3.7.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="530" selection-start-line="530" selection-end-line="530" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/mybatis1/fish/Bonus_recMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/mybatis1/fish/Recharge_cashMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/mybatis1/fish/Withdraw_cashMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="42" column="105" lean-forward="true" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/spring-web-4.3.7.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="117" selection-start-line="117" selection-end-line="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/recharge_cash/recharge_cash_edit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="87" column="74" lean-forward="true" selection-start-line="87" selection-start-column="74" selection-end-line="87" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/fish/recharge_cash/recharge_cash_list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="238" column="43" selection-start-line="238" selection-start-column="43" selection-end-line="238" selection-end-column="43" />
+        <state relative-caret-position="3088">
+          <caret line="356" column="27" selection-start-line="356" selection-start-column="27" selection-end-line="356" selection-end-column="27" />
+          <folding>
+            <element signature="e#9426#9511#0#HTML" />
+            <element signature="e#9545#9573#0#HTML" />
+            <element signature="e#9590#11165#0#HTML" />
+            <element signature="e#11204#11726#0#HTML" />
+            <element signature="e#11760#12280#0#HTML" />
+            <element signature="e#12308#12571#0#HTML" />
+            <element signature="e#12605#13794#0#HTML" />
+          </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/Recharge_cashController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="81" column="52" selection-start-line="81" selection-start-column="52" selection-end-line="81" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/mybatis1/fish/J91008_userMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="156" column="26" selection-start-line="156" selection-start-column="16" selection-end-line="156" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/cash.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="723">
+          <caret line="207" column="26" lean-forward="true" selection-start-line="207" selection-start-column="26" selection-end-line="207" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fh/service/fish/J91008_userManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="85" column="19" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1512">
+          <caret line="84" column="23" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/myteam.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/platoon.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-54" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fh/controller/fish/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2404">
-          <caret line="978" column="92" selection-start-line="978" selection-start-column="92" selection-end-line="978" selection-end-column="92" />
+        <state relative-caret-position="590">
+          <caret line="968" column="51" selection-start-line="968" selection-start-column="51" selection-end-line="968" selection-end-column="51" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#toRegister#0;class#MainController#0" />
-            <element signature="method#toRegister#0;class#MainController#0" />
-            <element signature="docComment;method#toLogin#0;class#MainController#0" />
-            <element signature="method#toLogin#0;class#MainController#0" />
-            <element signature="docComment;method#toIndex#0;class#MainController#0" />
-            <element signature="method#toIndex#0;class#MainController#0" />
-            <element signature="docComment;method#toCharge#0;class#MainController#0" />
-            <element signature="method#toCharge#0;class#MainController#0" />
-            <element signature="docComment;method#toFeeding#0;class#MainController#0" />
-            <element signature="method#toFeeding#0;class#MainController#0" />
-            <element signature="docComment;method#toPlatoon#0;class#MainController#0" />
-            <element signature="method#toPlatoon#0;class#MainController#0" />
-            <element signature="docComment;method#toCenter#0;class#MainController#0" />
-            <element signature="method#toCenter#0;class#MainController#0" />
-            <element signature="docComment;method#toBonusRec#0;class#MainController#0" />
-            <element signature="method#toBonusRec#0;class#MainController#0" />
-            <element signature="docComment;method#toC1harge#0;class#MainController#0" />
-            <element signature="method#toC1harge#0;class#MainController#0" />
-            <element signature="docComment;method#toCas1h#0;class#MainController#0" />
-            <element signature="method#toCash#1;class#MainController#0" />
-            <element signature="e#10009#10090#0" />
-            <element signature="method#toMyteam#1;class#MainController#0" />
-            <element signature="docComment;method#toContac1tus#0;class#MainController#0" />
-            <element signature="method#toContactus#1;class#MainController#0" />
-            <element signature="docComment;method#qrCode#0;class#MainController#0" />
-            <element signature="method#qrCode#0;class#MainController#0" />
-            <element signature="docComment;method#toMyData#0;class#MainController#0" />
-            <element signature="method#toInviteFriends#1;class#MainController#0" />
-            <element signature="docComment;method#toModifyPasswrod#0;class#MainController#0" />
-            <element signature="method#toMyData#1;class#MainController#0" />
-            <element signature="docComment;method#resetSystem#0;class#MainController#0" />
-            <element signature="method#resetSystem#0;class#MainController#0" />
-            <element signature="docComment;method#register#0;class#MainController#0" />
-            <element signature="method#register#0;class#MainController#0" />
-            <element signature="docComment;method#addRegisterUser#0;class#MainController#0" />
-            <element signature="method#addRegisterUser#0;class#MainController#0" />
-            <element signature="docComment;method#login#0;class#MainController#0" />
-            <element signature="method#login#0;class#MainController#0" />
-            <element signature="docComment;method#savaUser#0;class#MainController#0" />
-            <element signature="method#savaUser#0;class#MainController#0" />
-            <element signature="docComment;method#adopt#0;class#MainController#0" />
-            <element signature="method#adopt#0;class#MainController#0" />
-            <element signature="docComment;method#recharge#0;class#MainController#0" />
-            <element signature="method#recharge#0;class#MainController#0" />
-            <element signature="docComment;method#adoptExamine#0;class#MainController#0" />
-            <element signature="method#adoptExamine#0;class#MainController#0" />
-            <element signature="docComment;method#feedFish#0;class#MainController#0" />
-            <element signature="method#feedFish#0;class#MainController#0" />
-            <element signature="docComment;method#cash#0;class#MainController#0" />
-            <element signature="method#cash#0;class#MainController#0" />
-            <element signature="e#22924#22974#1" />
-            <element signature="e#22998#23048#1" />
-            <element signature="docComment;method#adoptExamine1#0;class#MainController#0" />
-            <element signature="method#adoptExamine1#0;class#MainController#0" />
-            <element signature="docComment;method#rejectRecharge#0;class#MainController#0" />
-            <element signature="method#rejectRecharge#0;class#MainController#0" />
-            <element signature="docComment;method#rejectCash#0;class#MainController#0" />
-            <element signature="method#rejectRecharge#1;class#MainController#0" />
-            <element signature="docComment;method#es#0;class#MainController#0" />
-            <element signature="method#es#0;class#MainController#0" />
-            <element signature="e#30769#30878#0" />
-            <element signature="e#30773#31214#0" />
-            <element signature="docComment;method#bonusSettlement#0;class#MainController#0" />
-            <element signature="method#bonusSettlement#0;class#MainController#0" />
-            <element signature="docComment;method#outBonusSettlement#0;class#MainController#0" />
-            <element signature="method#outBonusSettlement#0;class#MainController#0" />
-            <element signature="docComment;method#bonusRec#0;class#MainController#0" />
-            <element signature="method#bonusRec#0;class#MainController#0" />
-            <element signature="docComment;method#addMoney#0;class#MainController#0" />
-            <element signature="method#addMoney#0;class#MainController#0" />
-            <element signature="docComment;method#is_login#0;class#MainController#0" />
-            <element signature="method#is_login#0;class#MainController#0" />
-            <element signature="docComment;method#removeSession#0;class#MainController#0" />
-            <element signature="method#removeSession#0;class#MainController#0" />
+            <element signature="docComment;class#MainController#0" />
+            <element signature="e#1057#1068#0" />
+            <element signature="e#1917#1995#0" />
+            <element signature="e#1917#2534#0" />
+            <element signature="e#2540#2614#0" />
+            <element signature="e#2540#3078#0" />
+            <element signature="e#2953#3001#1" />
+            <element signature="e#3006#3053#1" />
+            <element signature="e#3084#3164#0" />
+            <element signature="e#3084#3355#0" />
+            <element signature="e#3361#3440#0" />
+            <element signature="e#3361#4020#0" />
+            <element signature="e#3608#3934#1" />
+            <element signature="e#3940#3995#1" />
+            <element signature="e#4026#4112#0" />
+            <element signature="e#4026#4831#0" />
+            <element signature="e#4282#4745#1" />
+            <element signature="e#4751#4806#1" />
+            <element signature="e#4837#4923#0" />
+            <element signature="e#4837#5802#0" />
+            <element signature="e#5095#5716#1" />
+            <element signature="e#5722#5777#1" />
+            <element signature="e#5808#5894#0" />
+            <element signature="e#5808#6665#0" />
+            <element signature="e#6066#6579#1" />
+            <element signature="e#6585#6640#1" />
+            <element signature="e#6671#6757#0" />
+            <element signature="e#6671#7624#0" />
+            <element signature="e#6927#7538#1" />
+            <element signature="e#7544#7599#1" />
+            <element signature="e#7630#7718#0" />
+            <element signature="e#7630#9055#0" />
+            <element signature="e#7892#8969#1" />
+            <element signature="e#8620#8679#1" />
+            <element signature="e#8721#8780#1" />
+            <element signature="e#8975#9030#1" />
+            <element signature="e#9061#9147#0" />
+            <element signature="e#9061#9860#0" />
+            <element signature="e#9313#9774#1" />
+            <element signature="e#9780#9835#1" />
+            <element signature="e#9866#9947#0" />
+            <element signature="e#9866#10869#0" />
+            <element signature="e#10117#10783#1" />
+            <element signature="e#10789#10844#1" />
+            <element signature="e#10875#10956#0" />
+            <element signature="e#10875#11413#0" />
+            <element signature="e#11132#11327#1" />
+            <element signature="e#11333#11388#1" />
+            <element signature="e#11419#11500#0" />
+            <element signature="e#11419#12101#0" />
+            <element signature="e#11684#12015#1" />
+            <element signature="e#12021#12076#1" />
+            <element signature="e#12107#12226#0" />
+            <element signature="e#12107#12844#0" />
+            <element signature="e#12850#12931#0" />
+            <element signature="e#12850#13518#0" />
+            <element signature="e#13101#13432#1" />
+            <element signature="e#13438#13493#1" />
+            <element signature="e#13524#13605#0" />
+            <element signature="e#13524#13936#0" />
+            <element signature="e#13791#13850#1" />
+            <element signature="e#13856#13911#1" />
+            <element signature="e#13943#14045#0" />
+            <element signature="e#14050#14089#0" />
+            <element signature="e#13943#15316#0" />
+            <element signature="class#14321:14908" />
+            <element signature="method#run#0;class#14321:14908" />
+            <element signature="e#14408#14803#0" />
+            <element signature="e#14824#14884#0" />
+            <element signature="e#15322#15440#0" />
+            <element signature="e#15445#15481#0" />
+            <element signature="e#15322#16992#0" />
+            <element signature="e#15722#15763#1" />
+            <element signature="e#16040#16084#1" />
+            <element signature="e#16215#16261#1" />
+            <element signature="e#16326#16373#1" />
+            <element signature="e#16526#16576#1" />
+            <element signature="e#16711#16756#1" />
+            <element signature="e#16854#16895#1" />
+            <element signature="e#16998#17124#0" />
+            <element signature="e#16998#18721#0" />
+            <element signature="e#17502#17550#1" />
+            <element signature="e#17556#17607#1" />
+            <element signature="e#18728#18825#0" />
+            <element signature="e#18830#18863#0" />
+            <element signature="e#18728#20357#0" />
+            <element signature="e#19340#19384#1" />
+            <element signature="e#19393#19408#0" />
+            <element signature="e#19593#19881#1" />
+            <element signature="e#19802#19849#1" />
+            <element signature="e#19887#20160#1" />
+            <element signature="e#19998#20045#1" />
+            <element signature="e#20239#20280#1" />
+            <element signature="e#20363#20486#0" />
+            <element signature="e#20363#21461#0" />
+            <element signature="e#21079#21175#1" />
+            <element signature="e#21467#21571#0" />
+            <element signature="e#21576#21609#0" />
+            <element signature="e#21467#22209#0" />
+            <element signature="e#21844#21883#1" />
+            <element signature="e#22000#22038#1" />
+            <element signature="e#22215#22347#0" />
+            <element signature="e#22352#22386#0" />
+            <element signature="e#22215#23453#0" />
+            <element signature="e#22592#22631#1" />
+            <element signature="e#22680#22723#1" />
+            <element signature="e#22786#22829#1" />
+            <element signature="e#22891#22933#1" />
+            <element signature="e#23459#23591#0" />
+            <element signature="e#23596#23636#0" />
+            <element signature="e#23459#24340#0" />
+            <element signature="e#23953#23996#1" />
+            <element signature="e#24346#24470#0" />
+            <element signature="e#24475#24511#0" />
+            <element signature="e#24346#27003#0" />
+            <element signature="e#25021#25060#1" />
+            <element signature="e#25139#25177#1" />
+            <element signature="e#25842#25883#1" />
+            <element signature="e#25892#25899#0" />
+            <element signature="e#26784#26832#1" />
+            <element signature="e#27009#27148#0" />
+            <element signature="e#27153#27185#0" />
+            <element signature="e#27009#29240#0" />
+            <element signature="e#27568#27607#1" />
+            <element signature="e#27802#27842#1" />
+            <element signature="e#27892#27935#1" />
+            <element signature="e#28045#28090#1" />
+            <element signature="e#28149#28192#1" />
+            <element signature="e#28308#28350#1" />
+            <element signature="e#28421#28464#1" />
+            <element signature="e#28864#28914#1" />
+            <element signature="e#28938#28988#1" />
+            <element signature="e#29246#29325#0" />
+            <element signature="e#29330#29371#0" />
+            <element signature="e#29246#30076#0" />
+            <element signature="e#29689#29732#1" />
+            <element signature="e#30082#30159#0" />
+            <element signature="e#30164#30206#0" />
+            <element signature="e#30082#30789#0" />
+            <element signature="e#30525#30568#1" />
+            <element signature="e#30795#30872#0" />
+            <element signature="e#30877#30915#0" />
+            <element signature="e#30795#31616#0" />
+            <element signature="e#31230#31273#1" />
+            <element signature="e#31622#31738#0" />
+            <element signature="e#31743#31784#0" />
+            <element signature="e#31622#32184#0" />
+            <element signature="e#32031#32070#1" />
+            <element signature="e#32190#32298#0" />
+            <element signature="e#32303#32338#0" />
+            <element signature="e#32190#33265#0" />
+            <element signature="e#32619#32658#1" />
+            <element signature="e#32858#32900#1" />
+            <element signature="e#33046#33088#1" />
+            <element signature="e#33272#33382#0" />
+            <element signature="e#33387#33419#0" />
+            <element signature="e#33272#34097#0" />
+            <element signature="e#33600#33904#0" />
+            <element signature="e#33732#33811#1" />
+            <element signature="e#33815#33894#1" />
+            <element signature="e#33927#34030#0" />
+            <element signature="e#34104#34216#0" />
+            <element signature="e#34104#35937#0" />
+            <element signature="e#34357#34388#1" />
+            <element signature="e#35242#35307#1" />
+            <element signature="e#35348#35440#1" />
+            <element signature="e#35642#35673#1" />
+            <element signature="e#35788#35931#1" />
+            <element signature="e#35943#36068#0" />
+            <element signature="e#35943#37239#0" />
+            <element signature="e#36652#37232#1" />
+            <element signature="e#37246#37358#0" />
+            <element signature="e#37246#37795#0" />
+            <element signature="e#37801#37914#0" />
+            <element signature="e#37801#38145#0" />
+            <element signature="e#38151#38228#0" />
+            <element signature="e#38233#38270#0" />
+            <element signature="e#38151#38389#0" />
+            <element signature="e#38395#38487#0" />
+            <element signature="e#38395#38790#0" />
+            <element signature="e#38676#38712#1" />
+            <element signature="e#38718#38784#1" />
+            <element signature="e#38796#38887#0" />
+            <element signature="e#38796#39053#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/j91008/css/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="38" column="27" lean-forward="true" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/feeding.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/index.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/j91008/images/logo_01.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/jsp/j91008/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="92" column="29" lean-forward="true" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1412,16 +1720,16 @@
           <artifact-editor>
             <show-content>
               <type id="jpa-descriptors" />
-              <type id="library" />
-              <type id="javaee-facet-resources" />
               <type id="artifact" />
+              <type id="javaee-facet-resources" />
+              <type id="library" />
             </show-content>
           </artifact-editor>
-          <last-edited>/J91008</last-edited>
+          <last-edited>J91008</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.20248255" />
                 <option value="0.5" />
               </list>
             </option>
@@ -1430,11 +1738,11 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>JRebel</last-edited>
+          <last-edited>Web (J91008)|Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.20248255" />
               </list>
             </option>
           </splitter-proportions>
@@ -1470,7 +1778,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.20248255" />
               </list>
             </option>
           </splitter-proportions>
@@ -1494,7 +1802,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.19937937" />
               </list>
             </option>
           </splitter-proportions>

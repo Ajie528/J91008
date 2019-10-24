@@ -67,12 +67,10 @@
 									</th>
 									<th class="center" style="width:50px;">序号</th>
 									<th class="center">创建时间</th>
-									<th class="center">更新时间</th>
-									<th class="center">数量</th>
+									<th class="center">会员账号</th>
+									<th class="center">收益</th>
 									<th class="center">用户ID</th>
 									<th class="center">类型</th>
-									<th class="center">1 表示删除，0 表示未删除</th>
-									<th class="center">1:完成、0：未完成、2：异常</th>
 									<th class="center">操作</th>
 								</tr>
 							</thead>
@@ -89,22 +87,15 @@
 											</td>
 											<td class='center' style="width: 30px;">${vs.index+1}</td>
 											<td class='center'>${var.GMT_CREATE}</td>
-											<td class='center'>${var.GMT_MODIFIED}</td>
+											<td class='center'>${var.PHONE}</td>
 											<td class='center'>${var.NUMBER}</td>
 											<td class='center'>${var.USER_ID}</td>
 											<td class='center'>${var.TYPE}</td>
-											<td class='center'>${var.IS_DELETED}</td>
-											<td class='center'>${var.STATE}</td>
 											<td class="center">
 												<c:if test="${QX.edit != 1 && QX.del != 1 }">
 												<span class="label label-large label-grey arrowed-in-right arrowed-in"><i class="ace-icon fa fa-lock" title="无权限"></i></span>
 												</c:if>
 												<div class="hidden-sm hidden-xs btn-group">
-													<c:if test="${QX.edit == 1 }">
-													<a class="btn btn-xs btn-success" title="编辑" onclick="edit('${var.BONUS_REC_ID}');">
-														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="编辑"></i>
-													</a>
-													</c:if>
 													<c:if test="${QX.del == 1 }">
 													<a class="btn btn-xs btn-danger" onclick="del('${var.BONUS_REC_ID}');">
 														<i class="ace-icon fa fa-trash-o bigger-120" title="删除"></i>
@@ -118,15 +109,7 @@
 														</button>
 			
 														<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-															<c:if test="${QX.edit == 1 }">
-															<li>
-																<a style="cursor:pointer;" onclick="edit('${var.BONUS_REC_ID}');" class="tooltip-success" data-rel="tooltip" title="修改">
-																	<span class="green">
-																		<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-																	</span>
-																</a>
-															</li>
-															</c:if>
+
 															<c:if test="${QX.del == 1 }">
 															<li>
 																<a style="cursor:pointer;" onclick="del('${var.BONUS_REC_ID}');" class="tooltip-error" data-rel="tooltip" title="删除">

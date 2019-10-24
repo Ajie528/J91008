@@ -24,16 +24,21 @@
 </head>
 <body>
 <div class="login_bg"></div>
+
+<div class="logo">
+    <img src="j91008/images/logo_01.png" />
+</div>
+
 <div class="login-view">
     <div class="login-tab">
         <a href="fish/toRegister" class="reglink">注册</a>
         <div class="row-text">
             <i class="iconfont icon-yonghuming1 login-icon"></i>
-            <input type="number" id="phone" placeholder="请输入账号"/>
+            <input type="number" id="phone" oninput="if(value.length>11) value=value.slice(0,11)" placeholder="请输入账号"/>
         </div>
         <div class="row-text">
             <i class="iconfont icon-mima4 login-icon"></i>
-            <input type="password" id="password" placeholder="请输入密码" />
+            <input type="password" id="password" placeholder="请输入密码"/>
         </div>
     </div>
     <a class="logindown">下载App</a>
@@ -50,7 +55,7 @@
 <script type="text/javascript" src="j91008/js/md5.js"></script>
 <script type="text/javascript" src="j91008/js/jquery-3.4.1.js"></script>
 <script>
-    $(".login-btn").click(function login () {
+    $(".login-btn").click(function login() {
         // 获取账号、密码
         var phone = $("#phone").val();
         var password = $("#password").val();
@@ -62,17 +67,17 @@
             mui.toast("请输入密码~");
             return false;
         }
-        if (isHTML(password)){
+        if (isHTML(password)) {
             mui.toast("禁止输入非法参数");
             return false;
         }
         // 密码加密
         password = md5(password);
         // 服务端校验
-        $.post("fish/login",{phone:phone,password:password},function(data) {
+        $.post("fish/login", {phone: phone, password: password}, function (data) {
             if (data === "success") {
                 mui.toast("登录成功！");
-                window.location.href="fish/toIndex";
+                window.location.href = "fish/toIndex";
                 return false;
             }
             if (data === "phoneError") {

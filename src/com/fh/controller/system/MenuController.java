@@ -1,13 +1,11 @@
 package com.fh.controller.system;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-
+import com.fh.controller.base.BaseController;
+import com.fh.entity.system.Menu;
+import com.fh.service.system.FHlogManager;
+import com.fh.service.system.MenuManager;
+import com.fh.util.*;
 import net.sf.json.JSONArray;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,16 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fh.controller.base.BaseController;
-import com.fh.entity.system.Menu;
-import com.fh.service.system.MenuManager;
-import com.fh.service.system.FHlogManager;
-import com.fh.util.AppUtil;
-import com.fh.util.Const;
-import com.fh.util.Jurisdiction;
-import com.fh.util.PageData;
-import com.fh.util.RightsHelper;
-/** 
+import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
  * 类名称：MenuController 菜单处理
  * 创建人：FH 
  * 修改时间：2018年5月27日
@@ -57,7 +51,7 @@ public class MenuController extends BaseController {
 			mv.addObject("MENU_ID", MENU_ID);
 			mv.addObject("MSG", null == pd.get("MSG")?"list":pd.get("MSG").toString()); //MSG=change 则为编辑或删除后跳转过来的
 			mv.addObject("menuList", menuList);
-			mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
+			mv.addObject("QX", Jurisdiction.getHC());	//按钮权限
 			mv.setViewName("system/menu/menu_list");
 		} catch(Exception e){
 			logger.error(e.toString(), e);
@@ -160,7 +154,7 @@ public class MenuController extends BaseController {
 			mv.addObject("MENU_ID", pd.get("PARENT_ID").toString());	//传入父菜单ID，作为子菜单的父菜单ID用
 			mv.addObject("MSG", "edit");
 			pd.put("MENU_ID",id);			//复原本菜单ID
-			mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
+			mv.addObject("QX", Jurisdiction.getHC());	//按钮权限
 			mv.setViewName("system/menu/menu_edit");
 		} catch(Exception e){
 			logger.error(e.toString(), e);
@@ -237,7 +231,7 @@ public class MenuController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value="/listAllMenu")
-	public ModelAndView listAllMenu(Model model,String MENU_ID)throws Exception{
+	public ModelAndView listAllMenu(Model model, String MENU_ID)throws Exception{
 		ModelAndView mv = this.getModelAndView();
 		try{
 			JSONArray arr = JSONArray.fromObject(menuService.listAllMenu("0"));
@@ -258,7 +252,7 @@ public class MenuController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value="/otherlistMenu")
-	public ModelAndView otherlistMenu(Model model,String MENU_ID)throws Exception{
+	public ModelAndView otherlistMenu(Model model, String MENU_ID)throws Exception{
 		ModelAndView mv = this.getModelAndView();
 		try{
 			PageData pd = new PageData();
@@ -287,7 +281,7 @@ public class MenuController extends BaseController {
 	 * @param roleRights：加密的权限字符串
 	 * @return
 	 */
-	public List<Menu> readMenu(List<Menu> menuList,String roleRights){
+	public List<Menu> readMenu(List<Menu> menuList, String roleRights){
 		for(int i=0;i<menuList.size();i++){
 			menuList.get(i).setHasMenu(RightsHelper.testRights(roleRights, menuList.get(i).getMENU_ID()));
 			if(menuList.get(i).isHasMenu() && "1".equals(menuList.get(i).getMENU_STATE())){	//判断是否有此菜单权限并且是否隐藏
