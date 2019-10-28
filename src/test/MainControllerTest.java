@@ -1,5 +1,6 @@
 package test;
 
+import com.fh.util.Tools;
 import org.junit.Test;
 
 import java.util.regex.Matcher;
@@ -22,6 +23,9 @@ public class MainControllerTest {
         Matcher matcher = r.matcher(str);
         flag = matcher.matches();
         System.out.println(flag);
+
+
     }
+
 
 }

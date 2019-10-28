@@ -21,7 +21,6 @@ import javax.servlet.http.HttpServletResponse;
 
 
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -387,7 +386,7 @@ public class MainController extends BaseController {
         String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
                 + path + "/";
         String context = basePath+"fish/toRegister.do?tag="+phone;
-        System.out.println("二维码内容"+context);
+
         ServletOutputStream out = response.getOutputStream();
         TwoDimensionCode.encoderQRCode(context, out);
     }
@@ -822,13 +821,14 @@ public class MainController extends BaseController {
         pd.put("COST", cost);
         j91008_userService.deducMoney(pd);
         // 5.我的推荐人 喂养次数累积 +1 （为了计算团队业绩）
-        if (Tools.isEmpty(pd.get("RECOMMENDER").toString() )) {
+        String re = String.valueOf(pd.get("RECOMMENDER"));
+        if (Tools.isEmpty(re)) {
             pd.put("RECOMMENDER",0);
         }
         j91008_userService.addTeamCount(pd);
         // 调用奖金结算的方法
         bonusSettlement(userId, cost);
-        outBonusSettlement(cost);
+        outBonusSettlement(cost,pd.get("PHONE").toString());
         return "success";
     }
 
@@ -836,7 +836,6 @@ public class MainController extends BaseController {
      * 功能描述：提现饲料
      *
      * @param ：数额、收款类型、收款码、用户id、银行卡号、倍数、扣除手续费后的数额
-     * @return
      * @author Ajie
      * @date 2019/10/22 0022
      */
@@ -845,10 +844,10 @@ public class MainController extends BaseController {
     public String cash(@RequestParam("recInfo") String[] rec) throws Exception {
         PageData pd = new PageData();
         PageData par = (PageData) applicati.getAttribute(Const.Par);
-        pd.put("J91008_USER_ID",rec[3]);
+        pd.put("J91008_USER_ID",rec[2]);
         pd = j91008_userService.findById(pd);
-        int money = Integer.parseInt(rec[0]);
-        int cost = Integer.parseInt(rec[6]);
+        double money = Double.parseDouble(rec[0]);
+        double cost = Double.parseDouble(rec[5]);
         // 验证是否登录
         if (!is_login()) {
             return "login";
@@ -864,9 +863,9 @@ public class MainController extends BaseController {
         if (money <= 0) {
             return "tooLittle";
         }
-        // 验证提现的数额是否符合倍数要求
-        int multiple = Integer.parseInt(rec[5]);
-        if (money%multiple != 0) {
+        // 验证提现的数额是否符合最低数要求
+        double multiple = Double.parseDouble(rec[4]);
+        if (money < multiple ) {
             return "multipError";
         }
         // 验证是否选择了提现类型
@@ -874,13 +873,9 @@ public class MainController extends BaseController {
             return "typeEmpty";
         }
         int type = Integer.parseInt(rec[1]);
-        // 验证是否上传支付凭证
-        if (Tools.isEmpty(rec[2]) && type != 3) {
-            return "imgEmpty";
-        }
-        // 验证是否输入银行卡号
-        if (Tools.isEmpty(rec[4]) && type == 3) {
-            return "bankEmpty";
+        // 验证是否输入收款账号
+        if (Tools.isEmpty(rec[3])) {
+            return "accoutEmpty";
         }
         // 扣除用户饲料
         pd.put("COST",money);
@@ -890,14 +885,9 @@ public class MainController extends BaseController {
         pd.put("GMT_CREATE", getTime());
         pd.put("GMT_MODIFIED", "");
         pd.put("NUMBER", cost);
-        pd.put("USER_ID", Integer.parseInt(rec[3]));
+        pd.put("USER_ID", Integer.parseInt(rec[2]));
         pd.put("WITHDRAW_TYPE", Integer.parseInt(rec[1]));
-        if (type != 3) {
-            pd.put("VOUCHER", rec[2]);
-        }
-        if (type == 3) {
-            pd.put("VOUCHER", rec[4]);
-        }
+        pd.put("VOUCHER", rec[3]);
         pd.put("IS_DELETED", 0);
         pd.put("IS_AUDITING", 0);
         pd.put("PHONE", pd.get("PHONE"));
@@ -968,6 +958,7 @@ public class MainController extends BaseController {
     @ResponseBody
     protected String rejectCash() throws Exception {
         PageData pd = new PageData();
+        PageData par = (PageData) applicati.getAttribute(Const.Par);
         pd = this.getPageData();
         // 查询订单
         pd = withdraw_cashService.findById(pd);
@@ -982,7 +973,10 @@ public class MainController extends BaseController {
         pd.put("GMT_MODIFIED", getTime());
         withdraw_cashService.editState(pd);
         // 退回饲料给用户
+        // 去提现手续费
+        double server = Double.parseDouble(par.get("PAYMENT_FEE").toString());
         double money = Double.parseDouble(pd.get("NUMBER").toString());
+        money = money/(1-server);
         addMoney(userId,money);
         return "success";
     }
@@ -1070,7 +1064,7 @@ public class MainController extends BaseController {
             e.printStackTrace();
             System.out.println("----------------图片上传失败！");
         }
-        System.out.println(imgPath);
+        System.out.println("图片上传路径："+imgPath);
         return imgPath;
     }
 
@@ -1092,14 +1086,19 @@ public class MainController extends BaseController {
         pd.put("J91008_USER_ID", userId);
         // 查找用户信息
         pd = j91008_userService.findById(pd);
+        // 触发奖金的手机号
+        String source = pd.get("PHONE").toString();
         // 推荐人
         String Recommender = pd.get("RECOMMENDER").toString();
         String recommenPath = pd.getString("RE_PATH");
+        pd.put("J91008_USER_ID",Recommender);
+        pd = j91008_userService.findById(pd);
+        String phone = pd.get("PHONE").toString();
         // 发推荐奖
         double re_profit = Double.parseDouble(par.get("PROFIT_ONE").toString());
         double money = re_profit * cost;
         addMoney(Recommender, money);
-        bonusRec(Recommender, money, "动态",pd.get("PHONE").toString());
+        bonusRec(Recommender, money, "动态",phone,source);
         // 发管理奖
         double ad_profit = Double.parseDouble(par.get("TWO_N_PROFIT").toString());
         money = ad_profit * cost;
@@ -1125,26 +1124,29 @@ public class MainController extends BaseController {
         for (PageData i : listRe) {
             userId = i.getString("J91008_USER_ID");
             addMoney(userId, money);
-            bonusRec(userId, money, "动态",pd.get("PHONE").toString());
+            bonusRec(userId, money, "动态",i.get("PHONE").toString(),source);
         }
     }
 
     /**
      * 功能描述：静态奖金结算（出局奖金）
      *
-     * @param :成本
-     * @return
+     * @param :成本、来源（是那个用户喂养触发的）
      * @author Ajie
      * @date 2019/10/21 0021
      */
-    public void outBonusSettlement(double cost) throws Exception {
+    public void outBonusSettlement(double cost,String source) throws Exception {
         PageData pd = new PageData();
+        PageData pd1 = new PageData();
         PageData par = (PageData) applicati.getAttribute(Const.Par);
         // 查询已出局人数和当前排号累积
         pd = feed_recordService.getRecCount(pd);
+        // 排号累积
         int count = Integer.parseInt(pd.get("REC_COUNT").toString());
+        // 已出局人数
         int out_count = Integer.parseInt(pd.get("OUT_COUNT").toString());
         out_count++;
+        // 多少个出局一个
         int number = Integer.parseInt(par.get("N_OUT_ONE").toString());
         boolean is_adopt = out_count * number <= count;
         // 发放奖金
@@ -1152,6 +1154,8 @@ public class MainController extends BaseController {
             // 查询未出局最小排号记录信息
             pd = feed_recordService.getNotOutMin(pd);
             String userId = pd.getString("USER_ID");
+            pd.put("J91008_USER_ID",userId);
+            pd1 = j91008_userService.findById(pd);
             // 更改记录状态
             pd.put("IS_OUT", 1);
             pd.put("COUNT_OUT", out_count);
@@ -1159,7 +1163,7 @@ public class MainController extends BaseController {
             // 给用户发钱并且做记录
             double money = Double.parseDouble(par.get("OUT_EARNINGS").toString());
             addMoney(userId, money);
-            bonusRec(userId, money, "出局",pd.get("PHONE").toString());
+            bonusRec(userId, money, "出局",pd1.get("PHONE").toString(),source);
             // 出局人数累积
             out_count++;
             is_adopt = out_count * number <= count;
@@ -1171,11 +1175,11 @@ public class MainController extends BaseController {
     /**
      * 功能描述：创建奖金记录
      *
-     * @param ：用户ID、数额、类型、手机号
+     * @param ：用户ID、数额、类型、手机号、来源
      * @author Ajie
      * @date 2019/10/21 0021
      */
-    public void bonusRec(String userId, double money, String type,String phone) throws Exception {
+    public void bonusRec(String userId, double money, String type,String phone,String source) throws Exception {
         PageData pd = new PageData();
         pd.put("GMT_CREATE", getTime());
         pd.put("GMT_MODIFIED", "");
@@ -1185,6 +1189,7 @@ public class MainController extends BaseController {
         pd.put("IS_DELETED", 0);
         pd.put("STATE", 1);
         pd.put("PHONE", phone);
+        pd.put("SOURCE", source);
         pd.put("BONUS_REC_ID", "");
         bonus_recService.save(pd);
     }

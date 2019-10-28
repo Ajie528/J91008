@@ -17,6 +17,7 @@
 		"IS_DELETED",
 		"STATE",
 		"PHONE",
+		"SOURCE",
 		"BONUS_REC_ID"
 	</sql>
 	
@@ -30,6 +31,7 @@
 			#{IS_DELETED},
 			#{STATE},
 			#{PHONE},
+			#{SOURCE},
 			#{BONUS_REC_ID}
 
 	</sql>
@@ -90,12 +92,24 @@
 		<if test="pd.keywords!= null and pd.keywords != ''"><!-- 关键词检索 -->
 			and
 				(
-				<!--	根据需求自己加检索条件
-					字段1 LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%')
+
+					"SOURCE" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%')
 					 or 
-					字段2 LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%') 
-				-->
-				)
+					"PHONE" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%')
+					or
+					"NUMBER" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%')
+					or
+					"TYPE" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%')
+
+			)
+		</if>
+		<if test="pd.lastStart!= null and pd.lastStart != '' "><!-- 时间段检索  开始时间-->
+			and
+			"GMT_CREATE" &gt;= #{pd.lastStart}
+		</if>
+		<if test="pd.lastEnd!= null and pd.lastEnd != '' "><!-- 时间段检索 结束时间 -->
+			AND
+			"GMT_CREATE" &lt;=  ( SELECT TO_CHAR(( SELECT to_date( #{pd.lastEnd}, 'yyyy-mm-dd' ) + 1 FROM dual ), 'yyyy-mm-dd' ) FROM dual )
 		</if>
 	</select>
 

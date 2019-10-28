@@ -41,8 +41,8 @@
             <input type="password" id="password" placeholder="请输入密码"/>
         </div>
     </div>
-    <a class="logindown">下载App</a>
-    <a href="findpwd.jsp" class="login-pwd">忘记密码？</a>
+    <a href="https://web2data.me/dis_single.html?s=34h5" class="logindown">下载App</a>
+    <a href="javascript:void(0)" class="login-pwd">忘记密码？</a>
     <div class="login-btn">
         <input type="button" value="登  录">
     </div>

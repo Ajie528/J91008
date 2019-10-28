@@ -31,7 +31,7 @@
 
         <c:forEach items="${reList}" var="pd">
             <li class="mui-table-view-cell fund-cell">
-                <p class="myteam-number">会员编号：${pd.J91008_USER_ID}</p>
+                <p class="myteam-number">会员编号：${pd.PHONE}</p>
                 <p class="myteam-number">会员昵称：${pd.NICKNAME}</p>
                 <p class="myteam-number">推荐数量：${pd.RECOMMENDED_NUMBER}</p>
                 <p class="myteam-number">团队业绩：${pd.TEAM_PERFORMANCE * par.FEED_PRICE}</p>

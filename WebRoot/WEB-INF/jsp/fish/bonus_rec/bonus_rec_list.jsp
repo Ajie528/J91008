@@ -67,9 +67,9 @@
 									</th>
 									<th class="center" style="width:50px;">序号</th>
 									<th class="center">创建时间</th>
-									<th class="center">会员账号</th>
+									<th class="center">触发会员账号</th>
 									<th class="center">收益</th>
-									<th class="center">用户ID</th>
+									<th class="center">会员账号</th>
 									<th class="center">类型</th>
 									<th class="center">操作</th>
 								</tr>
@@ -87,9 +87,9 @@
 											</td>
 											<td class='center' style="width: 30px;">${vs.index+1}</td>
 											<td class='center'>${var.GMT_CREATE}</td>
-											<td class='center'>${var.PHONE}</td>
+											<td class='center'>${var.SOURCE}</td>
 											<td class='center'>${var.NUMBER}</td>
-											<td class='center'>${var.USER_ID}</td>
+											<td class='center'>${var.PHONE}</td>
 											<td class='center'>${var.TYPE}</td>
 											<td class="center">
 												<c:if test="${QX.edit != 1 && QX.del != 1 }">

@@ -23,7 +23,7 @@
 </head>
 <body>
 <header class="mui-bar mui-bar-nav headernav-bg">
-    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left header-a1"></a>
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left header-a1 "></a>
     <h1 class="mui-title header-h1">公排</h1>
 </header>
 
@@ -58,19 +58,19 @@
 
 <footer>
     <nav class="mui-bar mui-bar-tab nav-bg1">
-        <a class="mui-tab-item nav-item" href="fish/toIndex.do">
+        <a class="mui-tab-item nav-item " href="fish/toIndex.do">
             <span class="mui-icon iconfont icon-shouye8"></span>
             <span class="mui-tab-label">领养</span>
         </a>
-        <a class="mui-tab-item nav-item" href="fish/toFeeding.do">
+        <a class="mui-tab-item nav-item " href="fish/toFeeding.do">
             <span class="mui-icon iconfont icon-weiyang"></span>
             <span class="mui-tab-label">喂养</span>
         </a>
-        <a class="mui-tab-item nav-item  mui-active" href="fish/toPlatoon.do">
+        <a class="mui-tab-item nav-item mui-active " href="fish/toPlatoon.do">
             <span class="mui-icon iconfont icon-dingdan7"></span>
             <span class="mui-tab-label">公排</span>
         </a>
-        <a class="mui-tab-item nav-item" href="fish/toCenter.do">
+        <a class="mui-tab-item nav-item " href="fish/toCenter.do">
             <span class="mui-icon iconfont icon-huiyuan21"></span>
             <span class="mui-tab-label">我的</span>
         </a>
@@ -79,33 +79,14 @@
 </body>
 <script type="text/javascript" src="j91008/js/mui.min.js"></script>
 <script>
-    mui('body').on('tap', 'a', function() {
-        var href = this.getAttribute('href');
-        if(href != null) {
-            //非plus环境，直接走href跳转
-            if(!mui.os.plus) {
-                location.href = href;
-                return;
-            }
-            if(href) {
-                //打开窗口的相关参数
-                var options = {
-                    styles: {
-                        popGesture: "close"
-                    },
-                    setFun: "refreshlocation",
-                    show: {
-                        duration: "100", //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
-                    },
-                    waiting: {
-                        autoShow: true, //自动显示等待框，默认为true
-                    },
-                };
-                //打开新窗口
-                mui.openWindow(href, id, options);
-            }
-        }
+
+   mui('body').on('tap', 'a', function () {
+       var href = this.getAttribute('href');
+       location.href=href
     });
+
+
+
 </script>
 
 </html>

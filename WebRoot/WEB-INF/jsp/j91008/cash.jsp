@@ -89,33 +89,23 @@
 
         <div class="charge-row mui-row assets" id="bank" hidden="">
             <div class="mui-col-xs-3"><label>银行卡：</label></div>
-            <div class="mui-col-xs-9 mui-text-right cash-row">
-                <input type="number" id="bankNumber" placeholder="请输入银行卡号" class="cash-input"/>
+            <div class="mui-col-xs-9 mui-text-right cash-row ">
+                <input id="num3" class="cash-input" type="number" maxlength="40" value="" placeholder="请输入银行卡号"/>
+            </div>
+        </div>
+        <div class="charge-row mui-row assets " id="weixin" hidden="">
+            <div class="mui-col-xs-3"><label>微信：</label></div>
+            <div class="mui-col-xs-9 mui-text-right cash-row ">
+                <input id="num1" class="cash-input" type="text" maxlength="40" value="" placeholder="请输入收款账号"/>
+            </div>
+        </div>
+        <div class="charge-row mui-row assets " id="zhifb" hidden="">
+            <div class="mui-col-xs-3"><label>支付宝：</label></div>
+            <div class="mui-col-xs-9 mui-text-right cash-row ">
+                <input id="num2" class="cash-input" type="text" maxlength="40" value="" placeholder="请输入收款账号"/>
             </div>
         </div>
 
-        <form id="Form" enctype='multipart/form-data' method='post'>
-            <div class="charge-row mui-row assets cash-pt" id="weixin" hidden="">
-                <div class="mui-col-xs-7"><label>微信收款码：</label></div>
-                <div class="mui-col-xs-5 cash-row ">
-                    <input class="picPath" type="hidden" value=""/>
-                    <div class="cash-code">
-                        <img class="photourlShow" src="j91008/images/upload.png"/>
-                        <input type="file" name="pictureFile" class="upload-file" onchange="setImg(this)"/>
-                    </div>
-                </div>
-            </div>
-            <div class="charge-row mui-row assets cash-pt" id="zhifb" hidden="">
-                <div class="mui-col-xs-7"><label>支付宝收款码：</label></div>
-                <div class="mui-col-xs-5 cash-row ">
-                    <input class="picPath" type="hidden" value=""/>
-                    <div class="cash-code">
-                        <img class="photourlShow" src="j91008/images/upload.png"/>
-                        <input type="file" name="pictureFile" class="upload-file" onchange="setImg(this)"/>
-                    </div>
-                </div>
-            </div>
-        </form>
     </div>
     <button type="button" class="charge-btn">确定提现</button>
 </div>
@@ -132,14 +122,15 @@
     // 提现倍数
     var multiple = ${par.CASH_MULTIPLIER};
     // 提现手续费
-    var charge = ${par.PAYMENT_FEE}
+    var charge =
+    ${par.PAYMENT_FEE}
 
     // 饲料
     var sum = ${user.MONEY};
 
     // 提现多少钱就显示扣除手续费到账多少钱
     function synchro(num) {
-        num -= charge*num
+        num -= charge * num
         $("#show").attr({value: num});
     }
 
@@ -173,8 +164,8 @@
             return false;
         }
         // 验证钱的格式
-        if (!(money % multiple == 0)) {
-            mui.toast('请输入' +multiple+' 的倍数');
+        if (money < multiple) {
+            mui.toast('请输入大于' + multiple + ' 数额');
             return false;
         }
         console.log(money);
@@ -184,15 +175,10 @@
             return false;
         }
         var i = paymentMethod(type);
-        // 验证提现收款码
-        var voucher = $("input[class=picPath]").val();
-        if (i != 3 && voucher == '') {
-            mui.toast('请上传收款码！！！');
-            return false;
-        }
-        var bankNumber = $("#bankNumber").val();
-        if (i == 3 && bankNumber == '') {
-            mui.toast('请输入银行卡号！！！');
+        // 验证提现账号
+        var account = $("#num" + i).val();
+        if (account == '') {
+            mui.toast('请输入收款账号！！！');
             return false;
         }
         // 把数据添加到数组中
@@ -200,9 +186,8 @@
         var array = [];
         array.push(money);
         array.push(i);
-        array.push(voucher);
         array.push('${user.J91008_USER_ID}');
-        array.push(bankNumber);
+        array.push(account);
         array.push(multiple);
         array.push(cost);
         serverCheck(array)
@@ -210,7 +195,6 @@
 
     // 服务器校验
     function serverCheck(array) {
-        console.log(array);
 
         $.ajax({
             url: "fish/cash.do",
@@ -218,7 +202,6 @@
             data: {recInfo: array},
             traditional: true, //传集合或者数组到后台service接收 阻止jq的深度序列化
             success: function (data) { //回调函数
-                console.log(data)
                 if (data === "success") {
                     mui.toast("等待后台审核！");
                     setTimeout(function () {
@@ -242,19 +225,15 @@
                     return false;
                 }
                 if (data === "multipError") {
-                    mui.toast('请输入' +multiple+' 的倍数');
+                    mui.toast('请输入大于' + multiple + ' 的数额');
                     return false;
                 }
                 if (data === "typeEmpty") {
-                    mui.toast('请选择支付类型！');
+                    mui.toast('请选择提现类型！');
                     return false;
                 }
-                if (data === "imgEmpty") {
-                    mui.toast('请上传支付凭证！！！');
-                    return false;
-                }
-                if (data === "bankEmpty") {
-                    mui.toast('请输入收款银行卡号！！！');
+                if (data === "accoutEmpty") {
+                    mui.toast('请输入收款账号！！！');
                     return false;
                 }
             }
@@ -300,15 +279,15 @@
 
     });
 
-    mui('body').on('tap', 'a', function() {
+    mui('body').on('tap', 'a', function () {
         var href = this.getAttribute('href');
-        if(href != null) {
+        if (href != null) {
             //非plus环境，直接走href跳转
-            if(!mui.os.plus) {
+            if (!mui.os.plus) {
                 location.href = href;
                 return;
             }
-            if(href) {
+            if (href) {
                 //打开窗口的相关参数
                 var options = {
                     styles: {

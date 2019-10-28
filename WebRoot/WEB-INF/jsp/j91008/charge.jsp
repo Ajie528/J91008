@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="j91008/css/style.css"/>
     <link rel="stylesheet" href="j91008/css/mui.picker.css"/>
     <link rel="stylesheet" href="j91008/css/mui.poppicker.css"/>
+    <link rel="stylesheet" href="j91008/css/mui.picture.css"/>
     <style>
         .mui-poppicker-header {
             background-color: #fff;
@@ -82,7 +83,7 @@
             <div class="charge-row mui-row assets" id="bank" hidden="">
                 <div class="mui-col-xs-3"><label>银行卡：</label></div>
                 <div class="mui-col-xs-9 mui-text-right cash-row">
-                    <input type="number" value="${par.BANK_NUMBER}" readonly="readonly" class="cash-input">
+                    <input type="number" value="${par.BANK_NUMBER}" readonly="readonly" class="cash-input" >
                 </div>
             </div>
             <div class="charge-row-code mui-row charge-pt assets cash-pt" id="bank1" hidden="">
@@ -98,7 +99,7 @@
             <div class="charge-row-code mui-row charge-pt assets cash-pt" id="zhifb" hidden="">
                 <div class="mui-col-xs-5"><label>支付宝收款码：</label></div>
                 <div class="mui-col-xs-7">
-                    <div class="charge-code"><img src="${par.ALIPAY}"/></div>
+                    <div class="charge-code enlarge"><img src="${par.ALIPAY}" data-preview-src="" data-preview-group="1" /></div>
                 </div>
             </div>
             <div class="charge-row-code mui-row charge-pt assets cash-pt" id="zhifb1" hidden="">
@@ -106,7 +107,7 @@
                 <div class="mui-col-xs-7">
                     <input class="picPath" type="hidden" value=""/>
                     <div class="charge-code">
-                        <img class="photourlShow" src="j91008/images/upload.png"/>
+                        <img class="photourlShow" src="j91008/images/upload.png" />
                         <input type="file" name="pictureFile" class="upload-file" onchange="setImg(this)"/>
                     </div>
                 </div>
@@ -115,7 +116,7 @@
             <div class="charge-row-code mui-row charge-pt assets cash-pt" id="weixin" hidden="">
                 <div class="mui-col-xs-4"><label>微信收款码：</label></div>
                 <div class="mui-col-xs-8">
-                    <div class="charge-code"><img src="${par.WECHAT}"/></div>
+                    <div class="charge-code enlarge"><img src="${par.WECHAT}" data-preview-src="" data-preview-group="2" /></div>
                 </div>
             </div>
             <div class="charge-row-code mui-row charge-pt assets cash-pt" id="weixin1" hidden="">
@@ -140,9 +141,20 @@
 <script src="j91008/js/mui.picker.js"></script>
 <script src="j91008/js/mui.poppicker.js"></script>
 <script type="text/javascript" src="j91008/js/jquery-3.4.1.js"></script>
+<%--图片点击放大--%>
+<script src="j91008/js/mui.zoom.js"></script>
+<script src="j91008/js/mui.previewimage.js"></script>
+
 <%-- form表单ajax提交 --%>
 <script src="static/js/jquery.form.js"></script>
 <script>
+
+    //点击图片放大（事件）
+    mui('.charge-row-code').on('tap', '.enlarge', function() {
+        mui.previewImage();//调用函数
+    })
+
+
     // 充值多少钱就显示需要支付多少钱
     function synchro(num) {
         $("#payment").attr({value: num});

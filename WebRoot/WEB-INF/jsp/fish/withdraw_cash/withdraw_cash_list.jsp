@@ -98,15 +98,7 @@
 											<td class='center' style="width: 30px;">${vs.index+1}</td>
 											<td class='center'>${var.GMT_CREATE}</td>
 											<td class='center'>${var.PHONE}</td>
-											<c:if test="${var.WITHDRAW_TYPE != 3}" >
-											<td class='center'>
-												<a style="cursor:pointer;" onmouseover="showTU('${var.VOUCHER}','yulantu${vs.index+1}');" onmouseout="hideTU('yulantu${vs.index+1}');">[预览]</a>
-												<div class="yulantu" id="yulantu${vs.index+1}"></div>
-											</td>
-											</c:if>
-											<c:if test="${var.WITHDRAW_TYPE == 3}" >
-												<td class='center'>${var.VOUCHER}</td>
-											</c:if>
+											<td class='center'>${var.VOUCHER}</td>
 											<td class='center'>${var.NUMBER}</td>
 											<td class='center'>${var.USER_ID}</td>
 											<td class='center'>${var.WITHDRAW_TYPE}</td>

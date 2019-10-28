@@ -54,8 +54,8 @@
 
             <div class="reg-row">
                 <i class="iconfont icon-lianjie11 reg-icon"></i>
-                <input type="number" id="extend" value=""/>
-                <span class="promotion-text" oninput="if(value.length>11) value=value.slice(0,11)" >推广号</span>
+                <input type="number" id="extend" oninput="if(value.length>11) value=value.slice(0,11)" value=""/>
+                <span class="promotion-text"  >推广号</span>
             </div>
             <div class="agreement mui-checkbox mui-left">
                 <input type="checkbox"/> <span>已阅读并同意<a href="javascript:void(0);">《用户协议》</a></span>
@@ -175,7 +175,7 @@
     //手机号格式校验
     function isphone(phone) {
         //RegExp 对象表示正则表达式，它是对字符串执行模式匹配的强大工具。
-        return (new RegExp(/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/).test(phone));
+        return (new RegExp(/^1[3|4|5|7|8][0-9]{9}$/).test(phone));
     }
 
     // md5加密

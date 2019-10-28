@@ -131,6 +131,14 @@
 				-->
 				)
 		</if>
+		<if test="pd.lastStart!= null and pd.lastStart != '' "><!-- 时间段检索  开始时间-->
+			and
+			"GMT_CREATE" &gt;= #{pd.lastStart}
+		</if>
+		<if test="pd.lastEnd!= null and pd.lastEnd != '' "><!-- 时间段检索 结束时间 -->
+			AND
+			"GMT_CREATE" &lt;=  ( SELECT TO_CHAR(( SELECT to_date( #{pd.lastEnd}, 'yyyy-mm-dd' ) + 1 FROM dual ), 'yyyy-mm-dd' ) FROM dual )
+		</if>
 	</select>
 	
 	<!-- 列表(全部) -->

@@ -92,11 +92,14 @@ public class J91008_userController extends BaseController {
 		PageData pd = new PageData();
 		pd = this.getPageData();
 		String pwd = pd.getString("PASSWORD");
+		// 密码二次加密
 		pwd = Tools.encrypt(pwd);
-		// 密码加密
 		pd.put("PASSWORD",pwd);
-
 		j91008_userService.edit(pd);
+		// 查询用户信息
+		pd = j91008_userService.findById(pd);
+		// 更新服务器缓存
+		applicati.setAttribute(pd.get("PHONE").toString(),pd);
 		mv.addObject("msg","success");
 		mv.setViewName("save_result");
 		return mv;
@@ -198,8 +201,7 @@ public class J91008_userController extends BaseController {
 		List<String> titles = new ArrayList<String>();
 		titles.add("创建时间");	//1
 		titles.add("创建时间");	//2
-		titles.add("1 表示删除，0 表示未删除");	//3
-		titles.add("1 表示已提现，0 表示未提现。每日0时 重置为0");	//4
+		titles.add("提现次数");	//4
 		titles.add("手机号");	//5
 		titles.add("密码");	//6
 		titles.add("今天喂养");	//7
@@ -217,17 +219,21 @@ public class J91008_userController extends BaseController {
 			PageData vpd = new PageData();
 			vpd.put("var1", varOList.get(i).getString("GMT_CREATE"));	    //1
 			vpd.put("var2", varOList.get(i).getString("GMT_MODIFIED"));	    //2
-			vpd.put("var3", varOList.get(i).get("IS_DELETED").toString());	//3
-			vpd.put("var4", varOList.get(i).get("IS_WITHDRAW ").toString());	//4
+			vpd.put("var4", varOList.get(i).get("IS_WITHDRAW").toString());	//4
 			vpd.put("var5", varOList.get(i).get("PHONE").toString());	//5
 			vpd.put("var6", varOList.get(i).getString("PASSWORD"));	    //6
 			vpd.put("var7", varOList.get(i).get("FEEDING_TODAY").toString());	//7
 			vpd.put("var8", varOList.get(i).get("MONEY").toString());	//8
 			vpd.put("var9", varOList.get(i).get("RECOMMENDED_NUMBER").toString());	//9
-			vpd.put("var10", varOList.get(i).get("RECOMMENDER").toString());	//10
-			vpd.put("var11", varOList.get(i).getString("RE_PATH"));	    //11
+			if (varOList.get(i).get("RECOMMENDER").toString() != null && !"".equals(varOList.get(i).get("RECOMMENDER").toString())) {
+				vpd.put("var10", varOList.get(i).get("RECOMMENDER").toString());	//10
+				vpd.put("var11", varOList.get(i).getString("RE_PATH"));	    //11
+			}
 			vpd.put("var12", varOList.get(i).get("LOVE_COIN").toString());	//12
-			vpd.put("var13", varOList.get(i).getString("NICKNAME"));	    //13
+			if (varOList.get(i).getString("NICKNAME") != null && !"".equals(varOList.get(i).getString("NICKNAME"))){
+				vpd.put("var13", varOList.get(i).getString("NICKNAME"));	    //13
+			}
+
 			vpd.put("var14", varOList.get(i).get("IS_ADOPTION").toString());	//14
 			varList.add(vpd);
 		}

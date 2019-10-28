@@ -127,15 +127,8 @@
 
 
     mui('body').on('tap', 'a', function () {
-        var id = this.getAttribute('href');
-        var href = this.href;
-        mui.openWindow({
-            id: id,
-            url: this.href,
-            show: {
-                autoShow: true
-            }
-        });
+        var href = this.getAttribute('href');
+        location.href=href
     });
 </script>
 

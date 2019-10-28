@@ -36,13 +36,13 @@
             </div>
 
             <c:forEach items="${pic}" var="pd">
-                <div class="mui-slider-item mui-slider-item-duplicate">
+                <div class="mui-slider-item">
                     <a href="#"><img src="${pd.PIC_PATH}"></a>
                 </div>
             </c:forEach>
 
             <div class="mui-slider-item mui-slider-item-duplicate">
-                <a href="#" style="display: none"><img src="j91008/images/index00.png"></a>
+                <a href="#" ><img src="${pic[0].PIC_PATH}"></a>
             </div>
 
         </div>
@@ -167,32 +167,11 @@
         interval: 5000
     });
 
-    mui('body').on('tap', 'a', function() {
+
+
+    mui('body').on('tap', 'a', function () {
         var href = this.getAttribute('href');
-        if(href != null) {
-            //非plus环境，直接走href跳转
-            if(!mui.os.plus) {
-                location.href = href;
-                return;
-            }
-            if(href) {
-                //打开窗口的相关参数
-                var options = {
-                    styles: {
-                        popGesture: "close"
-                    },
-                    setFun: "refreshlocation",
-                    show: {
-                        duration: "100", //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
-                    },
-                    waiting: {
-                        autoShow: true, //自动显示等待框，默认为true
-                    },
-                };
-                //打开新窗口
-                mui.openWindow(href, id, options);
-            }
-        }
+        location.href=href
     });
 </script>
 
